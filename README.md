@@ -1,19 +1,19 @@
-# [Nome do projeto]
+# Hello Friends
 
-[Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.]
+Plataforma web de aprendizado de Língua Inglesa.
 
 ## Alunos integrantes da equipe
 
-* [Nome completo do aluno 1]
-* [Nome completo do aluno 2]
-* [Nome completo do aluno 3]
-* [Nome completo do aluno 4]
+* Helen Camila de Oliveira
+* Izabella de Castro Lucas
+* Pedro Campos Miranda
+* Nataniel Geraldo Mendes Peixoto
 
-## Professores responsáveis
+## Professoras responsáveis
 
-* [Nome completo do professor 1]
-* [Nome completo do professor 2]
+* Cleiton Silva Tavares
+* Soraia Lúcia da Silva
 
 ## Instruções de utilização
 
-[Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.]
+Em processo de desenvolvimento.
