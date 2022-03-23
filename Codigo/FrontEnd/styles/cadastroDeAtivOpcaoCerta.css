@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif !important;
+    font-weight: 600;
+}
+
+.btn {
+    border-radius: 50px !important;
+    text-transform: uppercase;
+    font-size: 5px;
+    padding: 10px 0px;
+    cursor: pointer;
+    border: none;
+    margin-top: 1rem;
+    letter-spacing: 0.2em;
+    margin: 15px;
+    font-weight: 600 !important;
+}
+
+.titulo{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    color:#ABBF54;
+    margin-top: 10px;
+    margin-left: 30px !important;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0 !important; 
+} 
+
+/*escolha Da Questao*/
+
+.nav-pills .nav-link.active{
+    color: rgba(0, 0, 0, 0.486) !important;
+    background-color: #FFFA6F !important; 
+}
+
+.opcao{
+    color: rgba(0, 0, 0, 0.54) !important; 
+}
+
+.btn.focus, .btn:focus {
+    outline: none !important;
+    box-shadow: none !important ;
+}
+
+
+/*Questao Texto*/
+
+
+/*Pergunta*/
+.sub-titulo{
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    color:#ABBF54;
+    margin-top: 10px;
+    margin-left: 30px !important;
+}
+
+.form-control{
+    border-color: rgba(0, 0, 0, 0.54) !important;
+    border-radius: 50px !important;
+}
+
+.form-control.questao{
+    height: 200px !important;
+    border-radius: 10px !important;
+}
+
+/*Alternativas*/
+.alternativas{
+margin: 15px;
+}
+
+.divisaoAlternativas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+}
+
+.cadaAlternativa{
+    box-shadow:  5px 3px 3px 1px rgba(117, 116, 116, 0.54) !important;
+    height: 100px;
+    margin: 0 auto 30px;
+    background-color: rgba(236, 236, 236, 0.856);
+
+}
+
+.opcaoAlternativa{
+    width: 25px;
+    display: inline;
+    color: #3797A5;
+    z-index: 1;
+}
+
+
+/*Salvar atividade*/
+
+.btn-second {
+    background-color: #FFFA6F !important;
+    border: none;
+    width: 351px;
+    height: 46px;
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 0.15em;
+    color: rgba(0, 0, 0, 0.486) !important;
+    margin: 5px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.salvarDados{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+/*texto*/
+
+.form-control .questao{
+    width: 900px !important;
+}
+/*Upload*/
+
+.form-group{
+    margin-left: 10px;
+    margin-bottom: 0 !important;
+}
+    
+    .imageQuestao{
+      position: relative;
+      margin: 0 auto 20px;
+      width: 500px;
+      min-height: 50px;
+      border: 1px solid #3797A5;
+      border-radius: 40px;
+    }
+    
+    .imageQuestao img{
+        border-radius: 40px;
+        width: 498px !important;
+        min-height: 50px;
+        opacity: 0.8;
+    }
+    
+    
+    #newImagem{
+      position: absolute;
+      border: 1px solid #3797A5 ;
+      width: 500px;
+      left: 0;
+      top:0;
+      min-height: 100%;
+      border-radius: 40px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 2;
+      display: none;
+    }
+
+    /*Video*/
+
+    .linkVideo{
+        width: 500px;
+        border-radius: 40px;
+        border: 1px solid #3797A5 !important;
+        text-align: center;
+        font-weight: 100;
+        outline: none !important;
+        box-shadow: none !important ;
+    }
+
+    .video{
+       display: flex;
+       justify-content: center;
+    }
+
+    .tab-content{
+        width: 100%;
+    }
+
+    .Inputlink{
+        color: #3797A5;
+    }
+
+    .EnvVideo{
+            background-color:#3797A5;
+            border: 1px solid #ABBF54;
+            color: #fff ;
+            border-radius: 20px;
+           padding: 5px;
+           height: 35px;
+    }
+
+.video{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+
+.footer-atividade{
+    background: #3797A5;
+    padding: 15px;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-style: normal;
+    bottom:0;
+    width:100%;
+}

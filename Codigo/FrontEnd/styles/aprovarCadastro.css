@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+
+
+
+ .title{
+     margin: 50px 30px;
+     font-size: 35px;
+     line-height: 42px;
+     letter-spacing: 0.15em;
+     color: #ABBF54;
+ }
+
+ /*Lista Aprovação Alunos*/
+ #alunos{
+     display: block; 
+     overflow-x: auto;
+     margin: 0.5rem;
+ }
+ #data-table{
+     width: 100%;
+     color: #969cb3;
+ }
+ table thead tr th:first-child,
+ table tbody tr td:first-child{
+     border-radius: 0.25rem 0 0 0.25rem;
+ }
+ table thead tr th:last-child,
+ table tbody tr td:last-child{
+     border-radius: 0 0.25rem 0.25rem 0;
+ }
+
+ table thead th{
+
+     line-height: 20px;
+     color: #fdf865;
+     padding: 1rem 2rem;
+     border-bottom: 2px #3797A5 solid ;
+     background-color: #3796a585;
+
+ }
+
+ table tbody td{
+
+     padding: 1rem 2rem;
+ }
+
+ td{
+     font-style: normal;
+     font-weight: normal;
+     font-size:20px;
+     text-align: center;
+     line-height: 20px;
+     color: #0000007e;
+     border-bottom: 1px #3797A5 solid ;
+
+ }
+
+ /*button*/
+
+ .fa-angle-down{
+    color: #55c034;
+    font-size: 30px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.fa-times{
+    color: #ff4444;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+
+ .selecionar>div{
+     display: inline-block;
+ }
+
+
+ .reprovado{
+     margin-bottom: .5rem;
+     width: 7rem;
+     height: 2rem;
+     border-radius: 5px;
+     border: 0px solid;
+     cursor: pointer;
+     opacity: .8;
+ }
+ .reprovado:hover{
+     opacity: 1;
+ }
+
+
+ h2{
+     font-style: normal;
+     font-weight: normal;
+     line-height: 40px;
+     color: #8D8A8A;
+     margin: 0px;
+     text-align: center;
+ }
+
+
+ #button.cancel{
+     color: #e92929;
+     height: 50px;
+     width: 100px;
+     display: flex;
+     justify-content: center;
+     opacity: 1.0;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 40px;
+ }
+ #button.accept{
+     color: green;
+     height: 50px;
+     width: 100px;
+     display: flex;
+     justify-content: center;
+     opacity: 1.0;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 40px;
+ } 
+
+ /*Footer*/
+.footer{
+    background: #3797A5;
+    padding: 15px;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-style: normal;
+    margin-top: auto;
+}

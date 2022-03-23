@@ -1,0 +1,156 @@
+*{
+    font-family: 'Varela Round', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.sem-margin{
+    padding: 0 !important;
+}
+.header {
+    background-image: linear-gradient(to right, #3797A5, #7ed6e4);
+}
+
+.fotoMenu{
+    margin-left: 10px;
+    margin-bottom: 0 !important;
+}
+     
+.navbar-nav{
+    margin: 0 auto;
+}
+
+.imageMenu:hover .editar-content{
+      opacity: 1;
+}
+    
+.imageMenu img{
+      width: 54px;
+      height: 54px;
+      border-radius:100%;
+}
+
+
+   
+#newMenu{
+      position: absolute;
+      border: 2px solid #ABBF54;
+      color: aliceblue !important;
+      width: 100%;
+      left: 0;
+      top:0;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 100%;
+      z-index: 2;
+      display: none;
+}
+   
+
+.cont {
+    content: "";
+    left: 0;
+    right: 0;
+    size: 10% !important;
+    position:fixed !important;
+    z-index: -10;
+  
+    display: block;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  
+    opacity: 1;
+  }
+  
+  .imagemFundo{
+      width: 100%;
+      position:fixed !important;
+      -webkit-filter: blur(7px);
+    -moz-filter: blur(7px);
+    -o-filter: blur(7px);
+    -ms-filter: blur(7px);
+    filter: blur(7px);
+  }
+
+/*Tópicos*/
+.tp:hover{
+    background-color: #bbd159;
+    color: aliceblue !important;
+    margin: 0 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #ffffffec  !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #ffffff  !important;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content:center;
+}
+
+.menu{
+   font-size: 18px !important;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255) !important;
+}
+
+li{
+   margin-bottom: 5px !important;
+   cursor: pointer;
+}
+
+.tp{
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.sobre{
+    background-color: #ffbd43;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/*Fotter*/
+.footer{
+    background: #3797A5;
+    padding: 15px;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-style: normal;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+/*Sair*/
+
+.sair{
+    color: #ffffff !important;
+}
+
+
+.bi-pencil .sair{
+    color: #ebe9e0ec !important;
+}

@@ -1,0 +1,255 @@
+
+/*Container*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif !important;
+}
+
+.container:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  
+    display: block;
+    background-image: url('https://img.freepik.com/vektoren-kostenlos/aquarellentwurf-zurueck-zum-schulhintergrund_23-2148593945.jpg?size=626&ext=jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
+    filter: blur(6px);
+  }
+  
+  .container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    margin-right: 20px;
+  }
+
+
+
+.well
+{
+   background-color: #3796a5ab;
+   padding: 30px;
+   padding-left: 30px;
+   box-shadow: 0 0 10px #fff;
+   margin: 4% auto 0;
+   width: 900px;
+   border-radius: 10px;
+   height: 560px;
+}
+
+.title{
+    color:#FFFA6F !important;
+    letter-spacing: 0.2em;
+    line-height: 20px;
+    font-weight: 600 !important;
+}
+
+.button-cadastra{
+    background-color: #ABBF54 !important;
+    color: #fff !important;
+    line-height: 23px;
+    margin-top: 5%;
+    font-size: 20px !important;
+   line-height: 23px;
+   letter-spacing: 0.2em;
+
+}
+
+input{
+    height: 40px !important;
+}
+
+label{
+    color: #FFFA6F;
+    line-height: 23px;
+   letter-spacing: 0.2em;
+}
+
+.first-column {
+  width: 67%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.second-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.first-content {
+  display: flex;
+  box-shadow: 0 0 10px none;
+}
+/*Upload foto*/
+
+.form-group{
+margin-left: 10px;
+margin-bottom: 0 !important;
+}
+
+.image{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+}
+
+.image:hover .editar-content{
+  opacity: 1;
+}
+
+.image img{
+  width: 200px;
+  height: 200px;
+  border-radius:100%;
+}
+
+
+#new{
+  position: absolute;
+  border: 2px solid #ABBF54 ;
+  width: 100%;
+  left: 0;
+  top:0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  z-index: 2;
+  display: none;
+}
+
+
+/*VERSÃO MOBILE*/
+@media screen and (max-width: 1040px) {
+  .title{
+    font-size: 25px;
+  }
+  .well{
+   height: auto;
+   margin: 40% auto 0;
+  }
+ 
+ 
+  .content {
+      width: 100%;
+      align-items: center;
+  }
+
+
+  .content::before {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      border-radius: 0;
+  }
+  .first-content, .second-content {
+      justify-content: center;
+  }
+
+  .form {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+  }
+  label{
+      width:auto ;
+  }
+
+  .btn-second{
+      width:250px ;
+  }
+
+  .first-column {
+      text-align: center;
+      width: 100%;
+      z-index: 0;
+  }
+
+
+
+}
+
+
+
+@media screen and (max-width: 560px) {
+  
+  .title{
+    font-size: 25px;
+  }
+  .well{
+    height: auto;
+    float: left;
+    width: 1000px;
+    margin: 0;
+  }
+
+  .row{
+ height: 30%;
+  }
+  .content {
+      width: 90%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .button-cadastra{
+    margin: 0;
+  }
+  .btn-primary{
+      width: 200px;
+  }
+
+  .content::before {
+      width: 100%;
+      height: 40%;
+      top: 0;
+      border-radius: 0;
+  }
+  .first-content, .second-content {
+      flex-direction: column;
+      justify-content: space-around;
+  }
+
+
+  .form {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+  }
+
+  .second-column{
+      width: 95%;
+  }
+
+
+  .first-column {
+      text-align: center;
+      width: 100%;
+      z-index: 10;
+  }
+
+  .btn-second{
+      width:200px ;
+  }
+
+  label{
+      width:auto ;
+  }
+
+}

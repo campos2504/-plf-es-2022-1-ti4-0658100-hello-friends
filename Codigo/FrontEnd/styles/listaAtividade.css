@@ -1,0 +1,129 @@
+*{
+    font-family: 'Varela Round', sans-serif !important;
+}
+
+body,html {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 100vh;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif !important;
+    font-weight: 800 !important;
+    overflow-x: hidden;
+}
+
+
+a {
+    color:#9fb927 !important;
+}
+
+#table{
+    border-radius: 15px !important;
+
+}
+
+#data-table {
+    width: 80% !important;
+    margin: 0 auto !important;
+    border-radius: 15px !important;
+}
+
+
+td {
+    border-radius: 5px !important;
+    font-family: 'Varela Round', sans-serif !important;
+    font-style: normal !important;
+    font-size: 20px !important;
+    letter-spacing: 0.19em !important;
+    text-decoration: none !important;
+    background-color: rgba(230, 235, 240, 0.596);
+}
+
+th {
+    font-size: 30px;
+    padding: 2% !important;
+    font-family: 'Varela Round', sans-serif !important;
+    font-style: normal !important;
+    font-size: 25px !important;
+    letter-spacing: 0.15em !important;
+    text-decoration: none !important;
+    text-align:left !important;
+}
+.simpl{
+    border-radius: 0 !important;
+    padding-left: 80px !important;
+}
+thead {
+    border-radius: 15px !important;
+}
+
+i {
+    font-style: normal !important;
+}
+
+
+.nav-pills .nav-link.active{
+    color: rgba(0, 0, 0, 0.486) !important;
+    background-color: #FFFA6F !important; 
+    border-radius: 60px;
+    margin-left: 30px;
+    font-weight: bold !important;
+    font-family: 'Varela Round', sans-serif !important;
+}
+
+.opcao{
+    color: rgba(0, 0, 0, 0.54) !important; 
+    border-radius: 60px !important;
+    margin-left: 30px !important;
+    font-weight: bold !important;
+    font-family: 'Varela Round', sans-serif !important;
+}
+
+.btn.focus, .btn:focus {
+    outline: none !important;
+    box-shadow: none !important ;
+    border-radius: 60px !important;
+    margin-left: 30px !important;
+    font-weight: bold !important;
+    font-family: 'Varela Round', sans-serif !important;
+}
+
+/*Início - Botão adicionar*/
+
+.incluir-atividade{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.btn-circle.btn-sm.incluirAtividade { 
+    width: 70px !important; 
+    height: 70px !important; 
+    border-radius: 100px !important; 
+    font-size: 10px; 
+    text-align: center;
+    margin-right: 15px;
+} 
+
+.btn-circle.btn-sm { 
+    width: 34px !important; 
+    height: 34px !important; 
+    padding: 0px 0px; 
+    border-radius: 100px !important; 
+    font-size: 10px; 
+    text-align: center;
+}
+
+.editar-excluir{
+    color: #9fb927 !important;
+}
+
+.title{
+    color: #ffbd43;
+    font-weight: bold;
+}

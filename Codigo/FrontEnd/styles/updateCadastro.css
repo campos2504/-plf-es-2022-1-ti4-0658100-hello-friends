@@ -1,0 +1,94 @@
+*{
+    font-family: 'Varela Round', sans-serif !important;
+}
+
+body,html {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 100vh;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif !important;
+    font-weight: 800 !important;
+    overflow-x: hidden;
+}
+
+
+
+.custom-body {
+    display: flex !important;
+    flex-direction: column !important;
+}
+.main-content {
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid rgba(0,0,0,.1);
+}
+main .button-cadastra{
+    background-color: #3797A5 !important;
+    color: #fff !important;
+    line-height: 23px;
+    margin-top: 15px;
+    font-size: 20px !important;
+    line-height: 23px;
+    letter-spacing: 0.2em;
+    margin-bottom: 50px;
+    z-index: 15;
+}
+
+main input{
+    height: 40px !important;
+}
+
+main label{
+    color:  #0C6C7A;
+    line-height: 23px;
+   letter-spacing: 0.2em;
+}
+main .form-group{
+    margin-left: 10px;
+    margin-bottom: 0 !important;
+}
+main .image{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+  
+main .image:hover .editar-content{
+    opacity: 1;
+}
+  
+main .image img{
+    width: 200px;
+    height: 200px;
+    border-radius:100%;
+}
+
+
+.button-editar{
+    background-color: #ABBF54 !important;
+    color: #fff !important;
+    line-height: 23px;
+    margin-top: 5%;
+    font-size: 20px !important;
+    line-height: 23px;
+    letter-spacing: 0.2em;
+    border-radius: 20px;
+}
+
+.well{
+    margin-top: 15px !important;
+    margin-bottom: 90px !important;
+    height: 500px !important;
+}
+    
+.row{
+    margin-bottom: 5px;
+}

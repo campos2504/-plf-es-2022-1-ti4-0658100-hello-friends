@@ -1,0 +1,284 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+
+/* content*/
+.cont:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  
+    display: block;
+    background-image: url('https://img.freepik.com/vektoren-kostenlos/aquarellentwurf-zurueck-zum-schulhintergrund_23-2148593945.jpg?size=626&ext=jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
+    filter: blur(6px);
+  }
+  
+  .cont {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    margin-right: 20px;
+  }
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:white;
+}
+.content {
+    border: 2px solid #0C6C7A;
+    background-color: #3796a59c;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    width: 1038px;
+    height: 494px;
+    position: relative;
+}
+.content::before {
+    content: "";
+    position: absolute;
+    border: 2px solid #0C6C7A;
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 0;
+}
+
+
+.btn {
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 10px;
+    padding: 10px 0px;
+    cursor: pointer;
+    width: 150px;
+    border: none;
+    align-items: center;
+    margin-top: 1rem;
+    letter-spacing: 0.2em;
+    margin: 15px;
+}
+
+.btn-second:hover{
+    background-color: #35345e;
+}
+
+.btn-select{
+    border:none;
+    background-color: #fff;
+}
+.btn-select:active{
+    border: none;
+    background-color: #FFFA6F;
+}
+
+.btn-primary {
+    background-color: #ABBF54;
+    border: none;
+    transition: background-color .5s;
+    color: #fff;
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 0.15em;
+    width: 264px;
+    height: 44px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.btn-primary:hover {
+    background-color: #abbf54b9;
+    color: #fff;
+}
+.btn-second {
+    background-color: #ABBF54;
+    border: none;
+    width: 351px;
+    height: 46px;
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 0.15em;
+    color: #fff;
+    transition: background-color .5s;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.btn-second:hover {
+    background-color: #abbf54b9;
+    border:none;
+    color: #fff ;
+}
+
+.btn-select:focus{
+border: none;
+background-color:#FFFA6F;
+}
+button:focus{
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.first-content {
+    display: flex;
+    box-shadow: 0 0 10px #58af9b;
+}
+.first-content .second-column {
+    z-index: 11;
+}
+.first-column {
+    text-align: center;
+    width: 45%;
+    z-index: 10;
+}
+.second-column {
+    width:67%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list-escolha-professor-aluno {
+    display: flex;
+    list-style-type: none;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+}
+
+
+.escolha {
+width: 100%;
+display: flex;
+justify-content: center;
+position: relative;
+}
+
+.label-input {
+    border: 1px solid #58af9b;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    
+}
+
+label{
+    border-radius: 10px;
+    width: 524px;
+    height: 47px;
+}
+
+input{
+    margin: 10px;
+}
+
+input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/* second content*/
+
+.second-content {
+    position: absolute;
+    display: flex;
+}
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
+.senha {
+    color: #35345e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}
+.senha::first-letter {
+    text-transform: capitalize;
+}
+
+.logo{
+    width: 310px;
+    height: 340px;
+}
+
+/*VERSÃO MOBILE*/
+@media screen and (max-width: 1040px) {
+    .content {
+        width: 90% !important;
+    }
+
+
+    .content::before {
+        width: 100%;
+        height: 40%;
+        top: 0;
+        border-radius: 0;
+    }
+    .first-content, .second-content {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+
+    .form {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    label{
+        width:auto ;
+    }
+
+    .btn-second{
+        width:250px ;
+    }
+
+    .first-column {
+        text-align: center;
+        width: 100%;
+        z-index: 10;
+    }
+
+
+}
