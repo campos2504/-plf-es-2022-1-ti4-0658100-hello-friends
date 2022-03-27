@@ -16,7 +16,7 @@ namespace HelloFriendsAPI.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Enunciado { get; set; }
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public IEnumerable<PalavraChaveViewModel> PalavrasChaves { get; set; }
+        public string PalavrasChaves { get; set; }
         public Guid Id { get; set; }
 
     }

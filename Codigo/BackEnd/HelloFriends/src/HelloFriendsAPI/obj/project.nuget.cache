@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "68Vf+15RrJdcsTPrcZZfabo9kq2wqHiNnkCIzU1899wAeUyahoA8vN0Oz5cSfyDfN3P7e0H67qBFCq/MZ2W4fA==",
+  "dgSpecHash": "INWKqvzCzf77wcruUkTXYhLeXr3Wj+P/s2s8ijMi+Zqo8zgf5G0+DaijRzWR7zOcNdlaCIl9qQ/qF4DTA4EHmQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nataniel\\PUCMG\\Versão Final TIS3\\plf-es-2021-2-ti3-6654100-projeto-de-ingles\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+  "projectFilePath": "C:\\Users\\Nataniel\\ProjetoHelloFriends\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nataniel\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Nataniel\\.nuget\\packages\\mailkit\\2.15.0\\mailkit.2.15.0.nupkg.sha512",

@@ -34,15 +34,15 @@ namespace HelloFriendsAPI.Repositorys.Implementations
         public void Delete(Guid id)
         {
 
-            /*var result = _context.CompletaFrase.SingleOrDefault(p => p.Id.Equals(id));*/
+            var result = _context.CompletaFrase.SingleOrDefault(p => p.Id.Equals(id));
 
-            var result2 = _context.CompletaFrase.OrderBy(e => e.Id).Include(e => e.PalavrasChaves).ToList();
-            var result3 = result2.Single(e => e.Id.Equals(id));            
+            /*var result2 = _context.CompletaFrase.OrderBy(e => e.Id).Include(e => e.PalavrasChaves).ToList();
+            var result3 = result2.Single(e => e.Id.Equals(id));*/            
             
 
-            if(result3 != null) {
+            if(result != null) {
                 try {
-                    _context.Remove(result3);
+                    _context.Remove(result);
                     _context.SaveChanges();
                 }
                 catch (Exception ex) {
@@ -73,21 +73,7 @@ namespace HelloFriendsAPI.Repositorys.Implementations
 
         public List<CompletaFrase> FindAll()
         {
-            return _context.CompletaFrase
-                           .Include(c => c.PalavrasChaves)
-                           .Select(c => new CompletaFrase
-                           {
-                               Id = c.Id,
-                               Titulo = c.Titulo,
-                               Enunciado = c.Enunciado,
-                               ModuloId = c.ModuloId,
-                               Modulo = c.Modulo,
-                               PalavrasChaves = c.PalavrasChaves.Select(p => new PalavraChave
-                               {
-                                   Texto = p.Texto,
-                               })
-                           })
-                           .ToList();
+            return _context.CompletaFrase.ToList();
         }
 
         public CompletaFrase FindByID(Guid id)

@@ -15,3 +15,20 @@ C:\Users\Nataniel\PUCMG\Versão Final TIS3\plf-es-2021-2-ti3-6654100-projeto-de-
 C:\Users\Nataniel\PUCMG\Versão Final TIS3\plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.dll
 C:\Users\Nataniel\PUCMG\Versão Final TIS3\plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.pdb
 C:\Users\Nataniel\PUCMG\Versão Final TIS3\plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.genruntimeconfig.cache
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.csproj.AssemblyReference.cache
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.AssemblyInfoInputs.cache
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.AssemblyInfo.cs
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.csproj.CoreCompileInputs.cache
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.RazorAssemblyInfo.cache
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.RazorAssemblyInfo.cs
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.dll
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.pdb
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\bin\Debug\netcoreapp2.2\HelloFriendsAPI.deps.json
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\bin\Debug\netcoreapp2.2\HelloFriendsAPI.runtimeconfig.json
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\bin\Debug\netcoreapp2.2\HelloFriendsAPI.runtimeconfig.dev.json
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\bin\Debug\netcoreapp2.2\HelloFriendsAPI.dll
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\bin\Debug\netcoreapp2.2\HelloFriendsAPI.pdb
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Nataniel\ProjetoHelloFriends\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\obj\Debug\netcoreapp2.2\HelloFriendsAPI.genruntimeconfig.cache

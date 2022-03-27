@@ -54,7 +54,6 @@ namespace HelloFriendsAPI
                 cfg.CreateMap<Modulo, ModuloViewModel>().ReverseMap();
                 cfg.CreateMap<OpcaoCerta, OpcaoCertaCreateViewModel>().ReverseMap();
                 cfg.CreateMap<CompletaFrase, CompletaFraseCreateViewModel>().ReverseMap();
-                cfg.CreateMap<PalavraChave, PalavraChaveViewModel>().ReverseMap();
             });
             IMapper mapper = configMapper.CreateMapper();
 

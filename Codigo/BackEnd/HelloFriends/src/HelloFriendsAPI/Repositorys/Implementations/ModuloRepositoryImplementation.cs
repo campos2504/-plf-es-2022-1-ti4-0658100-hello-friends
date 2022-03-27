@@ -32,9 +32,9 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
 
             var result = _context.Modulo.SingleOrDefault(p => p.Id.Equals(id));
 
-            var acertoPalavrasChaves = _context.CompletaFrase.OrderBy(e => e.Id).Include(e => e.PalavrasChaves).ToList();
+            /*var acertoPalavrasChaves = _context.CompletaFrase.OrderBy(e => e.Id).Include(e => e.PalavrasChaves).ToList();
 
-            var filtroAcetoPalavraChave = acertoPalavrasChaves.FindAll(e => e.ModuloId.Equals(id)).ToList();
+            var filtroAcetoPalavraChave = acertoPalavrasChaves.FindAll(e => e.ModuloId.Equals(id)).ToList();*/
 
             /*foreach(var teste in result5) {
 

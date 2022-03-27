@@ -55,6 +55,8 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.Property<long>("ModuloId");
 
+                    b.Property<string>("PalavrasChaves");
+
                     b.Property<string>("Titulo");
 
                     b.HasKey("Id");
@@ -115,22 +117,6 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                     b.ToTable("OpcaoCerta");
                 });
 
-            modelBuilder.Entity("HelloFriendsAPI.Model.PalavraChave", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<Guid?>("AtividadeId");
-
-                    b.Property<string>("Texto");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AtividadeId");
-
-                    b.ToTable("PalavraChave");
-                });
-
             modelBuilder.Entity("HelloFriendsAPI.Model.CompletaFrase", b =>
                 {
                     b.HasOne("HelloFriendsAPI.Model.Modulo", "Modulo")
@@ -145,13 +131,6 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                         .WithMany()
                         .HasForeignKey("ModuloId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("HelloFriendsAPI.Model.PalavraChave", b =>
-                {
-                    b.HasOne("HelloFriendsAPI.Model.CompletaFrase", "Atividade")
-                        .WithMany("PalavrasChaves")
-                        .HasForeignKey("AtividadeId");
                 });
 #pragma warning restore 612, 618
         }

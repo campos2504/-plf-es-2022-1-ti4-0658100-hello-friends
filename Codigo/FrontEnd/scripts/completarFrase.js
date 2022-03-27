@@ -1,6 +1,9 @@
-let novaFrase;
+let arrayDePalavrasDaFrase;
+let novasPalavrasChaves;
 let idEscolhido;
 let frase;
+let palavrasParaEsconder;
+let arrayPalavrasChaves;
 let palavrasChaves;
 let idAtividadeEscolhida;
 let idModuloEscolhido;
@@ -17,7 +20,7 @@ function imprimeDadosCompletaFrase() {
   fetch(baseURLCompletaFrase, {
     headers: {
       'Authorization': `Bearer ${retornarTokenUsuario()}`
-    }  
+    }
   }).then(result => result.json())
     .then((data) => {
       let tela = document.getElementById('atividadeCompletaFrase');
@@ -34,21 +37,25 @@ function imprimeDadosCompletaFrase() {
         }
       }
 
-      console.log(data);
+      //Retira caracteres especiais da frase
       frase = data[idEscolhido].enunciado;
-      frase = data[idEscolhido].enunciado.replace(/,/, "");
-      frase = data[idEscolhido].enunciado.replace(".", "");
-      console.log(frase);
-      novaFrase = frase.split(/\s/);
-      palavrasChaves = data[idEscolhido].palavrasChaves;
-      console.log("Palavras Chave->", palavrasChaves);
-      console.log("Nova frase ->", novaFrase);
+      frase = data[idEscolhido].enunciado.replace(/\,/g, '');
+      frase = frase.replace(/\?/g, '');
+      frase = frase.replace(/\!/g, '');
+      frase = frase.replace(/\./g, '');
+
+      //Cria um array com cada palavra da frase, após retirar os caracteres especiais
+      arrayDePalavrasDaFrase = frase.split(/\s/);
+
+      //Cria um array com cada palavra a ser escondida
+      palavrasParaEsconder = data[idEscolhido].palavrasChaves.trim();
+      arrayPalavrasChaves = palavrasParaEsconder.split(/,/);
 
       /**
        * Percorre o vetor de palavras da senteça, verificando se cada palavra corresponde a palavra chave.
-       * Em caso positivo, a palavra é substituída pelo input.
+       * Em caso positivo, a palavra é substituída pelo input. O id da campo corresponde ao nome da palavra
        */
-      novaFrase.forEach(element => {
+      arrayDePalavrasDaFrase.forEach(element => {
 
         if (encontraPalavra(element, data)) {
           strHtml += `<input id="${element}" type="text">`;
@@ -68,24 +75,77 @@ function imprimeDadosCompletaFrase() {
  * Verifica se uma determinada palavra é igual a palara chave.
  */
 function encontraPalavra(element, data) {
-  for (i = 0; i < data[idEscolhido].palavrasChaves.length; i++) {
-    if (element == data[idEscolhido].palavrasChaves[i].texto.trim()) {
-      return true;
+  for (i = 0; i < data.length; i++) {
+    console.log("entrou for");
+    for (j = 0; j < arrayPalavrasChaves.length; j++) {
+      if (element == arrayPalavrasChaves[j]) {
+        return true;
+      }
     }
   }
 }
 
+/**
+ * Função para verificar se as palavras que o usuário digitou estão corretas.
+ */
+function verificaResposta() {
 
-/*Incluir Atividade completa frase */
+  let aux = palavrasDigitadas();
+  let acertou = false;
+  console.log(aux);
+
+  //Limpar os campos com as palavras preenchidas.
+  for (i = 0; i < arrayPalavrasChaves.length; i++) {
+    document.getElementById(`${arrayPalavrasChaves[i]}`).value = "";
+  }
+
+  for (i = 0; i < aux.length; i++) {
+    if (aux[i] == arrayPalavrasChaves[i]) {
+      acertou = true;
+      console.log("acertou");
+    } else {
+      acertou = false;
+      console.log("errou");
+    }
+  }
+
+  if (acertou) {
+    alert("Parabéns, você acertou!");
+    window.location.href = "listaAtividadesCompletaFrase.html";
+  } else {
+    alert("Não foi dessa vez, tente novamente!");
+  }
+}
+
+/**
+ * Função para criar um array com as palavras digitadas pelo usuário.
+ * @returns Retorna o array de palavras
+ */
+function palavrasDigitadas() {
+  let strHtml2 = [];
+
+  for (i = 0; i < arrayPalavrasChaves.length; i++) {
+    let palavra = document.getElementById(`${arrayPalavrasChaves[i]}`).value;
+    strHtml2[i] = palavra;
+  }
+  return strHtml2;
+}
+
+
+
+/**
+ * Função para criar uma nova atividade no banco de dados.
+ */
 const saveProviderCompletaFrase = (data) => {
   const xhr = new XMLHttpRequest();
-  let palavrasChaves = data.palavrasChaves.split(',').map((palavra) => { return { texto: palavra } });
   const newData = {
     titulo: data.titulo,
     enunciado: data.enunciado,
     moduloId: idModuloEscolhido,
-    palavrasChaves,
+    palavrasChaves: data.palavrasChaves
   };
+
+  console.log("data-->", newData);
 
   xhr.open('POST', 'https://localhost:44327/api/completar-frase', true);
   xhr.setRequestHeader("Content-type", "application/json");
@@ -94,7 +154,7 @@ const saveProviderCompletaFrase = (data) => {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         alert("Atividade criada com sucesso");
-        window.location.href="listaAtividadesCompletaFrase.html"
+        window.location.href = "listaAtividadesCompletaFrase.html"
         console.log(xhr.responseText);
       }
       else {
@@ -106,7 +166,7 @@ const saveProviderCompletaFrase = (data) => {
 
   xhr.send(JSON.stringify(newData));
   console.log(newData);
-  imprimeDadosCompletaFrase();
+  /*imprimeDadosCompletaFrase();*/
 }
 
 
@@ -146,45 +206,3 @@ const formCompletaFrase = {
 $('#modalInclusaoAtividadeCompletaFrase').modal('hide');
 imprimeDadosCompletaFrase();
 
-
-
-function verificaResposta() {
-
-  let aux = palavrasDigitadas();
-  let acertou = false;
-  console.log(aux);
-
-  //Limpar os campos com as palavras preenchidas.
-  for (i = 0; i < palavrasChaves.length; i++) {
-    document.getElementById(`${palavrasChaves[i].texto.trim()}`).value = "";
-  }
-
-  for (i = 0; i < aux.length; i++) {
-    console.log(aux[i]);
-    console.log(palavrasChaves[i].texto.trim());
-    if (aux[i] == palavrasChaves[i].texto.trim()) {
-      acertou = true;
-      console.log("acertou");
-    } else {
-      acertou = false;
-      console.log("errou");
-    }
-  }
-
-  if (acertou) {
-    alert("Parabéns, você acertou!");
-    window.location.href = "listaAtividadesCompletaFrase.html";
-  } else {
-    alert("Não foi dessa vez, tente novamente!");
-  }
-}
-
-function palavrasDigitadas() {
-  let strHtml2 = [];
-
-  for (i = 0; i < palavrasChaves.length; i++) {
-    let palavra = document.getElementById(`${palavrasChaves[i].texto.trim()}`).value;
-    strHtml2[i] = palavra;
-  }
-  return strHtml2;
-}

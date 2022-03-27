@@ -6,8 +6,6 @@ namespace HelloFriendsAPI.Model
     {
         public string Enunciado { get; set; }
 
-
-        /* EF Relations */
-        public IEnumerable<PalavraChave> PalavrasChaves { get; set; }
+        public string PalavrasChaves { get; set; }
     }
 }

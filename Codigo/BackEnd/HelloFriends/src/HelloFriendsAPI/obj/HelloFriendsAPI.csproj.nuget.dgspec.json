@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nataniel\\PUCMG\\Versão Final TIS3\\plf-es-2021-2-ti3-6654100-projeto-de-ingles\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj": {}
+    "C:\\Users\\Nataniel\\ProjetoHelloFriends\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nataniel\\PUCMG\\Versão Final TIS3\\plf-es-2021-2-ti3-6654100-projeto-de-ingles\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj": {
+    "C:\\Users\\Nataniel\\ProjetoHelloFriends\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nataniel\\PUCMG\\Versão Final TIS3\\plf-es-2021-2-ti3-6654100-projeto-de-ingles\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Nataniel\\ProjetoHelloFriends\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
         "projectName": "HelloFriendsAPI",
-        "projectPath": "C:\\Users\\Nataniel\\PUCMG\\Versão Final TIS3\\plf-es-2021-2-ti3-6654100-projeto-de-ingles\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+        "projectPath": "C:\\Users\\Nataniel\\ProjetoHelloFriends\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
         "packagesPath": "C:\\Users\\Nataniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nataniel\\PUCMG\\Versão Final TIS3\\plf-es-2021-2-ti3-6654100-projeto-de-ingles\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\obj\\",
+        "outputPath": "C:\\Users\\Nataniel\\ProjetoHelloFriends\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

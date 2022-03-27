@@ -85,7 +85,7 @@ function tableCompletaFrase() {
       let texto_completaFrase = "";
       // Montar texto HTML das atividades
       for (i = 0; i < data.length; i++) {
-        if (data[i].modulo.id == idModuloEscolhido) {
+        if (data[i].moduloId == idModuloEscolhido) {
           texto_completaFrase = texto_completaFrase + ` 
                     <tr id="tb">
                       <td id="tb">
