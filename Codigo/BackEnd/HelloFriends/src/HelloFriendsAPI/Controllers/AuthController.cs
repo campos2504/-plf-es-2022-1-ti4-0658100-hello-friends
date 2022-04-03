@@ -92,7 +92,12 @@ namespace HelloFriendsAPI.Controllers {
                 {
                     throw new InvalidOperationException($"Erro ao associar claim" + $" ({opcacaoCertaClaim.ToString()}) ao usuário '{user.Id}'.");
                 }
-
+                //verdadeirofalso
+                var verdadeiroFalsoClaim = await _userManager.AddClaimAsync(user, new Claim("verdadeirofalso", "retornar,realizar"));
+                if (!verdadeiroFalsoClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({verdadeiroFalsoClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
                 return Ok(new {
                     success = true,
                 });   
@@ -147,7 +152,11 @@ namespace HelloFriendsAPI.Controllers {
                 {
                     throw new InvalidOperationException($"Erro ao associar claim" + $" ({gestaoaluno.ToString()}) ao usuário '{user.Id}'.");
                 }
-
+                var verdadeiroFalsoClaim = await _userManager.AddClaimAsync(user, new Claim("verdadeirofalso", "criar,editar,excluir,retornar,realizar"));
+                if (!verdadeiroFalsoClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({verdadeiroFalsoClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
                 return Ok(new {
                     success = true,
                 });
