@@ -1,5 +1,5 @@
-const baseURLVerdadeiroFalso = `https://localhost:44327/api/verdadeiro-falso`;
-let idModuloEscolhido;
+const baseURLVerdadeiroFalso = 'https://localhost:44327/api/verdadeiro-falso';
+let idModuloEscolhidoVF;
 
 var selecaoAtividade_verdadeiroFalso = {
   verdadeiroFalso(event) {
@@ -13,9 +13,9 @@ var selecaoAtividade_verdadeiroFalso = {
 }
 
 //recupera do localStorage a atividade escolhida
-let moduloEscolhido_completaFrase = JSON.parse(localStorage.getItem('moduloCorrente'));
-idModuloEscolhido = moduloEscolhido_completaFrase.event;
-console.log("testefinal->", idModuloEscolhido);
+let moduloEscolhido_VF = JSON.parse(localStorage.getItem('moduloCorrente'));
+idModuloEscolhidoVF = moduloEscolhido_VF.event;
+console.log("testefinal->", idModuloEscolhidoVF);
 
 
 //Exclui Atividade completa frase
@@ -85,11 +85,11 @@ function tableVerdadeiroFalso() {
       let texto = "";
       // Montar texto HTML das atividades
       for (i = 0; i < data.length; i++) {
-        if (data[i].moduloId == idModuloEscolhido) {
+        if (data[i].moduloId == idModuloEscolhidoVF) {
           texto = texto + ` 
                     <tr id="tb">
                       <td id="tb">
-                            <a onclick="selecaoAtividade_verdadeiroFalso.verdadeiroFalso(event)" href="">
+                            <a onclick="selecaoAtividade_verdadeiroFalso.verdadeiroFalso(event)" href="cadastroDeAtivverdadeiroFalso.html">
                                 <i id="${data[i].id}"">
                                     ${data[i].titulo}
                                 </i>                              
