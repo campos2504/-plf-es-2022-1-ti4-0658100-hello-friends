@@ -13378,25 +13378,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pcamp\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\Nataniel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pcamp\\Documents\\Code\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Nataniel\\Downloads\\TesteBranch2\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
       "projectName": "HelloFriendsAPI",
-      "projectPath": "C:\\Users\\pcamp\\Documents\\Code\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
-      "packagesPath": "C:\\Users\\pcamp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pcamp\\Documents\\Code\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\obj\\",
+      "projectPath": "C:\\Users\\Nataniel\\Downloads\\TesteBranch2\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+      "packagesPath": "C:\\Users\\Nataniel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nataniel\\Downloads\\TesteBranch2\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pcamp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nataniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -13509,7 +13509,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }
