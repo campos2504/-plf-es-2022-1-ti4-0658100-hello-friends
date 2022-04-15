@@ -93,6 +93,12 @@ namespace HelloFriendsAPI.Controllers {
                     throw new InvalidOperationException($"Erro ao associar claim" + $" ({opcacaoCertaClaim.ToString()}) ao usuário '{user.Id}'.");
                 }
 
+                var updateCadastroAlunoClaim = await _userManager.AddClaimAsync(user, new Claim("gestaoalunos", "retornar"));
+                if (!opcacaoCertaClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({opcacaoCertaClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+
                 return Ok(new {
                     success = true,
                 });   

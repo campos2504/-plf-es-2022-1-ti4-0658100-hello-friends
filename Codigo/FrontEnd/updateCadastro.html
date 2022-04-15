@@ -66,7 +66,7 @@
 
   <main class="container-fluid main-content sem-margin">
 
-    <form onsubmit="formEdit.submit(event)">
+    <form onsubmit="formUpdateAluno.submit(event)">
       <div class="row">
         <div class="well center-block">
           <div class="well-header">
@@ -80,7 +80,7 @@
                   <div class="form-group m-0">
                     <label for="txtname" class=" col-form-label"> Editar Nome:</label>
                     <div class="input-group">
-                      <input type="text" placeholder="Nome Completo" name="txtname" id="txtname" class="form-control">
+                      <input type="text" placeholder="Nome Completo" name="txtname" id="txtnameUpdate" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@
                   <div class="form-group m-0">
                     <label for="txtmail" class=" col-form-label">Editar Nascimento:</label>
                     <div class="input-group">
-                      <input placeholder="Data de Nascimento" type="date" id="datepicker" class="form-control">
+                      <input placeholder="Data de Nascimento" type="date" name="datepicker" id="datepicker" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -180,7 +180,7 @@
 
     function initPage() {
       document.getElementById('botaoDeslogar').addEventListener('click', deslogarUsuario);
-      document.getElementById('btn_incluir').addEventListener('click', formUsuario);
+      
 
       if (ehAluno()) {
         document.getElementById('aprovarCadastroNav').style.display = "none";

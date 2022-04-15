@@ -1,33 +1,62 @@
-let imagemForm;
-let imagemNome;
-let imageBase64;
-let binaryString;
-const url = 'https://localhost:44380/api/autenticacao/';
+let imagemFormUpdate;
+let imagemNomeUpdate;
+let imageBase5;
+let binaryStringUpdate;
+let idUpdateAluno;
+let nomeUsuario;
+let nomeResp;
+let nameAluno;
+let email;
+let idAluno;
+
+const url = 'https://localhost:44327/api/alunos';
+
+//recupera do localStorage a atividade escolhida
+let dadosAluno = JSON.parse(localStorage.getItem('userToken'));
+console.log(dadosAluno);
+/*idUpdateAluno = dadosAluno.user.id;*/
+idUpdateAluno = 4;
+console.log("testefinal->", idUpdateAluno);
+
 
 function iniciarInformacoesUsuario() {
-  let usuario = JSON.parse(localStorage.getItem('-------'));
-  let idUsuario = usuario.id;
-  let nomeUsuaria = usuario.nomeUsuaria;
-  let nomeResp = usuario.Resp;
-  let email = usuario.email;
-  let birthDate = usuario.birthDate;
 
-  document.querySelector('#txtname').value = nomeUsuaria;
-  document.querySelector('#txtrespname').value = nomeResp;
-  document.querySelector('#txtmail').value = email;
-  document.querySelector('#datepicker').value = birthDate;
+  let urlUpdateAluno = ''.concat(url, '/', idUpdateAluno);
+  console.log(urlUpdateAluno);
+  
+  fetch(urlUpdateAluno, {
+    headers: {
+      'Authorization': `Bearer ${retornarTokenUsuario()}`
+    },
+  }).then(result => result.json())
+    .then((data) => {
+      console.log(data)
+      nomeUsuario = data.nomeCompleto;
+      nomeResp = data.nomeResponsavel;
+      email = data.email;
+      birthDate = data.dataAniversario;
+      var dataAniver = new Date(birthDate)
+      var birthDateCerto = dataAniver.toISOString().slice(0,10)
+
+      document.querySelector('#txtnameUpdate').value = nomeUsuario;
+      document.querySelector('#txtrespname').value = nomeResp;
+      document.querySelector('#txtmail').value = email;
+      document.querySelector('#datepicker').value = birthDateCerto;
+
+    }) 
 
 };
 
-const saveUpdateProduct = (data) => {
+const saveUpdateAluno = (data) => {
   const renamedData = {
-    idAluno: data.idAluno,
+    idAluno: idUpdateAluno,
     nameAluno: data.nameAluno,
     nameResp: data.nameResp,
     emailAluno: data.emailAluno,
-    birthDate=data.birthDate,
+    dataAniversario:data.birthDate,
+    imagem: imagemNomeUpdate,
+    imagemUpload: imageBase64Update,
   }
-
 
   console.log(url);
 
@@ -40,50 +69,54 @@ const saveUpdateProduct = (data) => {
     method: 'put',
     body: JSON.stringify(renamedData),
   }).then(function (res) {
-    window.location = 'consultarProdutos.html'
+    window.location = 'Login.html'
   })
     .catch(function (res) { console.log(res) })
 }
 
-const formUpdateUsuario = {
-  idAluno,
-  nameAluno: document.querySelector('#txtname').value,
+
+
+const formUpdateAluno = {
+  nameAluno: document.querySelector('#txtnameUpdate').value,
   nameResp: document.querySelector('#txtrespname').value,
   emailAluno: document.querySelector('#txtmail').value,
   birthDate: document.querySelector('#datepicker').value,
 
   getValue() {
     return {
-      idAluno: idAluno.value,
       nameAluno: nameAluno.value,
       nameResp: nameResp.value,
       emailAluno: emailAluno.value,
-      birthDate: birthDate.valua,
+      birthDate: birthDate.value,
     }
   },
 
   validateFields() {
-    const { idAluno, nameAluno, nameResp, emailAluno, birthDate } = formUpdateProduto.getValue()
-    if (idAluno.trim() === "" || nameAluno.trim() === "" ||
+    const { nameAluno, nameResp, emailAluno, birthDate } = formUpdateAluno.getValue()
+    if (nameAluno.trim() === "" ||
       nameResp.trim() === "" || emailAluno.trim() === ""
       || birthDate.trim() === "") {
       throw new Error("Por favor, preencha todos os campos")
+    }else{
+      console.log("value ok")
     }
   },
 
-  formatProduct() {
-    let { idAluno, nameAluno, nameResp, emailAluno, birthDate } = formUpdateProduto.getValue()
+  formatAluno() {
+    let { nameAluno, nameResp, emailAluno, birthDate } = formUpdateAluno.getValue()
     return {
-      idAluno, nameAluno, nameResp, emailAluno, birthDate
+       nameAluno, nameResp, emailAluno, birthDate
     }
   },
 
   submit(event) {
     event.preventDefault()
     try {
-      formUpdateProduto.validateFields()
-      const SaveUpdateProduct = formUpdateProduto.formatProduct()
-      saveUpdateProduct(SaveUpdateProduct)
+      console.log("entrou");
+      formUpdateAluno.validateFields()
+      const SaveUpdateAluno = formUpdateAluno.formatAluno()
+      console.log("->", SaveUpdateAluno);
+      saveUpdateAluno(SaveUpdateAluno)
     } catch (error) {
       alert(error.message)
     }
@@ -122,17 +155,18 @@ var loaderFile = function (event) {
 
 function upload(file) {
 
-  imagemForm = file;
-  imagemNome = file.name;
+  imagemFormUpdate = file;
+  imagemNomeUpdate = file.name;
 
   console.log("NAME >>>>" + file.name);
 
   var reader = new FileReader();
   reader.onload = this.manipularReader.bind(this);
-  reader.readAsBinaryString(file);
+  reader.readAsbinaryString(file);
 };
 
 function manipularReader(readerEvt) {
-  binaryString = readerEvt.target.result;
-  imageBase64 = btoa(binaryString);
+  binaryStringUpdate = readerEvt.target.result;
+  imageBase64Update = btoa(binaryStringUpdate);
 };
+iniciarInformacoesUsuario();
