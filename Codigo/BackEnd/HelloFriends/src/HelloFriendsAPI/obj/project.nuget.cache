@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s2h+soZQOGsTWn9v2viyNbY27fZ4QOb3EzUGpJsUWs5cvfkuDkOSotmWPpRZTjU5S2KUkvSLLWndcbTaWiB3fg==",
+  "dgSpecHash": "ZgQYHCrIBCi+Xi07rbx7qp1YJthu4CRVFoZN6uSxM1G62aehyZjZwZRwFpFKuxrxgj+NBMMy+I2gEzHhGbhYAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\helen\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+  "projectFilePath": "C:\\Users\\Nataniel\\Downloads\\TesteBranch2\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\helen\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\helen\\.nuget\\packages\\mailkit\\2.15.0\\mailkit.2.15.0.nupkg.sha512",
