@@ -12,6 +12,7 @@ namespace HelloFriendsAPI.Controllers {
     [Authorize]
     [ApiController]
     [Route("api/alunos")]
+
     public class AlunosController : ControllerBase{
 
         private IAlunoBusiness _alunoBusiness;
@@ -44,6 +45,7 @@ namespace HelloFriendsAPI.Controllers {
         public IActionResult Get(long id) {
 
             var aluno = _alunoBusiness.FindByID(id);
+            aluno.ImagemSrc = String.Format("{0}://{1}{2}/Images/{3}", Request.Scheme, Request.Host, Request.PathBase, aluno.Imagem);
             if (aluno == null) {
                 return NotFound();
             }

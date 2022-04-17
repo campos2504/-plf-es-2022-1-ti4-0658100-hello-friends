@@ -80,7 +80,7 @@
                   <div class="form-group m-0">
                     <label for="txtname" class=" col-form-label"> Editar Nome:</label>
                     <div class="input-group">
-                      <input type="text" placeholder="Nome Completo" name="txtname" id="txtnameUpdate" class="form-control">
+                      <input type="text" placeholder="Nome Completo" name="txtnameUpdate" id="txtnameUpdate" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -91,30 +91,19 @@
                   <div class="form-group m-0">
                     <label for="txtrespname" class=" col-form-label">Editar Responsável:</label>
                     <div class="input-group">
-                      <input type="text" placeholder="Nome do responsável" name="txtrespname" id="txtrespname"
+                      <input type="text" placeholder="Nome do responsável" name="txtrespnameUpdate" id="txtrespnameUpdate"
                         class="form-control">
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div class="row">
-                <div class="col-md-10 col-xs-10 col-sm-10">
-                  <div class="form-group m-0">
-                    <label for="txtmail" class=" col-form-label">Editar Email:</label>
-                    <div class="input-group">
-                      <input type="email" class="form-control" name="txtmail" id="txtmail" placeholder="Email">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              
               <div class="row">
                 <div class="col-md-10 col-xs-10 col-sm-10">
                   <div class="form-group m-0">
                     <label for="txtmail" class=" col-form-label">Editar Nascimento:</label>
                     <div class="input-group">
-                      <input placeholder="Data de Nascimento" type="date" name="datepicker" id="datepicker" class="form-control">
+                      <input placeholder="Data de Nascimento" type="date" name="datepickerUpdate" id="datepickerUpdate" class="form-control">
                     </div>
                   </div>
                 </div>
@@ -130,15 +119,15 @@
 
             <div class="second-column ">
               <form class="col-md-6 col-xs-6 col-sm-6">
-                <label for="txtrespname" class=" col-form-label">Foto de perfil:</label>
+                <label for="txtrespnameUpdate" class=" col-form-label">Foto de perfil:</label>
                 <div class="form-group">
                   <div class="image">
-                    <div id="new">
+                    <div id="newImageAlunoUpdate">
                     </div>
-                    <img src="img/profile.jpg" alt="SemFoto">
+                    <img src="img/profile.jpg" alt="SemFoto" id="imageUpdateAluno">
                   </div>
                   <input accept="image/jpeg, image/png, image/jpg" type="file" class="form-control-file"
-                    id="exampleFormControlFile1" onchange="loaderFile(event)">
+                  id="exampleFormControlFile1" onchange="loaderFileUpdateAluno(event)">
                 </div>
               </form>
             </div>

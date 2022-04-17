@@ -13362,6 +13362,7 @@
       "MailKit >= 2.15.0",
       "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
+      "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -13378,23 +13379,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\helen\\.nuget\\packages\\": {},
+    "C:\\Users\\Nataniel\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nataniel\\Downloads\\TesteBranch2\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
       "projectName": "HelloFriendsAPI",
-      "projectPath": "C:\\Users\\Nataniel\\Downloads\\TesteBranch2\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+      "projectPath": "C:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
       "packagesPath": "C:\\Users\\Nataniel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nataniel\\Downloads\\TesteBranch2\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\obj\\",
+      "outputPath": "C:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\helen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nataniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13437,6 +13438,10 @@
             "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Cors": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
@@ -13506,7 +13511,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
