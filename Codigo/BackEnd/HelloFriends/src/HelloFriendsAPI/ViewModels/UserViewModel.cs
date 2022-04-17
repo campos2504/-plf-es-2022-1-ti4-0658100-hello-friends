@@ -16,5 +16,6 @@ namespace HelloFriendsAPI.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [MinLength(6, ErrorMessage = "O campo {0} precisa de no mínimo {1} caracter")]
         public string Senha { get; set; }
+
     }
 }
