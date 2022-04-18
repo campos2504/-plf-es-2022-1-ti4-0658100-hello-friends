@@ -61,8 +61,7 @@ const saveUpdateAluno = (data) => {
     method: 'PUT',
     body: JSON.stringify(renamedData),
   }).then(function (res) {
-    console.log(res);
-    
+    window.location.href="modulos.html"   
   })
     .catch(function (res) { console.log(res) })
 }
