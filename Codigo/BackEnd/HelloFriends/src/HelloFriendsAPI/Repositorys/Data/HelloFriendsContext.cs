@@ -21,5 +21,6 @@ namespace HelloFriendsAPI.Repositorys.Data
         public DbSet<CompletaFrase> CompletaFrase { get; set; }
         public DbSet<OpcaoCerta> OpcaoCerta { get; set; }
         public DbSet<VerdadeiroFalso> VerdadeiroFalso { get; set; }
+        public DbSet<RespostasCompleFrase> RespostasCompleFrase { get; set; }
     }
 }

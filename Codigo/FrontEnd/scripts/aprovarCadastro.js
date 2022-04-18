@@ -1,4 +1,5 @@
 const baseURL = `https://localhost:44327/api/alunos`;
+const baseURLAutorizar = `https://localhost:44327/api/alunos/autorizar`;
 
 var aprovacaoCadastro = {
   aprovado(id) {
@@ -10,15 +11,10 @@ var aprovacaoCadastro = {
     request.send();
     const produtos = request.responseText;
     var objeto = JSON.parse(produtos);
-    console.log(objeto);
+    console.log(objeto)
 
     let form = {
       id: objeto.id,
-      nomeCompleto: objeto.nomeCompleto,
-      nomeResponsavel: objeto.nomeResponsavel,
-      email: objeto.email,
-      dataAniversario: objeto.dataAniversario,
-      imagem: objeto.imagem,
       status: true,
       situacao: "Aprovado"
     }
@@ -37,11 +33,6 @@ var aprovacaoCadastro = {
 
     let form = {
       id: objeto.id,
-      nomeCompleto: objeto.nomeCompleto,
-      nomeResponsavel: objeto.nomeResponsavel,
-      email: objeto.email,
-      dataAniversario: objeto.dataAniversario,
-      imagem: objeto.imagem,
       status: true,
       situacao: "Reprovado"
     }
@@ -90,7 +81,8 @@ table();
 
 
 function atualizaCadastro(form) {
-  let url = baseURL;
+  let url = ''.concat(baseURLAutorizar, '/', form.id);
+  console.log(url);
   fetch(url, {
     headers: {
       'Accept': 'application/json',

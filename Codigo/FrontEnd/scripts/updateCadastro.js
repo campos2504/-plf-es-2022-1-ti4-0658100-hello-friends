@@ -12,14 +12,9 @@ const url = 'https://localhost:44327/api/alunos';
 //recupera do localStorage a atividade escolhida
 let dadosAluno = JSON.parse(localStorage.getItem('userToken'));
 
-/*idUpdateAluno = dadosAluno.user.id;*/
-idUpdateAluno = 10;
-console.log("testefinal->", idUpdateAluno);
-console.log("testefinal->", dadosAluno);
-
 function iniciarInformacoesUsuario() {
 
-  let urlUpdateAluno = ''.concat(url, '/', idUpdateAluno);
+  let urlUpdateAluno = ''.concat(url, '/email/', dadosAluno.user.email);
   console.log(urlUpdateAluno);
   
   fetch(urlUpdateAluno, {
@@ -28,11 +23,13 @@ function iniciarInformacoesUsuario() {
     },
   }).then(result => result.json())
     .then((data) => {
+      console.log(data.id);
+      idUpdateAluno = data.id;
       var dataAniver = new Date(data.dataAniversario)
       var birthDateUpdateCerto = dataAniver.toISOString().slice(0,10)
       console.log(data.imagemSrc)
 
-      /*document.getElementById('imageUpdateAluno').src = data.imagemSrc;*/
+      document.getElementById('imageUpdateAluno').src = data.imagemSrc;
       document.querySelector('#txtnameUpdate').value = data.nomeCompleto;
       document.querySelector('#txtrespnameUpdate').value = data.nomeResponsavel;
       document.querySelector('#datepickerUpdate').value = birthDateUpdateCerto;
@@ -65,7 +62,7 @@ const saveUpdateAluno = (data) => {
     body: JSON.stringify(renamedData),
   }).then(function (res) {
     console.log(res);
-    /*window.location.reload();*/
+    
   })
     .catch(function (res) { console.log(res) })
 }
@@ -133,7 +130,7 @@ var loaderFileUpdateAluno = function (event) {
   }
 
   readerUpdateUpdate.onload = function () {
-    var outputUpdateAluno = document.getElementById("newImageAlunoUpdate");
+    var outputUpdateAluno = document.getElementById("new");
     outputUpdateAluno.style.display = "block";
     outputUpdateAluno.style.backgroundImage = "url(" + readerUpdateUpdate.result + ")";
   }
