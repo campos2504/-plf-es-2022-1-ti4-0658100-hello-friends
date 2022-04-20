@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,5 +15,9 @@ namespace HelloFriendsAPI.ViewModels
         public IEnumerable<ProfessorViewModel> Professores { get; set; }
         public string ImagemUpload { get; set; }
         public string Imagem { get; set; }
+        public long Id { get; set; }
+        public bool Status { get; set; }
+        public string Situacao { get; set; }
+
     }
 }

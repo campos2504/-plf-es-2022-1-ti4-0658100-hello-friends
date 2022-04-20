@@ -10,5 +10,6 @@ namespace HelloFriendsAPI.Repositorys {
         Aluno Update(Aluno aluno);
         void Delete(long id);
         bool Exists(long id);
+        Aluno FindByEmail(string email);
     }
 }

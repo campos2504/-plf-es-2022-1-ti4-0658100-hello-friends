@@ -55,6 +55,7 @@ namespace HelloFriendsAPI
                 cfg.CreateMap<OpcaoCerta, OpcaoCertaCreateViewModel>().ReverseMap();
                 cfg.CreateMap<CompletaFrase, CompletaFraseCreateViewModel>().ReverseMap();
                 cfg.CreateMap<CompletaTexto, CompletaTextoCreateViewModel>().ReverseMap();
+                cfg.CreateMap<VerdadeiroFalso, VerdadeiroFalsoCreateViewModel>().ReverseMap();
             });
             IMapper mapper = configMapper.CreateMapper();
 
@@ -69,6 +70,9 @@ namespace HelloFriendsAPI
             services.AddScoped<ICompletaFraseRepository, CompletaFraseRepositoryImplementation>();
             services.AddScoped<ICompletaTextoBusiness, CompletaTextoBusinessImplementation>();
             services.AddScoped<ICompletaTextoRepository, CompletaTextoRepositoryImplementation>();
+            services.AddScoped<IVerdadeiroFalsoBusiness, VerdadeiroFalsoBusinessImplementation>();
+            services.AddScoped<IVerdadeiroFalsoRepository, VerdadeiroFalsoRepositoryImplementation>();
+
             services.AddSingleton(mapper);
 
         }

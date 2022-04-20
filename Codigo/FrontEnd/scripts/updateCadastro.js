@@ -1,35 +1,56 @@
-let imagemForm;
-let imagemNome;
-let imageBase64;
-let binaryString;
-const url = 'https://localhost:44380/api/autenticacao/';
+let imagemFormUpdate;
+let imagemNomeUpdate;
+let imageBase64Update;
+let binaryStringUpdate;
+let idUpdateAluno;
+let nameAlunoUpdate;
+let email;
+let idAluno;
+
+const url = 'https://localhost:44327/api/alunos';
+
+//recupera do localStorage a atividade escolhida
+let dadosAluno = JSON.parse(localStorage.getItem('userToken'));
 
 function iniciarInformacoesUsuario() {
-  let usuario = JSON.parse(localStorage.getItem('-------'));
-  let idUsuario = usuario.id;
-  let nomeUsuaria = usuario.nomeUsuaria;
-  let nomeResp = usuario.Resp;
-  let email = usuario.email;
-  let birthDate = usuario.birthDate;
 
-  document.querySelector('#txtname').value = nomeUsuaria;
-  document.querySelector('#txtrespname').value = nomeResp;
-  document.querySelector('#txtmail').value = email;
-  document.querySelector('#datepicker').value = birthDate;
+  let urlUpdateAluno = ''.concat(url, '/email/', dadosAluno.user.email);
+  console.log(urlUpdateAluno);
+  
+  fetch(urlUpdateAluno, {
+    headers: {
+      'Authorization': `Bearer ${retornarTokenUsuario()}`
+    },
+  }).then(result => result.json())
+    .then((data) => {
+      console.log(data.id);
+      idUpdateAluno = data.id;
+      var dataAniver = new Date(data.dataAniversario)
+      var birthDateUpdateCerto = dataAniver.toISOString().slice(0,10)
+      console.log(data.imagemSrc)
 
+      document.getElementById('imageUpdateAluno').src = data.imagemSrc;
+      document.querySelector('#txtnameUpdate').value = data.nomeCompleto;
+      document.querySelector('#txtrespnameUpdate').value = data.nomeResponsavel;
+      document.querySelector('#datepickerUpdate').value = birthDateUpdateCerto;
+
+    }) 
 };
 
-const saveUpdateProduct = (data) => {
+const saveUpdateAluno = (data) => {
   const renamedData = {
-    idAluno: data.idAluno,
-    nameAluno: data.nameAluno,
-    nameResp: data.nameResp,
-    emailAluno: data.emailAluno,
-    birthDate=data.birthDate,
+    id: idUpdateAluno,
+    nomeCompleto: data.nameAlunoUpdate,
+    nomeResponsavel: data.nameRespUpdate,
+    email: dadosAluno.user.email,
+    dataAniversario:data.birthDateUpdate,
+    status: true,
+    situacao: "Aprovado",
+    imagem: imagemNomeUpdate,
+    imagemUpload: imageBase64Update,
   }
 
-
-  console.log(url);
+  console.log(renamedData);
 
   fetch(url, {
     headers: {
@@ -37,53 +58,50 @@ const saveUpdateProduct = (data) => {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${retornarTokenUsuario()}`
     },
-    method: 'put',
+    method: 'PUT',
     body: JSON.stringify(renamedData),
   }).then(function (res) {
-    window.location = 'consultarProdutos.html'
+    window.location.href="modulos.html"   
   })
     .catch(function (res) { console.log(res) })
 }
 
-const formUpdateUsuario = {
-  idAluno,
-  nameAluno: document.querySelector('#txtname').value,
-  nameResp: document.querySelector('#txtrespname').value,
-  emailAluno: document.querySelector('#txtmail').value,
-  birthDate: document.querySelector('#datepicker').value,
 
+
+const formUpdateAluno = {
   getValue() {
     return {
-      idAluno: idAluno.value,
-      nameAluno: nameAluno.value,
-      nameResp: nameResp.value,
-      emailAluno: emailAluno.value,
-      birthDate: birthDate.valua,
+      nameAlunoUpdate: document.querySelector('#txtnameUpdate').value,
+      nameRespUpdate: document.querySelector('#txtrespnameUpdate').value,
+      birthDateUpdate: document.querySelector('#datepickerUpdate').value,
     }
   },
 
-  validateFields() {
-    const { idAluno, nameAluno, nameResp, emailAluno, birthDate } = formUpdateProduto.getValue()
-    if (idAluno.trim() === "" || nameAluno.trim() === "" ||
-      nameResp.trim() === "" || emailAluno.trim() === ""
-      || birthDate.trim() === "") {
+  validateFieldsUpdate() {
+    const { nameAlunoUpdate, nameRespUpdate, birthDateUpdate } = formUpdateAluno.getValue()
+    if (nameAlunoUpdate.trim() === "" ||
+      nameRespUpdate.trim() === "" || birthDateUpdate.trim() === "") {
       throw new Error("Por favor, preencha todos os campos")
+    }else{
+      console.log("value ok")
     }
   },
 
-  formatProduct() {
-    let { idAluno, nameAluno, nameResp, emailAluno, birthDate } = formUpdateProduto.getValue()
+  formatUpdateAluno() {
+    console.log("entrou");
+    let { nameAlunoUpdate, nameRespUpdate, birthDateUpdate } = formUpdateAluno.getValue()
     return {
-      idAluno, nameAluno, nameResp, emailAluno, birthDate
+       nameAlunoUpdate, nameRespUpdate, birthDateUpdate
     }
   },
 
   submit(event) {
     event.preventDefault()
     try {
-      formUpdateProduto.validateFields()
-      const SaveUpdateProduct = formUpdateProduto.formatProduct()
-      saveUpdateProduct(SaveUpdateProduct)
+      console.log("teste");
+      formUpdateAluno.validateFieldsUpdate()
+      const SaveUpdateAluno = formUpdateAluno.formatUpdateAluno()      
+      saveUpdateAluno(SaveUpdateAluno)
     } catch (error) {
       alert(error.message)
     }
@@ -91,10 +109,10 @@ const formUpdateUsuario = {
 }
 
 function checkfiles(event) {
-  let fileName = event.target.value;
-  let ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+  let fileNameUpdate = event.target.value;
+  let extUpdate = fileNameUpdate.substring(fileNameUpdate.lastIndexOf('.') + 1);
 
-  if (ext == "jpeg" || ext == "png" || ext == "jpg") {
+  if (extUpdate == "jpeg" || extUpdate == "png" || extUpdate == "jpg") {
     return true;
   }
   else {
@@ -102,37 +120,38 @@ function checkfiles(event) {
   }
 }
 
-var loaderFile = function (event) {
-  var reader = new FileReader();
+var loaderFileUpdateAluno = function (event) {
+  var readerUpdateUpdate = new FileReader();
 
   if (!checkfiles(event)) {
     alert("Não foi possível carregar a imagem, formato não suportado!")
     return false;
   }
 
-  reader.onload = function () {
-    var output = document.getElementById("new");
-    output.style.display = "block";
-    output.style.backgroundImage = "url(" + reader.result + ")";
+  readerUpdateUpdate.onload = function () {
+    var outputUpdateAluno = document.getElementById("new");
+    outputUpdateAluno.style.display = "block";
+    outputUpdateAluno.style.backgroundImage = "url(" + readerUpdateUpdate.result + ")";
   }
-  reader.readAsDataURL(event.target.files[0]);
+  readerUpdateUpdate.readAsDataURL(event.target.files[0]);
 
   upload(event.target.files[0]);
 };
 
 function upload(file) {
 
-  imagemForm = file;
-  imagemNome = file.name;
+  imagemFormUpdate = file;
+  imagemNomeUpdate = file.name;
 
   console.log("NAME >>>>" + file.name);
 
-  var reader = new FileReader();
-  reader.onload = this.manipularReader.bind(this);
-  reader.readAsBinaryString(file);
+  var readerUpdate = new FileReader();
+  readerUpdate.onload = this.manipularreaderUpdate.bind(this);
+  readerUpdate.readAsBinaryString(file);
 };
 
-function manipularReader(readerEvt) {
-  binaryString = readerEvt.target.result;
-  imageBase64 = btoa(binaryString);
+function manipularreaderUpdate(readerUpdateEvt) {
+  binaryStringUpdate = readerUpdateEvt.target.result;
+  imageBase64Update = btoa(binaryStringUpdate);
 };
+iniciarInformacoesUsuario();

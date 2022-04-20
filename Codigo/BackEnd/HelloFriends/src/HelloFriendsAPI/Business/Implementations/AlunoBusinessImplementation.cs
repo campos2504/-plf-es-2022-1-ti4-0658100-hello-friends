@@ -2,43 +2,74 @@
 using HelloFriendsAPI.Model;
 using HelloFriendsAPI.Repositorys;
 using HelloFriendsAPI.ViewModels;
+using Microsoft.AspNetCore.JsonPatch;
+using System;
 using System.Collections.Generic;
+using System.Web.Http.ModelBinding;
+using System.Web.Http.OData;
 
 namespace HelloFriendsAPI.Business.Implementations {
-    public class AlunoBusinessImplementation : IAlunoBusiness {
+    public class AlunoBusinessImplementation : IAlunoBusiness
+    {
 
         private readonly IAlunoRepository _repository;
         private readonly IMapper _mapper;
 
-        public AlunoBusinessImplementation(IAlunoRepository repository, IMapper mapper) {
+        public AlunoBusinessImplementation(IAlunoRepository repository, IMapper mapper)
+        {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public Aluno Create(AlunoViewModel alunoViewModel) {
+        public Aluno Create(AlunoViewModel alunoViewModel)
+        {
 
             //Converção da ViewModel para Model
             return _repository.Create(_mapper.Map<Aluno>(alunoViewModel));
         }
 
-        public void Delete(long id) {
+        public void Delete(long id)
+        {
 
             _repository.Delete(id);
         }
 
-        public List<Aluno> FindAll() {
+        public List<Aluno> FindAll()
+        {
 
             return _repository.FindAll();
         }
 
-        public Aluno FindByID(long id) {
+        public Aluno FindByID(long id)
+        {
 
             return _repository.FindByID(id);
         }
 
-        public Aluno Update(Aluno aluno) {
+        public Aluno Update(AlunoViewModel alunoViewModel)
+        {
+            if(alunoViewModel.Imagem == null)
+            {
+                var alunoSelecionado = _repository.FindByID(alunoViewModel.Id);
+                alunoViewModel.Imagem = alunoSelecionado.Imagem;
+            }            
 
-            return _repository.Update(aluno);
+            return _repository.Update(_mapper.Map<Aluno>(alunoViewModel));
+        }
+
+        public Aluno Autorizar(long id, AlunoAuthViewModel aluno)
+        {
+            var alunoSelecionado = _repository.FindByID(id);
+
+            alunoSelecionado.Status = aluno.Status;
+            alunoSelecionado.Situacao = aluno.Situacao;
+
+            return _repository.Update(alunoSelecionado);
+        }
+
+        public Aluno FindByEmail(string email)
+        {
+            return _repository.FindByEmail(email);
         }
     }
 }

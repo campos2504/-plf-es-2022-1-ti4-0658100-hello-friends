@@ -27,7 +27,7 @@
         <div class="imageMenu mb-lg-0 mb-sm-5 ">
           <div id="newMenu">
           </div>
-          <img src="img/profile.jpg" alt="SemFoto">
+          <img src="img/profile.jpg" alt="SemFoto" id="fotoUsuario">
         </div>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -86,6 +86,11 @@
             <a id="opcaoCerta" class="btn  nav-link opcao" data-toggle="pill" href="#pills-opcaoCerta" role="tab"
               aria-controls="pills-opcaoCerta" aria-selected="false">Opção Certa</a>
           </li>
+
+          <li class="nav-item">
+            <a id="verdadeiroFalso" class="btn  nav-link opcao" data-toggle="pill" href="#pills-verdadeiroFalso" role="tab"
+              aria-controls="pills-verdadeiroFalso" aria-selected="false">Verdadeiro ou Falso</a>
+          </li>
         </ul>
 
         <div class="tab-content" id="pills-tabContent">
@@ -133,6 +138,21 @@
               </tbody>
             </table>
           </div>
+          <div class="tab-pane fade " id="pills-verdadeiroFalso" role="tabpanel"
+            aria-labelledby="pills-profile-tab">
+            <table id="data-table">
+              <thead>
+                <tr id="table_verdadeiroFalso">
+                  <th>Titulo da atividade Verdadeiro ou Falso</th>
+                  <th class="simpl"></th>
+                </tr>
+              </thead>
+
+              <tbody id="listaAtividades_verdadeiroFalso">
+              </tbody>
+
+            </table>
+          </div>
       </section>
     </div>
 
@@ -159,6 +179,9 @@
             </a>
             <a href="cadastroDeAtivOpcaoCerta.html">
               <button type="button" id="cadastroOpcaCerta" class="btn btn-primary">Opção Certa</button>
+            </a>
+            <a href="cadastroDeAtivverdadeiroFalso.html">
+              <button type="button" id="cadastroAtivVerdadeiroFalso" class="btn btn-primary">Verdadeiro ou Falso</button>
             </a>
           </div>
         </div>
@@ -194,6 +217,8 @@
   <script src="scripts/listaAtividadesCompletaFrase.js"></script>
   <script src="scripts/listaAtividades.js"></script>
   <script src="scripts/listaAtividadesCompletaTexto.js"></script>
+  <script src="scripts/listaAtividadesVerdadeiroFalso.js"></script>
+  <script src="scripts/carregarFotoUsuario.js"></script>
   <script>
     validarLogin();
 

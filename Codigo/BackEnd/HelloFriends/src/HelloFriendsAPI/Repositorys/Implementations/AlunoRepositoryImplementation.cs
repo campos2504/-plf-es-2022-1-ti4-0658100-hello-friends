@@ -51,6 +51,7 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
         public List<Aluno> FindAll() {
 
             return _context.Aluno.ToList();
+
         }
 
         public Aluno FindByID(long id) {
@@ -75,6 +76,12 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
                 }
             }
             return aluno;
+        }
+
+        public Aluno FindByEmail(string email)
+        {
+
+            return _context.Aluno.SingleOrDefault(p => p.Email.Equals(email));
         }
     }
 }

@@ -14,7 +14,6 @@
         "outputPath": "C:\\Users\\izabe\\TI.3\\Força\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -53,6 +52,10 @@
               "target": "Package",
               "version": "[2.15.0, )"
             },
+            "Microsoft.AspNet.WebApi.OData": {
+              "target": "Package",
+              "version": "[5.7.0, )"
+            },
             "Microsoft.AspNetCore": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -62,6 +65,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
