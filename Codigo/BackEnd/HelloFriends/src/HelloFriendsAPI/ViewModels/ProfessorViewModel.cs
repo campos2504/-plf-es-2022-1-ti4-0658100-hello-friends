@@ -8,3 +8,4 @@ namespace HelloFriendsAPI.ViewModels
         public string NumeroTelefone { get; set; }
     }
 }
+ 

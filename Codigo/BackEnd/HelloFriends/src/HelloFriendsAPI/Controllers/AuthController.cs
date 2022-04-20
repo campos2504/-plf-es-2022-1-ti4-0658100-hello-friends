@@ -148,6 +148,12 @@ namespace HelloFriendsAPI.Controllers {
                     throw new InvalidOperationException($"Erro ao associar claim" + $" ({completarFraseClaim.ToString()}) ao usuário '{user.Id}'.");
                 }
 
+                var completarTextoClaim = await _userManager.AddClaimAsync(user, new Claim("completartexto", "criar,editar,excluir,retornar,realizar"));
+                if (!completarTextoClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({completarTextoClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+
                 var opcacaoCertaClaim = await _userManager.AddClaimAsync(user, new Claim("opcaocerta", "criar,editar,excluir,retornar,realizar"));
                 if (!opcacaoCertaClaim.Succeeded)
                 {
