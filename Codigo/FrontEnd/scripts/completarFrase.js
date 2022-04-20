@@ -40,11 +40,12 @@ function imprimeDadosCompletaFrase() {
       //Retira caracteres especiais da frase
       frase = data[idEscolhido].enunciado;
       frase = data[idEscolhido].enunciado.replace(/\,/g, '');
-      frase = frase.replace(/\?/g, '');
-      frase = frase.replace(/\!/g, '');
-      frase = frase.replace(/\./g, '');
+      frase = frase.replace(/\?/g, ' ?');
+      frase = frase.replace(/\!/g, ' !');
+      frase = frase.replace(/\./g, ' .');
 
       //Cria um array com cada palavra da frase, após retirar os caracteres especiais
+      console.log(frase);
       arrayDePalavrasDaFrase = frase.split(/\s/);
 
       //Cria um array com cada palavra a ser escondida
@@ -56,7 +57,6 @@ function imprimeDadosCompletaFrase() {
        * Em caso positivo, a palavra é substituída pelo input. O id da campo corresponde ao nome da palavra
        */
       arrayDePalavrasDaFrase.forEach(element => {
-
         if (encontraPalavra(element, data)) {
           strHtml += `<input id="${element}" type="text">`;
           strHtml += ' ';

@@ -77,6 +77,10 @@
             <a id="completaFrase" class="btn nav-link opcao active" data-toggle="pill" href="#pills-completaFrase"
               role="tab" aria-controls="pills-completaFrase" aria-selected="true">Completar Frase</a>
           </li>
+          <li class="nav-item">
+            <a id="completaTexto" class="btn  nav-link opcao" data-toggle="pill" href="#pills-completaTexto" role="tab"
+              aria-controls="pills-completaTexto" aria-selected="false">Completar Texto</a>
+          </li>
 
           <li class="nav-item">
             <a id="opcaoCerta" class="btn  nav-link opcao" data-toggle="pill" href="#pills-opcaoCerta" role="tab"
@@ -100,6 +104,22 @@
 
             </table>
           </div>
+
+          <div class="tab-pane fade" id="pills-completaTexto" role="tabpanel" aria-labelledby="pills-home-tab">
+            <table id="data-table">
+              <thead>
+                <tr id="table_completaTexto">
+                  <th>Titulo da atividade Completa Texto</th>
+                  <th class="simpl"></th>
+                </tr>
+              </thead>
+
+              <tbody id="listaAtividades_completaTexto">
+              </tbody>
+
+            </table>
+          </div>
+
           <div class="tab-pane fade" id="pills-opcaoCerta" role="tabpanel" aria-labelledby="pills-profile-tab">
             <table id="data-table">
               <thead>
@@ -133,6 +153,9 @@
           <div class="modal-footer" style="justify-content: center;">
             <a href="cadastroDeAtivCompletarFrase.html">
               <button type="button" id="cadastroCompletaFrase" class="btn btn-primary">Completa Frase</button>
+            </a>
+            <a href="cadastroDeAtivCompletarTexto.html">
+              <button type="button" id="cadastroCompletaTexto" class="btn btn-primary">Completa Texto</button>
             </a>
             <a href="cadastroDeAtivOpcaoCerta.html">
               <button type="button" id="cadastroOpcaCerta" class="btn btn-primary">Opção Certa</button>
@@ -170,6 +193,7 @@
     crossorigin="anonymous"></script>
   <script src="scripts/listaAtividadesCompletaFrase.js"></script>
   <script src="scripts/listaAtividades.js"></script>
+  <script src="scripts/listaAtividadesCompletaTexto.js"></script>
   <script>
     validarLogin();
 

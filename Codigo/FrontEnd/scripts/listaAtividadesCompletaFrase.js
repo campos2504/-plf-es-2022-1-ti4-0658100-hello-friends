@@ -1,5 +1,5 @@
 const baseURLCompletaFrase = `https://localhost:44327/api/completar-frase`;
-let idModuloEscolhido;
+let idModuloTextoEscolhido;
 
 var selecaoAtividade_completaFrase = {
   completaFrase(event) {
@@ -14,8 +14,8 @@ var selecaoAtividade_completaFrase = {
 
 //recupera do localStorage a atividade escolhida
 let moduloEscolhido_completaFrase = JSON.parse(localStorage.getItem('moduloCorrente'));
-idModuloEscolhido = moduloEscolhido_completaFrase.event;
-console.log("testefinal->", idModuloEscolhido);
+idModuloTextoEscolhido = moduloEscolhido_completaFrase.event;
+console.log("testefinal->", idModuloTextoEscolhido);
 
 
 //Exclui Atividade completa frase
@@ -85,7 +85,7 @@ function tableCompletaFrase() {
       let texto_completaFrase = "";
       // Montar texto HTML das atividades
       for (i = 0; i < data.length; i++) {
-        if (data[i].moduloId == idModuloEscolhido) {
+        if (data[i].moduloId == idModuloTextoEscolhido) {
           texto_completaFrase = texto_completaFrase + ` 
                     <tr id="tb">
                       <td id="tb">

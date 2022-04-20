@@ -66,6 +66,28 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                     b.ToTable("CompletaFrase");
                 });
 
+            modelBuilder.Entity("HelloFriendsAPI.Model.CompletaTexto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Enunciado");
+
+                    b.Property<string>("Imagem");
+
+                    b.Property<long>("ModuloId");
+
+                    b.Property<string>("PalavrasChaves");
+
+                    b.Property<string>("Titulo");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ModuloId");
+
+                    b.ToTable("CompletaTexto");
+                });
+
             modelBuilder.Entity("HelloFriendsAPI.Model.Modulo", b =>
                 {
                     b.Property<long>("Id")
@@ -118,6 +140,14 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                 });
 
             modelBuilder.Entity("HelloFriendsAPI.Model.CompletaFrase", b =>
+                {
+                    b.HasOne("HelloFriendsAPI.Model.Modulo", "Modulo")
+                        .WithMany()
+                        .HasForeignKey("ModuloId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.CompletaTexto", b =>
                 {
                     b.HasOne("HelloFriendsAPI.Model.Modulo", "Modulo")
                         .WithMany()

@@ -1,0 +1,181 @@
+*{
+    font-family: 'Varela Round', sans-serif !important;
+}
+
+body,html {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 100vh;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif !important;
+    font-weight: 800 !important;
+    overflow-x: hidden;
+
+}
+
+.custom-body {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.linha {
+    margin: 0px;
+    border: 0px;
+}
+
+.main-content {
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+.mensagem{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.bemVindo{
+    margin-top: 10px;
+    margin-left: 30px !important;
+    font-family: 'Varela Round', sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+}
+
+hr {
+    width: 80% !important;
+    height: 80% !important;
+    border: 1px solid #0C6C7A !important;
+    transform: rotate(-0.05deg) !important;
+}
+
+/*Atividade*/
+
+.completaTexto {
+    display: flex;
+    width: 90% !important;
+    height: auto !important;
+    border-radius: 20px;
+    border: 2px solid #0C6C7A;
+    font-family: 'Varela Round', sans-serif;
+    font-style: normal;
+    font-size: 21px !important;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.54);
+    margin-bottom: 30px !important;
+}
+
+
+.titulo{
+    font-family: 'Varela Round', sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+p.palavraChaveCompletaTexto {
+    display: inline;
+    background-color: #0C6C7A;
+    padding: 10px;
+    margin-left: 15px;
+    border-radius: 5%;
+    color: aliceblue;
+}
+
+
+/*Salvar atividade*/
+
+.btn {
+    border-radius: 50px !important;
+    text-transform: uppercase;
+    font-size: 5px;
+    padding: 10px 0px;
+    cursor: pointer;
+    border: none;
+    margin-top: 1rem;
+    letter-spacing: 0.2em;
+    margin: 15px;
+    font-weight: 600 !important;
+}
+
+.btn-second {
+    background-color:#faf441 !important;
+    border: none;
+    width: 351px;
+    height: 46px;
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 0.15em;
+    color:rgba(0, 0, 0, 0.54) !important;
+    margin: 5px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.salvarDados{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px !important;
+}
+
+
+
+/*Início - Botão adicionar*/
+
+.incluir-atividade{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.btn-circle.btn-sm.incluirAtividade { 
+    width: 80px !important; 
+    height: 50px !important; 
+    border-radius: 50px; 
+    font-size: 10px; 
+    text-align: center;
+} 
+
+.btn-circle.btn-sm { 
+    width: 34px !important; 
+    height: 34px !important; 
+    padding: 0px 0px; 
+    border-radius: 17px; 
+    font-size: 10px; 
+    text-align: center;
+}
+.footer{
+    margin-top: 30px;
+}
+
+main{
+    margin-bottom: 80px;
+}
+
+/*Alinhamento input*/
+
+input{
+    text-align: center;
+    color:#9fb927;
+    font-weight: 600;     
+}
