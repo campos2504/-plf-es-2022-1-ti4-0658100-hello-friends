@@ -21,6 +21,7 @@ const realizarLogin = (event) => {
         }
       }
       else {
+        renderizaAlert('Favor verificar os dados de login.', 'danger')
         console.log(xhr.responseText);
       }
     }

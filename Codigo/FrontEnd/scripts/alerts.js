@@ -3,7 +3,7 @@ function removeAlert(alertId) {
   alert.remove();
 }
 
-function renderizaAlert(mensagem, tipoAlert, tempoDeAtraso = undefined, tempoDeExibicao = 4000) {
+function renderizaAlert(mensagem, tipoAlert, tempoDeAtraso = undefined, tempoDeExibicao = 3000) {
   const alertId = 'userAlert';
 
   const div = document.createElement('div');

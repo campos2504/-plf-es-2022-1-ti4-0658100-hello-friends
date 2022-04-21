@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\izabe\\TI.3\\Força\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
+  "FilePath": "c:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\HelloFriendsAPI.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -1870,6 +1870,37 @@
     "CSharpLanguageVersion": 703
   },
   "RootNamespace": "HelloFriendsAPI",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\Views\\RespostasCompleFrases\\Edit.cshtml",
+      "TargetPath": "Views\\RespostasCompleFrases\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\Views\\RespostasCompleFrases\\Index.cshtml",
+      "TargetPath": "Views\\RespostasCompleFrases\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\Views\\RespostasCompleFrases\\Details.cshtml",
+      "TargetPath": "Views\\RespostasCompleFrases\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\Views\\RespostasCompleFrases\\Delete.cshtml",
+      "TargetPath": "Views\\RespostasCompleFrases\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Nataniel\\plf-es-2022-1-ti4-0658100-hello-friends\\Codigo\\BackEnd\\HelloFriends\\src\\HelloFriendsAPI\\Views\\RespostasCompleFrases\\Create.cshtml",
+      "TargetPath": "Views\\RespostasCompleFrases\\Create.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
