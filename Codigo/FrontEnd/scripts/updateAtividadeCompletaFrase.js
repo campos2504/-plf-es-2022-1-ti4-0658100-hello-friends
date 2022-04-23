@@ -1,11 +1,11 @@
 const baseURLCompletaFrase = `https://localhost:44327/api/completar-frase`;
 let idModuloEscolhidoUpdate;
 let idUpdateCompletaFrase;
+let idAtividadeUpdate;
 
 //recupera do localStorage a atividade para update
 let atividadeUpdate = JSON.parse(localStorage.getItem('atividadeUpdate'));
-idAtividadeUpdate = atividadeUpdate.event;
-console.log("testefinal->", idAtividadeUpdate);
+idAtividadeUpdate = atividadeUpdate.id;
 update();
 
 function update() {
@@ -18,8 +18,6 @@ function update() {
     .then((data) => {
       for (i = 0; i < data.length; i++) {
         if (data[i].id == idAtividadeUpdate) {
-          console.log(data[i]);
-          console.log("Update atividade.....!");
           idModuloEscolhidoUpdate = data[i].moduloId;
           idUpdateCompletaFrase = data[i].id;
           console.log("idUpdateCompletaFrase.....!", idUpdateCompletaFrase);

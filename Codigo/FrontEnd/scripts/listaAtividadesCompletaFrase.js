@@ -43,7 +43,8 @@ function deletaAtividadeCompletaFrase(id) {
 //Carregar dados de atividade em tela para posterior atualização.
 function editarCompletaFrase(id) {
   
-  selecionaAtividadeUpdate(id);
+  localStorage.setItem('atividadeUpdate', JSON.stringify({ id }));
+  window.location.href = "Update_cadastroDeAtivCompletarFrase.html";
   /*fetch(baseURLCompletaFrase, {
     headers: {
       'Authorization': `Bearer ${retornarTokenUsuario()}`
@@ -62,15 +63,6 @@ function editarCompletaFrase(id) {
     }
   })*/
 }
-
-
-function selecionaAtividadeUpdate(event) {
-  if (event) {
-    localStorage.setItem('atividadeUpdate', JSON.stringify({ event }));
-    window.location.href = "Update_cadastroDeAtivCompletarFrase.html";
-  };
-};
-
           
 function tableCompletaFrase() {
   fetch(baseURLCompletaFrase, {
