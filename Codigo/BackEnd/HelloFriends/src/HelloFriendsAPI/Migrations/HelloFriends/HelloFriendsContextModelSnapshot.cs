@@ -170,9 +170,7 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.Property<long>("AlunoId");
 
-                    b.Property<Guid>("CompletaFraseID");
-
-                    b.Property<Guid?>("CompletaTextoId");
+                    b.Property<Guid>("CompletaTextoID");
 
                     b.Property<long>("MId");
 
@@ -182,7 +180,7 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.HasIndex("AlunoId");
 
-                    b.HasIndex("CompletaTextoId");
+                    b.HasIndex("CompletaTextoID");
 
                     b.ToTable("RespostasCompletaTexto");
                 });
@@ -195,11 +193,9 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.Property<long>("AlunoId");
 
-                    b.Property<Guid>("CompletaFraseID");
-
                     b.Property<long>("MId");
 
-                    b.Property<Guid?>("OpcaoCertaId");
+                    b.Property<Guid>("OpcaoCertaID");
 
                     b.Property<double>("Resultado");
 
@@ -207,7 +203,7 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.HasIndex("AlunoId");
 
-                    b.HasIndex("OpcaoCertaId");
+                    b.HasIndex("OpcaoCertaID");
 
                     b.ToTable("RespostasOpcaoCerta");
                 });
@@ -220,19 +216,17 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.Property<long>("AlunoId");
 
-                    b.Property<Guid>("CompletaFraseID");
-
                     b.Property<long>("MId");
 
                     b.Property<double>("Resultado");
 
-                    b.Property<Guid?>("VerdadeiroFalsoId");
+                    b.Property<Guid>("VerdadeiroFalsoID");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AlunoId");
 
-                    b.HasIndex("VerdadeiroFalsoId");
+                    b.HasIndex("VerdadeiroFalsoID");
 
                     b.ToTable("RespostasVF");
                 });
@@ -309,7 +303,8 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.HasOne("HelloFriendsAPI.Model.CompletaTexto", "CompletaTexto")
                         .WithMany()
-                        .HasForeignKey("CompletaTextoId");
+                        .HasForeignKey("CompletaTextoID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("HelloFriendsAPI.Model.RespostasOpcaoCerta", b =>
@@ -321,7 +316,8 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.HasOne("HelloFriendsAPI.Model.OpcaoCerta", "OpcaoCerta")
                         .WithMany()
-                        .HasForeignKey("OpcaoCertaId");
+                        .HasForeignKey("OpcaoCertaID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("HelloFriendsAPI.Model.RespostasVF", b =>
@@ -333,7 +329,8 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.HasOne("HelloFriendsAPI.Model.VerdadeiroFalso", "VerdadeiroFalso")
                         .WithMany()
-                        .HasForeignKey("VerdadeiroFalsoId");
+                        .HasForeignKey("VerdadeiroFalsoID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("HelloFriendsAPI.Model.VerdadeiroFalso", b =>

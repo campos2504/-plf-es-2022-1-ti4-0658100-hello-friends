@@ -8,7 +8,7 @@ namespace HelloFriendsAPI.Model
         public double Resultado { get; set; }
         public long AlunoId { get; set; }
         public long MId { get; set; }
-        public Guid CompletaFraseID { get; set; }
+        public Guid OpcaoCertaID { get; set; }
         public virtual Aluno Aluno { get; set; }
         public virtual OpcaoCerta OpcaoCerta { get; set; }
     }
