@@ -57,6 +57,10 @@ namespace HelloFriendsAPI
                 cfg.CreateMap<CompletaTexto, CompletaTextoCreateViewModel>().ReverseMap();
                 cfg.CreateMap<VerdadeiroFalso, VerdadeiroFalsoCreateViewModel>().ReverseMap();
                 cfg.CreateMap<RespostasVF, RespostasVFViewModel>().ReverseMap();
+                cfg.CreateMap<RespostasCompletaTexto, RespostasCompletaTextoViewModel>().ReverseMap();
+                cfg.CreateMap<RespostasCompleFrase, RespostasCompleFraseViewModel>().ReverseMap();
+                cfg.CreateMap<RespostasOpcaoCerta, RespostasOpcaoCertaViewModel>().ReverseMap();
+
             });
             IMapper mapper = configMapper.CreateMapper();
 
@@ -75,6 +79,12 @@ namespace HelloFriendsAPI
             services.AddScoped<IVerdadeiroFalsoRepository, VerdadeiroFalsoRepositoryImplementation>();
             services.AddScoped<IRespostasVFBusiness, RespostasVFBusinessImplementation>();
             services.AddScoped<IRespostasVFRepository, RespostasVFRepositoryImplementation>();
+            services.AddScoped<IRespostasOpcaoCertaRepository, RespostasOpcaoCertaRepositoryImplementation>();
+            services.AddScoped<IRespostasCompletaFraseRepository, RespostasCompletaFraseImplementation>();
+            services.AddScoped<IRespostasCompletaTextoRepository, RespostasCompletaTextoImplementation>();
+            services.AddScoped<IRespostasOpcaoCertaBusiness, RespostasOpcaoCertaBusinessImplementation>();
+            services.AddScoped<IRespostasCompletaFraseBusiness, RespostasCompletaFraseBusinessImplementation>();
+            services.AddScoped<IRespostasCompletaTextoBusiness, RespostasCompletaTextoBusinessImplementation>();
 
             services.AddSingleton(mapper);
 
