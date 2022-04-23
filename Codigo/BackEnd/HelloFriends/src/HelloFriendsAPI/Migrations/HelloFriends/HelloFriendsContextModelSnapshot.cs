@@ -149,7 +149,7 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
                     b.Property<Guid>("CompletaFraseID");
 
-                    b.Property<string>("Resposta");
+                    b.Property<long>("MId");
 
                     b.Property<double>("Resultado");
 
@@ -160,6 +160,75 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                     b.HasIndex("CompletaFraseID");
 
                     b.ToTable("RespostasCompleFrase");
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.RespostasCompletaTexto", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("AlunoId");
+
+                    b.Property<Guid>("CompletaTextoID");
+
+                    b.Property<long>("MId");
+
+                    b.Property<double>("Resultado");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlunoId");
+
+                    b.HasIndex("CompletaTextoID");
+
+                    b.ToTable("RespostasCompletaTexto");
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.RespostasOpcaoCerta", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("AlunoId");
+
+                    b.Property<long>("MId");
+
+                    b.Property<Guid>("OpcaoCertaID");
+
+                    b.Property<double>("Resultado");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlunoId");
+
+                    b.HasIndex("OpcaoCertaID");
+
+                    b.ToTable("RespostasOpcaoCerta");
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.RespostasVF", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("AlunoId");
+
+                    b.Property<long>("MId");
+
+                    b.Property<double>("Resultado");
+
+                    b.Property<Guid>("VerdadeiroFalsoID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlunoId");
+
+                    b.HasIndex("VerdadeiroFalsoID");
+
+                    b.ToTable("RespostasVF");
                 });
 
             modelBuilder.Entity("HelloFriendsAPI.Model.VerdadeiroFalso", b =>
@@ -222,6 +291,45 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                     b.HasOne("HelloFriendsAPI.Model.CompletaFrase", "CompletaFrase")
                         .WithMany()
                         .HasForeignKey("CompletaFraseID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.RespostasCompletaTexto", b =>
+                {
+                    b.HasOne("HelloFriendsAPI.Model.Aluno", "Aluno")
+                        .WithMany()
+                        .HasForeignKey("AlunoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("HelloFriendsAPI.Model.CompletaTexto", "CompletaTexto")
+                        .WithMany()
+                        .HasForeignKey("CompletaTextoID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.RespostasOpcaoCerta", b =>
+                {
+                    b.HasOne("HelloFriendsAPI.Model.Aluno", "Aluno")
+                        .WithMany()
+                        .HasForeignKey("AlunoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("HelloFriendsAPI.Model.OpcaoCerta", "OpcaoCerta")
+                        .WithMany()
+                        .HasForeignKey("OpcaoCertaID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.RespostasVF", b =>
+                {
+                    b.HasOne("HelloFriendsAPI.Model.Aluno", "Aluno")
+                        .WithMany()
+                        .HasForeignKey("AlunoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("HelloFriendsAPI.Model.VerdadeiroFalso", "VerdadeiroFalso")
+                        .WithMany()
+                        .HasForeignKey("VerdadeiroFalsoID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
