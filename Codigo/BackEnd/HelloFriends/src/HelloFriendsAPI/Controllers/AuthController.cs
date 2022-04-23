@@ -105,6 +105,23 @@ namespace HelloFriendsAPI.Controllers {
                     throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasVFClaim.ToString()}) ao usuário '{user.Id}'.");
                 }
 
+                var respostasOpcaoCertaClaim = await _userManager.AddClaimAsync(user, new Claim("respostasopcerta", "retornar,criar,editar"));
+                if (!respostasOpcaoCertaClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasOpcaoCertaClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+
+                var respostasCompletaFraseClaim = await _userManager.AddClaimAsync(user, new Claim("respostascompfrase", "retornar,criar,editar"));
+                if (!respostasCompletaFraseClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasCompletaFraseClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+                var respostasCompletaTextoClaim = await _userManager.AddClaimAsync(user, new Claim("respostascomptexto", "retornar,criar,editar"));
+                if (!respostasCompletaTextoClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasCompletaTextoClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+
                 var updateCadastroAlunoClaim = await _userManager.AddClaimAsync(user, new Claim("gestaoalunos", "atualizar, retornar"));
                 if (!updateCadastroAlunoClaim.Succeeded)
                 {
@@ -187,6 +204,21 @@ namespace HelloFriendsAPI.Controllers {
                 if (!respostasVFClaim.Succeeded)
                 {
                     throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasVFClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+                var respostasOpcaoCertaClaim = await _userManager.AddClaimAsync(user, new Claim("respostasopcerta", "criar,editar,excluir,retornar"));
+                if (!respostasOpcaoCertaClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasOpcaoCertaClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+                var respostasCompletaFraseClaim = await _userManager.AddClaimAsync(user, new Claim("respostascompfrase", "criar,editar,excluir,retornar"));
+                if (!respostasCompletaFraseClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasCompletaFraseClaim.ToString()}) ao usuário '{user.Id}'.");
+                }
+                var respostasCompletaTextoClaim = await _userManager.AddClaimAsync(user, new Claim("respostascomptexto", "criar,editar,excluir,retornar"));
+                if (!respostasCompletaTextoClaim.Succeeded)
+                {
+                    throw new InvalidOperationException($"Erro ao associar claim" + $" ({respostasCompletaTextoClaim.ToString()}) ao usuário '{user.Id}'.");
                 }
 
                 return Ok(new {
