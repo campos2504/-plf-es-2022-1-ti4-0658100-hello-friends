@@ -62,9 +62,19 @@ namespace HelloFriendsAPI.Repositorys.Implementations
             return _context.RespostasCompletaTexto.ToList();
         }
 
+        public RespostasCompletaTexto FindByAlunoAtividade(long idAluno, Guid idAtividade)
+        {
+            return _context.RespostasCompletaTexto.SingleOrDefault(p => p.AlunoId.Equals(idAluno) && p.CompletaTextoID.Equals(idAtividade));
+        }
+
         public RespostasCompletaTexto FindByID(long id)
         {
             return _context.RespostasCompletaTexto.SingleOrDefault(p => p.Id.Equals(id));
+        }
+
+        public List<RespostasCompletaTexto> FindByModuloAluno(long idModulo, long idAluno)
+        {
+            return _context.RespostasCompletaTexto.Where(p => p.MId.Equals(idModulo) && p.AlunoId.Equals(idAluno)).ToList();
         }
 
         public RespostasCompletaTexto Update(RespostasCompletaTexto respostasCompletaTexto)

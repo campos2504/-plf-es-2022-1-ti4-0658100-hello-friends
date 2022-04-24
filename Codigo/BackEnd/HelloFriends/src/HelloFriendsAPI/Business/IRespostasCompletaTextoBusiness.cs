@@ -12,5 +12,6 @@ namespace HelloFriendsAPI.Business.Implementations
         List<RespostasCompletaTexto> FindAll();
         RespostasCompletaTexto Update(RespostasCompletaTextoViewModel respostasViewModel);
         void Delete(long id);
+        List<RespostasCompletaTexto> FindByModuloAluno(long idModulo, long idAluno);
     }
 }

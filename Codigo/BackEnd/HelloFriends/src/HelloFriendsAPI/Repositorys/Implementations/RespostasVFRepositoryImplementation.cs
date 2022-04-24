@@ -60,12 +60,22 @@ namespace HelloFriendsAPI.Repositorys.Implementations
                 return _context.RespostasVF.ToList();
             }
 
-            public RespostasVF FindByID(long id)
+        public RespostasVF FindByAlunoAtividade(long idAluno, Guid idAtividade)
+        {
+            return _context.RespostasVF.SingleOrDefault(p => p.AlunoId.Equals(idAluno) && p.VerdadeiroFalsoID.Equals(idAtividade));
+        }
+
+        public RespostasVF FindByID(long id)
             {
                 return _context.RespostasVF.SingleOrDefault(p => p.Id.Equals(id));
             }
 
-            public RespostasVF Update(RespostasVF respostasVF)
+        public List<RespostasVF> FindByModuloAluno(long idModulo, long idAluno)
+        {
+            return _context.RespostasVF.Where(p => p.MId.Equals(idModulo) && p.AlunoId.Equals(idAluno)).ToList();
+        }
+
+        public RespostasVF Update(RespostasVF respostasVF)
             {
                 if (!Exists(respostasVF.Id)) return null;
 

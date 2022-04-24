@@ -6,46 +6,62 @@ using System.Collections.Generic;
 
 namespace HelloFriendsAPI.Business.Implementations
 {
-        public class RespostasOpcaoCertaBusinessImplementation : IRespostasOpcaoCertaBusiness
+    public class RespostasOpcaoCertaBusinessImplementation : IRespostasOpcaoCertaBusiness
+    {
+        private readonly IRespostasOpcaoCertaRepository _repository;
+        private readonly IMapper _mapper;
+
+        public RespostasOpcaoCertaBusinessImplementation(IRespostasOpcaoCertaRepository repository, IMapper mapper)
         {
-            private readonly IRespostasOpcaoCertaRepository _repository;
-            private readonly IMapper _mapper;
+            _repository = repository;
+            _mapper = mapper;
+        }
 
-            public RespostasOpcaoCertaBusinessImplementation(IRespostasOpcaoCertaRepository repository, IMapper mapper)
+        public RespostasOpcaoCerta Create(RespostasOpcaoCertaViewModel respostasViewModel)
+        {
+
+            var consulta = _repository.FindByAlunoAtividade(respostasViewModel.AlunoId, respostasViewModel.OpcaoCertaID);
+
+            if (consulta == null)
             {
-                _repository = repository;
-                _mapper = mapper;
+                return _repository.Create(_mapper.Map<RespostasOpcaoCerta>(respostasViewModel));
+            }
+            else
+            {
+                respostasViewModel.Id = consulta.Id;
+                return _repository.Update(_mapper.Map<RespostasOpcaoCerta>(respostasViewModel));
             }
 
-            public RespostasOpcaoCerta Create(RespostasOpcaoCertaViewModel respostasOpcaoCertaView)
-            {
+        }
 
-                //Converção da ViewModel para Model
-                return _repository.Create(_mapper.Map<RespostasOpcaoCerta>(respostasOpcaoCertaView));
-            }
 
-            public void Delete(long id)
-            {
+        public void Delete(long id)
+        {
 
-                _repository.Delete(id);
-            }
+            _repository.Delete(id);
+        }
 
-            public List<RespostasOpcaoCerta> FindAll()
-            {
+        public List<RespostasOpcaoCerta> FindAll()
+        {
 
-                return _repository.FindAll();
-            }
+            return _repository.FindAll();
+        }
 
-            public RespostasOpcaoCerta FindByID(long id)
-            {
+        public RespostasOpcaoCerta FindByID(long id)
+        {
 
-                return _repository.FindByID(id);
-            }
+            return _repository.FindByID(id);
+        }
 
-            public RespostasOpcaoCerta Update(RespostasOpcaoCertaViewModel respostasOpcaoCertaView)
-            {
+        public List<RespostasOpcaoCerta> FindByModuloAluno(long idModulo, long idAluno)
+        {
+            return _repository.FindByModuloAluno(idModulo, idAluno);
+        }
 
-                return _repository.Update(_mapper.Map<RespostasOpcaoCerta>(respostasOpcaoCertaView));
-            }
+        public RespostasOpcaoCerta Update(RespostasOpcaoCertaViewModel respostasOpcaoCertaView)
+        {
+
+            return _repository.Update(_mapper.Map<RespostasOpcaoCerta>(respostasOpcaoCertaView));
         }
     }
+}

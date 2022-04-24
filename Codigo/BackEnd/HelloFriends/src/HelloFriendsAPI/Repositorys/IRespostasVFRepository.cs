@@ -12,5 +12,7 @@ namespace HelloFriendsAPI.Repositorys.Implementations
         RespostasVF Update(RespostasVF respostasVF);
         void Delete(long id);
         bool Exists(long id);
+        List<RespostasVF> FindByModuloAluno(long idModulo, long idAluno);
+        RespostasVF FindByAlunoAtividade(long idAluno, Guid idAtividade);
     }
 }

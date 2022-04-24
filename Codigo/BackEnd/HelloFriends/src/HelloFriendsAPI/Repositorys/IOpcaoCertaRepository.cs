@@ -14,5 +14,7 @@ namespace HelloFriendsAPI.Repositorys
         OpcaoCerta Update(OpcaoCerta opcaoCerta);
         void Delete(Guid id);
         bool Exists(Guid id);
+
+       
     }
 }
