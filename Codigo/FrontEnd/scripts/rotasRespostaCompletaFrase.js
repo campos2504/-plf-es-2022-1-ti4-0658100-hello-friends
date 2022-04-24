@@ -3,19 +3,17 @@ let alunoIdCompletaFrase;
 
 //Recuperar informações do localStorage
 let dadosAlunoCompletaFrase = JSON.parse(localStorage.getItem('userToken'));
+dadosAlunoCompletaFrase = dadosAlunoCompletaFrase.user.email;
 
 let mIDCompletaFrase = JSON.parse(localStorage.getItem('moduloCorrente'));
 mIDCompletaFrase = mIDCompletaFrase.event;
-console.log(mIDCompletaFrase);
 
 let completaFraseID = JSON.parse(localStorage.getItem('atividadeCompletaFraseEscolhida'));
 completaFraseID = completaFraseID.arg1;
-console.log(completaFraseID);
 
 
 //Salvar no BD a resposta
-function salvarRespostaCompletaFrase(resultado){ 
-  console.log(alunoId);
+function salvarRespostaCompletaFrase(resultado) {
 
   const renamedData = {
     resultado: resultado,
@@ -23,7 +21,6 @@ function salvarRespostaCompletaFrase(resultado){
     mID: mIDCompletaFrase,
     completaFraseID: completaFraseID
   }
-
   console.log(renamedData);
 
   fetch(urlRespostaCompletaFrase, {
@@ -35,44 +32,40 @@ function salvarRespostaCompletaFrase(resultado){
     method: 'POST',
     body: JSON.stringify(renamedData),
   }).then(function (res) {
-    window.location.href="modulos.html"
   })
     .catch(function (res) { console.log(res) })
 }
 
 
 //Recuperar usuário
-function getUser() {
+function getUserCompletaFrase() {
 
-  if(ehAluno()){
-    //GetByEmail
-    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaFrase.user.email);
-
+  if(ehAluno()) {
+    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaFrase);
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
     request.send();
     const dados = request.responseText;
     var objeto = JSON.parse(dados);
-    alunoId = objeto.id;
+    alunoIdCompletaFrase = objeto.id;
     return objeto;
-  }  
+  }
 };
-getUser();
+getUserCompletaFrase();
 
 //Recuperar usuário
-function getModuloAluno() {
-  
-  alunoIdCompletaFrase = getUser();
-  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaFrase/", mIDCompletaFrase,"/", alunoIdCompletaFrase.id);
-  console.log(urlModuloAluno);
+function getModuloAlunoCompletaFrase() {
 
-    let request = new XMLHttpRequest();
-    request.open('GET', urlModuloAluno, false);
-    request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
-    request.send();
-    const dados = request.responseText;
-    var objeto = JSON.parse(dados);
+  let alunoIdCompletaFrase = getUserCompletaFrase();
+  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaFrase/", mIDCompletaFrase, "/", alunoIdCompletaFrase.id);
 
-    return objeto;    
+  let request = new XMLHttpRequest();
+  request.open('GET', urlModuloAluno, false);
+  request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
+  request.send();
+  const dados = request.responseText;
+  var objeto = JSON.parse(dados);
+
+  return objeto;
 };

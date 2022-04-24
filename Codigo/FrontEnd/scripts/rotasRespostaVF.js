@@ -3,12 +3,13 @@ let alunoIdVF;
 
 //Recuperar informações do localStorage
 let dadosAlunoVF = JSON.parse(localStorage.getItem('userToken'));
+dadosAlunoVF = dadosAlunoVF.user.email;
 
 let mIDVF = JSON.parse(localStorage.getItem('moduloCorrente'));
 mIDVF = mIDVF.event;
 
-let vfID = JSON.parse(localStorage.getItem('atividadeVerdadeiroFalso'));
-vfID = vfID.arg1;
+let verdadeiroFalsoID = JSON.parse(localStorage.getItem('atividadeVerdadeiroFalso'));
+verdadeiroFalsoID = verdadeiroFalsoID.arg1;
 
 
 //Salvar no BD a resposta
@@ -18,9 +19,8 @@ function salvarRespostaOpcaoCerta(resultado){
     resultado: resultado,
     alunoId: alunoIdVF,
     mID: mIDVF,
-    vfID: vfID
+    verdadeiroFalsoID: verdadeiroFalsoID
   }
-
   console.log(renamedData);
 
   fetch(urlRespostaVF, {
@@ -32,37 +32,33 @@ function salvarRespostaOpcaoCerta(resultado){
     method: 'POST',
     body: JSON.stringify(renamedData),
   }).then(function (res) {
-    window.location.href="modulos.html"
   })
     .catch(function (res) { console.log(res) })
 }
 
 
 //Recuperar usuário
-function getUser() {
+function getUserRespostaVF() {
 
   if(ehAluno()){
-    //GetByEmail
-    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoVF.user.email);
-
+    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoVF);
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
     request.send();
     const dados = request.responseText;
     var objeto = JSON.parse(dados);
-    alunoId = objeto.id;
+    alunoIdVF = objeto.id;
     return objeto;
   }  
 };
-getUser();
+getUserRespostaVF();
 
 //Recuperar usuário
-function getModuloAluno() {
+function getModuloAlunoVF() {
   
-  alunoIdVF = getUser();
+  let alunoIdVF = getUserRespostaVF();
   let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasvf/", mIDVF,"/", alunoIdVF.id);
-  console.log(urlModuloAluno);
 
     let request = new XMLHttpRequest();
     request.open('GET', urlModuloAluno, false);

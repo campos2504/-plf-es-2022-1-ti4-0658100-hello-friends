@@ -14,6 +14,13 @@ let alternativaRespondida;
 let respostaCerta;
 const baseURL = `https://localhost:44327/api/opcaocerta`;
 
+
+//Importar arquivo JS
+var imported = document.createElement('script');
+imported.src = 'scripts/rotasRespostaOpcaoCerta.js';
+document.head.appendChild(imported);
+
+
 function introducao() {
   fetch(baseURL, {
     headers: {
@@ -105,10 +112,17 @@ function alternativaResposta() {
   console.log(respostaCerta)
 
   if (alternativaRespondida == respostaCerta) {
+    if(ehAluno()){
+      salvarRespostaOpcaoCerta(1.0);
+    }
     alert("Parabéns você acertou!");
     window.location.href = "listaAtividadesCompletaFrase.html";
   } else {
+    if(ehAluno()){
+      salvarRespostaOpcaoCerta(0.0);
+    }
     alert("Infelizmente a resposta não está certa");
+    window.location.href = "listaAtividadesCompletaFrase.html";
   }
   console.log(alternativaRespondida);
 }

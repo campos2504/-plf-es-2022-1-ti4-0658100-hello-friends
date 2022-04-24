@@ -15,7 +15,6 @@ function carregarFotoUsuario() {
       },
     }).then(result => result.json())
       .then((data) => {
-        console.log(data.imagemSrc);
         
       })
   }else{

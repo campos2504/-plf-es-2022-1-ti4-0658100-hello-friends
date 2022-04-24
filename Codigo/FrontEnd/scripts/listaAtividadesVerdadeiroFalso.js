@@ -2,16 +2,14 @@ const baseURLVerdadeiroFalso = 'https://localhost:44327/api/verdadeiro-falso';
 let idModuloEscolhidoVF;
 
 //Importar arquivo JS
-let importedVF = document.createElement('scriptVF');
-importedVF.src = 'scripts/rotasRespostaCompletaTexto.js';
+let importedVF = document.createElement('script');
+importedVF.src = 'scripts/rotasRespostaVF.js';
 document.head.appendChild(importedVF);
 
 var selecaoAtividade_verdadeiroFalso = {
   verdadeiroFalso(event) {
     let nameOfFunction = [event.target];
-    console.log(nameOfFunction);
     let arg1 = event.target.getAttribute('id');
-    console.log(arg1);
 
     localStorage.setItem('atividadeVerdadeiroFalso', JSON.stringify({ arg1 }));
   }
@@ -20,15 +18,12 @@ var selecaoAtividade_verdadeiroFalso = {
 //recupera do localStorage a atividade escolhida
 let moduloEscolhido_VF = JSON.parse(localStorage.getItem('moduloCorrente'));
 idModuloEscolhidoVF = moduloEscolhido_VF.event;
-console.log("testefinal->", idModuloEscolhidoVF);
 
 
 //Exclui Atividade completa frase
 function deletaVF(id) {
 
-  console.log("id->", id);
   let urlDeleteVerdadeiroFalso = ''.concat(baseURLVerdadeiroFalso, '/', id);
-  console.log("url->", urlDeleteVerdadeiroFalso);
 
   fetch(urlDeleteVerdadeiroFalso, {
     headers: {
@@ -84,10 +79,9 @@ function tableVerdadeiroFalso() {
     },
   }).then(result => result.json())
     .then((data) => {
-      console.log(data);
-      let dadosModuloAluno;
+      let dadosModuloAlunoVF;
       if(ehAluno()){
-        dadosModuloAluno = getModuloAluno();
+        dadosModuloAlunoVF = getModuloAlunoVF();
       }      
       let nota;
       //process the returned data
@@ -98,7 +92,7 @@ function tableVerdadeiroFalso() {
         if (data[i].moduloId == idModuloEscolhidoVF) {
           nota  = undefined;
           if(ehAluno()){
-            dadosModuloAluno.forEach(element => {
+            dadosModuloAlunoVF.forEach(element => {
               if(element.completaFraseID == data[i].id){
                 nota = (element.resultado * 100) + "%";
               }

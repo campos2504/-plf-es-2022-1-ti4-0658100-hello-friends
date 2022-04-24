@@ -82,7 +82,7 @@ namespace HelloFriendsAPI.Repositorys.Implementations
         {
             if (!Exists(respostasOpcaoCerta.Id)) return null;
 
-            var result = _context.VerdadeiroFalso.SingleOrDefault(p => p.Id.Equals(respostasOpcaoCerta.Id));
+            var result = _context.RespostasOpcaoCerta.SingleOrDefault(p => p.Id.Equals(respostasOpcaoCerta.Id));
 
             if (result != null)
             {

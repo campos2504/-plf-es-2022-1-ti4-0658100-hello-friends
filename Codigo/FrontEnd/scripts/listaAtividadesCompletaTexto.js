@@ -2,16 +2,14 @@ const baseURLCompletaTexto = `https://localhost:44327/api/completar-texto`;
 let idModuloEscolhido;
 
 //Importar arquivo JS
-let importedCompleTexto = document.createElement('scriptCompleTexto');
+let importedCompleTexto = document.createElement('script');
 importedCompleTexto.src = 'scripts/rotasRespostaCompletaTexto.js';
 document.head.appendChild(importedCompleTexto);
 
 var selecaoAtividade_completaTexto = {
   completaTexto(event) {
     let nameOfFunction = [event.target];
-    console.log(nameOfFunction);
     let arg1 = event.target.getAttribute('id');
-    console.log(arg1);
 
     localStorage.setItem('atividadeCompletaTextoEscolhida', JSON.stringify({ arg1 }));
   }
@@ -20,15 +18,12 @@ var selecaoAtividade_completaTexto = {
 //recupera do localStorage a atividade escolhida
 let moduloEscolhido_completaTexto = JSON.parse(localStorage.getItem('moduloCorrente'));
 idModuloEscolhido = moduloEscolhido_completaTexto.event;
-console.log("testefinal->", idModuloEscolhido);
 
 
 //Exclui Atividade completa Texto
 function deletaAtividadeCompletaTexto(id) {
 
-  console.log("id->", id);
   let urlDeleteCompletaTexto = ''.concat(baseURLCompletaTexto, '/', id);
-  console.log("url->", urlDeleteCompletaTexto);
 
   fetch(urlDeleteCompletaTexto, {
     headers: {
@@ -84,11 +79,10 @@ function tableCompletaTexto() {
     },
   }).then(result => result.json())
     .then((data) => {
-      console.log(data);
-      let dadosModuloAluno;
+      let dadosModuloAlunoCompletaTexto;
       if(ehAluno()){
-        dadosModuloAluno = getModuloAluno();
-      }      
+        dadosModuloAlunoCompletaTexto = getModuloAlunoCompletaTexto();
+      }
       let nota;
       //process the returned data
       let divTela_CompletaTexto = document.querySelector('#data-table #listaAtividades_completaTexto');
@@ -98,8 +92,8 @@ function tableCompletaTexto() {
         if (data[i].moduloId == idModuloEscolhido) {
           nota  = undefined;
           if(ehAluno()){
-            dadosModuloAluno.forEach(element => {
-              if(element.completaFraseID == data[i].id){
+            dadosModuloAlunoCompletaTexto.forEach(element => {
+              if(element.completaTextoID == data[i].id){
                 nota = (element.resultado * 100) + "%";
               }
             });

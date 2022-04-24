@@ -3,6 +3,7 @@ let alunoIdOpcaoCerta;
 
 //Recuperar informações do localStorage
 let dadosAlunoOpcaoCerta = JSON.parse(localStorage.getItem('userToken'));
+dadosAlunoOpcaoCerta = dadosAlunoOpcaoCerta.user.email;
 
 let mIDopcaCerta = JSON.parse(localStorage.getItem('moduloCorrente'));
 mIDopcaCerta = mIDopcaCerta.event;
@@ -20,7 +21,6 @@ function salvarRespostaOpcaoCerta(resultado){
     mID: mIDopcaCerta,
     opcaoCertaID: opcaoCertaID
   }
-
   console.log(renamedData);
 
   fetch(urlRespostaOpcaoCerta, {
@@ -32,37 +32,33 @@ function salvarRespostaOpcaoCerta(resultado){
     method: 'POST',
     body: JSON.stringify(renamedData),
   }).then(function (res) {
-    window.location.href="modulos.html"
   })
     .catch(function (res) { console.log(res) })
 }
 
 
 //Recuperar usuário
-function getUser() {
+function getUserOpcaoCerta() {
 
   if(ehAluno()){
-    //GetByEmail
-    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoOpcaoCerta.user.email);
-
+    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoOpcaoCerta);
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
     request.send();
     const dados = request.responseText;
     var objeto = JSON.parse(dados);
-    alunoId = objeto.id;
+    alunoIdOpcaoCerta = objeto.id;
     return objeto;
   }  
 };
-getUser();
+getUserOpcaoCerta();
 
 //Recuperar usuário
-function getModuloAluno() {
+function getModuloAlunoOpcaoCerta() {
   
-  alunoIdOpcaoCerta = getUser();
+  let alunoIdOpcaoCerta = getUserOpcaoCerta();
   let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasOpcaoCerta/", mIDopcaCerta,"/", alunoIdOpcaoCerta.id);
-  console.log(urlModuloAluno);
 
     let request = new XMLHttpRequest();
     request.open('GET', urlModuloAluno, false);

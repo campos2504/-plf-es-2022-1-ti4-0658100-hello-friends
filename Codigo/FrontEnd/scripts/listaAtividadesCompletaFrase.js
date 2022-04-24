@@ -10,9 +10,7 @@ document.head.appendChild(importedCompletaFrase);
 var selecaoAtividade_completaFrase = {
   completaFrase(event) {
     let nameOfFunction = [event.target];
-    console.log(nameOfFunction);
     let arg1 = event.target.getAttribute('id');
-    console.log(arg1);
 
     localStorage.setItem('atividadeCompletaFraseEscolhida', JSON.stringify({ arg1 }));
   }
@@ -21,15 +19,12 @@ var selecaoAtividade_completaFrase = {
 //recupera do localStorage a atividade escolhida
 let moduloEscolhido_completaFrase = JSON.parse(localStorage.getItem('moduloCorrente'));
 idModuloTextoEscolhido = moduloEscolhido_completaFrase.event;
-console.log("testefinal->", idModuloTextoEscolhido);
 
 
 //Exclui Atividade completa frase
 function deletaAtividadeCompletaFrase(id) {
 
-  console.log("id->", id);
   let urlDeleteCompletaFrase = ''.concat(baseURLCompletaFrase, '/', id);
-  console.log("url->", urlDeleteCompletaFrase);
 
   fetch(urlDeleteCompletaFrase, {
     headers: {
@@ -39,7 +34,6 @@ function deletaAtividadeCompletaFrase(id) {
     },
     method: 'delete',
   }).then(function (res) {
-    console.log("reposta delete->", res)
     window.location.reload();
   })
     .catch(function (res) { console.log("reposta delete->", res) })
@@ -77,11 +71,10 @@ function tableCompletaFrase() {
     },
   }).then(result => result.json())
     .then((data) => {
-      console.log(data);
-      let dadosModuloAluno;
+      let dadosModuloAlunoCompletaFrase;
       if(ehAluno()){
-        dadosModuloAluno = getModuloAluno();
-      }      
+        dadosModuloAlunoCompletaFrase = getModuloAlunoCompletaFrase();
+      }         
       let nota;
       //process the returned data
       let divTela_CompletaFrase = document.querySelector('#data-table #listaAtividades_completaFrase');
@@ -91,7 +84,7 @@ function tableCompletaFrase() {
         if (data[i].moduloId == idModuloTextoEscolhido) {
           nota  = undefined;
           if(ehAluno()){
-            dadosModuloAluno.forEach(element => {
+            dadosModuloAlunoCompletaFrase.forEach(element => {
               if(element.completaFraseID == data[i].id){
                 nota = (element.resultado * 100) + "%";
               }

@@ -3,6 +3,7 @@ let alunoIdCompletaTexto;
 
 //Recuperar informações do localStorage
 let dadosAlunoCompletaTexto = JSON.parse(localStorage.getItem('userToken'));
+dadosAlunoCompletaTexto = dadosAlunoCompletaTexto.user.email;
 
 let mIDCompletaTexto = JSON.parse(localStorage.getItem('moduloCorrente'));
 mIDCompletaTexto = mIDCompletaTexto.event;
@@ -12,7 +13,7 @@ completaTextoID = completaTextoID.arg1;
 
 
 //Salvar no BD a resposta
-function salvarRespostaCompletaTexto(resultado){ 
+function salvarRespostaCompletaTexto(resultado) {
 
   const renamedData = {
     resultado: resultado,
@@ -20,7 +21,6 @@ function salvarRespostaCompletaTexto(resultado){
     mID: mIDCompletaTexto,
     completaTextoID: completaTextoID
   }
-
   console.log(renamedData);
 
   fetch(urlRespostaCompletaTexto, {
@@ -32,44 +32,40 @@ function salvarRespostaCompletaTexto(resultado){
     method: 'POST',
     body: JSON.stringify(renamedData),
   }).then(function (res) {
-    window.location.href="modulos.html"
   })
     .catch(function (res) { console.log(res) })
 }
 
 
 //Recuperar usuário
-function getUser() {
+function getUserCompletaTexto() {
 
-  if(ehAluno()){
-    //GetByEmail
-    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaTexto.user.email);
-
+  if (ehAluno()) {
+    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaTexto);
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
     request.send();
     const dados = request.responseText;
     var objeto = JSON.parse(dados);
-    alunoId = objeto.id;
+    alunoIdCompletaTexto = objeto.id;
     return objeto;
-  }  
+  }
 };
-getUser();
+getUserCompletaTexto();
 
 //Recuperar usuário
-function getModuloAluno() {
+function getModuloAlunoCompletaTexto() {
+
+  let alunoIdCompletaTexto = getUserCompletaTexto();
+  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaTexto/", mIDCompletaTexto, "/", alunoIdCompletaTexto.id);
+
+  let request = new XMLHttpRequest();
+  request.open('GET', urlModuloAluno, false);
+  request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
+  request.send();
+  const dados = request.responseText;
+  var objeto = JSON.parse(dados);
   
-  alunoIdCompletaTexto = getUser();
-  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaTexto/", mIDCompletaTexto,"/", alunoIdCompletaTexto.id);
-  console.log(urlModuloAluno);
-
-    let request = new XMLHttpRequest();
-    request.open('GET', urlModuloAluno, false);
-    request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
-    request.send();
-    const dados = request.responseText;
-    var objeto = JSON.parse(dados);
-
-    return objeto;    
+  return objeto;
 };

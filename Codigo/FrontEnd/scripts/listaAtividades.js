@@ -2,8 +2,8 @@ const baseURLOpcaoCerta = `https://localhost:44327/api/opcaocerta`;
 let idModuloEscolhidoOC;
 
 //Importar arquivo JS
-let importedOpcaoCerta = document.createElement('scriptOpcaoCerta');
-importedOpcaoCerta.src = 'scripts/rotasRespostaCompletaTexto.js';
+let importedOpcaoCerta = document.createElement('script');
+importedOpcaoCerta.src = 'scripts/rotasRespostaOpcaoCerta.js';
 document.head.appendChild(importedOpcaoCerta);
 
 
@@ -12,7 +12,6 @@ var selecaoAtividade = {
     let nameOfFunction = [event.target];
     console.log(nameOfFunction);
     let arg1 = event.target.getAttribute('id');
-    console.log(arg1);
 
     localStorage.setItem('atividadeOpcaoCerta', JSON.stringify({ arg1 }));
   }
@@ -20,7 +19,6 @@ var selecaoAtividade = {
 
 let moduloEscolhido_opcaoCerta = JSON.parse(localStorage.getItem('moduloCorrente'));
 idModuloEscolhidoOC = moduloEscolhido_opcaoCerta.event;
-console.log("testefinal->", idModuloEscolhidoOC);
 
 
 //Exclui Atividade Opção certa
@@ -28,7 +26,6 @@ function deletaAtividadeOpcaoCerta(id) {
 
   console.log("id->", id);
   let urlDeleteOpcaoCerta = ''.concat(baseURLOpcaoCerta, '/', id);
-  console.log("url->", urlDeleteOpcaoCerta);
 
   fetch(urlDeleteOpcaoCerta, {
     headers: {
@@ -52,11 +49,10 @@ function table() {
     },
   }).then(result => result.json())
     .then((data) => {
-      console.log(data);
-      let dadosModuloAluno;
+      let dadosModuloAlunoOpcaoCerta;
       if(ehAluno()){
-        dadosModuloAluno = getModuloAluno();
-      }      
+        dadosModuloAlunoOpcaoCerta = getModuloAlunoOpcaoCerta();
+      }
       let nota;
       //process the returned data
       let divTela = document.querySelector('#data-table #listaAtividades_opcaoCerta');
@@ -66,8 +62,8 @@ function table() {
         if (data[i].moduloId == idModuloEscolhidoOC) {
           nota  = undefined;
           if(ehAluno()){
-            dadosModuloAluno.forEach(element => {
-              if(element.completaFraseID == data[i].id){
+            dadosModuloAlunoOpcaoCerta.forEach(element => {
+              if(element.opcaoCertaID == data[i].id){
                 nota = (element.resultado * 100) + "%";
               }
             });
