@@ -35,7 +35,7 @@ function introducao() {
           idEscolhidoOpcaoCerta = i;
         }
       }
-
+      
       respostaCerta = data[idEscolhidoOpcaoCerta].alternativaCerta;
       if (data[idEscolhidoOpcaoCerta].texto != "") {
         questaoTxt = `<h3 class="textoAtiv">${data[idEscolhidoOpcaoCerta].texto}</h3>`;

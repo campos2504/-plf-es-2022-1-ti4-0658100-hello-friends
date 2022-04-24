@@ -2,6 +2,7 @@
 using HelloFriendsAPI.Model;
 using HelloFriendsAPI.Repositorys.Implementations;
 using HelloFriendsAPI.ViewModels;
+using System;
 using System.Collections.Generic;
 
 namespace HelloFriendsAPI.Business.Implementations
@@ -19,9 +20,18 @@ namespace HelloFriendsAPI.Business.Implementations
 
         public RespostasCompleFrase Create(RespostasCompleFraseViewModel respostasViewModel)
             {
-
-                //Converção da ViewModel para Model
+            var consulta = _repository.FindByAlunoAtividade(respostasViewModel.AlunoId, respostasViewModel.CompletaFraseID);
+                        
+            if (consulta == null)
+            {
                 return _repository.Create(_mapper.Map<RespostasCompleFrase>(respostasViewModel));
+            }
+            else
+            {
+                respostasViewModel.Id = consulta.Id;
+                return _repository.Update(_mapper.Map<RespostasCompleFrase>(respostasViewModel));
+            }
+                
             }
 
             public void Delete(long id)
@@ -30,17 +40,18 @@ namespace HelloFriendsAPI.Business.Implementations
                 _repository.Delete(id);
             }
 
+
             public List<RespostasCompleFrase> FindAll()
             {
 
                 return _repository.FindAll();
             }
 
-            public RespostasCompleFrase FindByID(long id)
-            {
+        public List<RespostasCompleFrase> FindByModuloAluno(long idModulo, long idAluno)
+        {
+            return _repository.FindByModuloAluno(idModulo, idAluno);
 
-                return _repository.FindByID(id);
-            }
+        }
 
             public RespostasCompleFrase Update(RespostasCompleFraseViewModel respostasViewModel)
             {

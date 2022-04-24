@@ -7,7 +7,6 @@ function mensagemBoasVindas() {
 
     nomeUsuario = JSON.parse(localStorage.getItem('userToken'));
     urlNomeUsuario = ''.concat(urlNome, '/email/', nomeUsuario.user.email);
-    console.log(urlNomeUsuario);
 
     if (dadosUsuario.userType === "aluno") {
         fetch(urlNomeUsuario, {

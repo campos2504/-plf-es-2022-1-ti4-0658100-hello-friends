@@ -52,7 +52,8 @@ function table() {
       let divTela = document.querySelector('#data-table #lista');
       let texto = "";
       // Montar texto HTML das noticias
-      for (i = 0; i < data.length; i++) {
+      console.log(data);
+      for (i = 0; i < data.length; i++) {        
         if (data[i].status == false) {
           texto = texto + ` 
                         <tr id="tb">

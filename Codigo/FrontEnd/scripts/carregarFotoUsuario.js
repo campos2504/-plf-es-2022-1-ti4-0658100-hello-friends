@@ -7,7 +7,6 @@ function carregarFotoUsuario() {
 
   dadosUsuario = JSON.parse(localStorage.getItem('userToken'));
   urlUpdateAluno = ''.concat(urlFoto, '/email/', dadosUsuario.user.email);
-  console.log(urlUpdateAluno);
   
   if (dadosUsuario.userType === "aluno") {
     fetch(urlUpdateAluno, {

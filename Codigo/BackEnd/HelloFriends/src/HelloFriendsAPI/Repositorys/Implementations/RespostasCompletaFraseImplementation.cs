@@ -67,6 +67,16 @@ namespace HelloFriendsAPI.Repositorys.Implementations
             return _context.RespostasCompleFrase.SingleOrDefault(p => p.Id.Equals(id));
         }
 
+        public RespostasCompleFrase FindByAlunoAtividade(long idAluno, Guid idAtividade)
+        {
+            return _context.RespostasCompleFrase.SingleOrDefault(p => p.AlunoId.Equals(idAluno) && p.CompletaFraseID.Equals(idAtividade));
+        }
+
+        public List<RespostasCompleFrase> FindByModuloAluno(long idModulo, long idAluno)
+        {
+            return _context.RespostasCompleFrase.Where(p => p.MId.Equals(idModulo) && p.AlunoId.Equals(idAluno)).ToList();
+        }
+
         public RespostasCompleFrase Update(RespostasCompleFrase respostasCompleFrase)
         {
             if (!Exists(respostasCompleFrase.Id)) return null;

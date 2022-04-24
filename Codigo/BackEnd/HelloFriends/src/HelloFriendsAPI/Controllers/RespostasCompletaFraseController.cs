@@ -35,10 +35,10 @@ namespace HelloFriendsAPI.Controllers
         }
 
         [ClaimsAuthorize("respostascompfrase", "retornar")]
-        [HttpGet("{id}")]
-        public IActionResult Get(long id)
+        [HttpGet("{idModulo}/{idAluno}")]
+        public IActionResult GetModuloAluno(long idModulo, long idAluno)
         {
-            var respostas = _respostasBusiness.FindByID(id);
+            var respostas = _respostasBusiness.FindByModuloAluno(idModulo, idAluno);
 
             if (respostas == null)
             {

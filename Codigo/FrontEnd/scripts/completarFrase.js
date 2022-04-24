@@ -8,12 +8,16 @@ let palavrasChaves;
 let idAtividadeEscolhida;
 let idModuloEscolhido;
 
+//Importar arquivo JS
+var imported = document.createElement('script');
+imported.src = 'scripts/rotasRespostaCompletaFrase.js';
+document.head.appendChild(imported);
+
 const baseURLCompletaFrase = `https://localhost:44327/api/completar-frase`;
 
 //recupera do localStorage a atividade escolhida
 let moduloEscolhido = JSON.parse(localStorage.getItem('moduloCorrente'));
 idModuloEscolhido = moduloEscolhido.event;
-console.log("testefinal->", idModuloEscolhido);
 
 /*Carregar atividades na tela*/
 function imprimeDadosCompletaFrase() {
@@ -29,7 +33,6 @@ function imprimeDadosCompletaFrase() {
       //recupera do localStorage a atividade escolhida
       let atividadeEscolhida = JSON.parse(localStorage.getItem('atividadeCompletaFraseEscolhida'));
       idAtividadeEscolhida = atividadeEscolhida.arg1;
-      console.log("testefinal->", idAtividadeEscolhida);
 
       for (i = 0; i < data.length; i++) {
         if (data[i].id == idAtividadeEscolhida) {
@@ -45,7 +48,6 @@ function imprimeDadosCompletaFrase() {
       frase = frase.replace(/\./g, ' .');
 
       //Cria um array com cada palavra da frase, após retirar os caracteres especiais
-      console.log(frase);
       arrayDePalavrasDaFrase = frase.split(/\s/);
 
       //Cria um array com cada palavra a ser escondida
@@ -76,7 +78,6 @@ function imprimeDadosCompletaFrase() {
  */
 function encontraPalavra(element, data) {
   for (i = 0; i < data.length; i++) {
-    console.log("entrou for");
     for (j = 0; j < arrayPalavrasChaves.length; j++) {
       if (element == arrayPalavrasChaves[j]) {
         return true;
@@ -92,7 +93,6 @@ function verificaResposta() {
 
   let aux = palavrasDigitadas();
   let acertou = false;
-  console.log(aux);
 
   //Limpar os campos com as palavras preenchidas.
   for (i = 0; i < arrayPalavrasChaves.length; i++) {
@@ -110,10 +110,17 @@ function verificaResposta() {
   }
 
   if (acertou) {
+    if(ehAluno()){
+      salvarRespostaCompletaFrase(1.0);
+    }    
     alert("Parabéns, você acertou!");
     window.location.href = "listaAtividadesCompletaFrase.html";
   } else {
+    if(ehAluno()){
+      salvarRespostaCompletaFrase(0.0);
+    }
     alert("Não foi dessa vez, tente novamente!");
+    window.location.href = "listaAtividadesCompletaFrase.html";
   }
 }
 

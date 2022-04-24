@@ -8,7 +8,7 @@ namespace HelloFriendsAPI.Business.Implementations
     public interface IRespostasCompletaFraseBusiness
     {
         RespostasCompleFrase Create(RespostasCompleFraseViewModel respostasViewModel);
-        RespostasCompleFrase FindByID(long id);
+        List<RespostasCompleFrase> FindByModuloAluno(long idModulo, long idAluno);
         List<RespostasCompleFrase> FindAll();
         RespostasCompleFrase Update(RespostasCompleFraseViewModel respostasViewModel);
         void Delete(long id);

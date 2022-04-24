@@ -1,6 +1,12 @@
 const baseURLCompletaFrase = `https://localhost:44327/api/completar-frase`;
 let idModuloTextoEscolhido;
 
+
+//Importar arquivo JS
+var imported = document.createElement('script');
+imported.src = 'scripts/rotasRespostaCompletaFrase.js';
+document.head.appendChild(imported);
+
 var selecaoAtividade_completaFrase = {
   completaFrase(event) {
     let nameOfFunction = [event.target];
@@ -72,12 +78,29 @@ function tableCompletaFrase() {
   }).then(result => result.json())
     .then((data) => {
       console.log(data);
+      let dadosModuloAluno;
+      if(ehAluno()){
+        dadosModuloAluno = getModuloAluno();
+        console.log("Pedro ->", dadosModuloAluno);
+      }      
+      let nota;
       //process the returned data
       let divTela_CompletaFrase = document.querySelector('#data-table #listaAtividades_completaFrase');
       let texto_completaFrase = "";
       // Montar texto HTML das atividades
       for (i = 0; i < data.length; i++) {
         if (data[i].moduloId == idModuloTextoEscolhido) {
+          nota  = undefined;
+          if(ehAluno()){
+            dadosModuloAluno.forEach(element => {
+              if(element.completaFraseID == data[i].id){
+                nota = (element.resultado * 100) + "%";
+              }
+            });
+          }          
+          if(nota == undefined){
+            nota = "Pendente";
+          }          
           texto_completaFrase = texto_completaFrase + ` 
                     <tr id="tb">
                       <td id="tb">
@@ -104,6 +127,12 @@ function tableCompletaFrase() {
                                             d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                                   </svg>
                               </button>
+                           </td>
+
+                            <td>
+                              <div class=">
+                                <h3 class=""><span id=""></span>${nota}</h3>
+                              </div>
                            </td>
                        </td>                               
                     </tr>
