@@ -12,5 +12,7 @@ namespace HelloFriendsAPI.Business.Implementations
         List<RespostasOpcaoCerta> FindAll();
         RespostasOpcaoCerta Update(RespostasOpcaoCertaViewModel respostasOpcaoCertaView);
         void Delete(long id);
+
+        List<RespostasOpcaoCerta> FindByModuloAluno(long idModulo, long idAluno);
     }
 }

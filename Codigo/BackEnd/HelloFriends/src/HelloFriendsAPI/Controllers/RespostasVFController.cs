@@ -35,17 +35,17 @@ namespace HelloFriendsAPI.Controllers
         }
 
         [ClaimsAuthorize("respostasvf", "retornar")]
-        [HttpGet("{id}")]
-        public IActionResult Get(long id)
+        [HttpGet("{idModulo}/{idAluno}")]
+        public IActionResult GetModuloAluno(long idModulo, long idAluno)
         {
-            var respostasVF = _respostasVFBusiness.FindByID(id);
+            var respostas = _respostasVFBusiness.FindByModuloAluno(idModulo, idAluno);
 
-            if (respostasVF == null)
+            if (respostas == null)
             {
                 return NotFound();
             }
 
-            return Ok(respostasVF);
+            return Ok(respostas);
         }
 
         [ClaimsAuthorize("respostasvf", "criar")]

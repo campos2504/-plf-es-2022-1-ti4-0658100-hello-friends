@@ -12,5 +12,7 @@ namespace HelloFriendsAPI.Business.Implementations
         List<RespostasVF> FindAll();
         RespostasVF Update(RespostasVFViewModel respostasVF);
         void Delete(long id);
+
+        List<RespostasVF> FindByModuloAluno(long idModulo, long idAluno);
     }
 }
