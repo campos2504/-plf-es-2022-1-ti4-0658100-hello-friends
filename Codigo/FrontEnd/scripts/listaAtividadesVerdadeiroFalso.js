@@ -89,7 +89,7 @@ function tableVerdadeiroFalso() {
           texto = texto + ` 
                     <tr id="tb">
                       <td id="tb">
-                            <a onclick="selecaoAtividade_verdadeiroFalso.verdadeiroFalso(event)" href="cadastroDeAtivverdadeiroFalso.html">
+                            <a onclick="selecaoAtividade_verdadeiroFalso.verdadeiroFalso(event)" href="AtividadeVouF.html">
                                 <i id="${data[i].id}"">
                                     ${data[i].titulo}
                                 </i>                              
