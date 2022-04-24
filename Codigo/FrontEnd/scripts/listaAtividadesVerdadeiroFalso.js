@@ -93,7 +93,7 @@ function tableVerdadeiroFalso() {
           nota  = undefined;
           if(ehAluno()){
             dadosModuloAlunoVF.forEach(element => {
-              if(element.completaFraseID == data[i].id){
+              if(element.verdadeiroFalsoID == data[i].id){
                 nota = (element.resultado * 100) + "%";
               }
             });
