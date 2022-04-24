@@ -1,12 +1,6 @@
 const baseURLCompletaFrase = `https://localhost:44327/api/completar-frase`;
 let idModuloTextoEscolhido;
 
-
-//Importar arquivo JS
-let importedCompletaFrase = document.createElement('script');
-importedCompletaFrase.src = 'scripts/rotasRespostaCompletaFrase.js';
-document.head.appendChild(importedCompletaFrase);
-
 var selecaoAtividade_completaFrase = {
   completaFrase(event) {
     let nameOfFunction = [event.target];

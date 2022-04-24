@@ -1,5 +1,6 @@
 ﻿using HelloFriendsAPI.Model;
 using HelloFriendsAPI.ViewModels;
+using System;
 using System.Collections.Generic;
 
 namespace HelloFriendsAPI.Business {
@@ -9,5 +10,6 @@ namespace HelloFriendsAPI.Business {
         List<Modulo> FindAll();
         Modulo Update(ModuloViewModel modulo);
         void Delete(long id);
+        string FindMedalha(long idModulo, long idAluno);
     }
 }

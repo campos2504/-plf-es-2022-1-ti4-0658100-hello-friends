@@ -13,7 +13,7 @@ verdadeiroFalsoID = verdadeiroFalsoID.arg1;
 
 
 //Salvar no BD a resposta
-function salvarRespostaOpcaoCerta(resultado){ 
+function salvarRespostaVF(resultado){ 
 
   const renamedData = {
     resultado: resultado,

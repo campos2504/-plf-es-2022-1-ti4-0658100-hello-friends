@@ -10,5 +10,6 @@ namespace HelloFriendsAPI.Repositorys {
         Modulo Update(Modulo modulo);
         void Delete(long id);
         bool Exists(long id);
+        string FindMedalha(long idModulo, long idAluno);
     }
 }

@@ -5,22 +5,28 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace HelloFriendsAPI.Repositorys.Implementations {
-    public class ModuloRepositoryImplementation : IModuloRepository{
+namespace HelloFriendsAPI.Repositorys.Implementations
+{
+    public class ModuloRepositoryImplementation : IModuloRepository
+    {
 
         private HelloFriendsContext _context;
 
-        public ModuloRepositoryImplementation(HelloFriendsContext context) {
+        public ModuloRepositoryImplementation(HelloFriendsContext context)
+        {
             _context = context;
         }
 
-        public Modulo Create(Modulo modulo) {
+        public Modulo Create(Modulo modulo)
+        {
 
-            try {
+            try
+            {
                 _context.Add(modulo);
                 _context.SaveChanges();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
 
                 throw ex;
             }
@@ -28,7 +34,8 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
             return modulo;
         }
 
-        public void Delete(long id) {
+        public void Delete(long id)
+        {
 
             var result = _context.Modulo.SingleOrDefault(p => p.Id.Equals(id));
 
@@ -43,50 +50,114 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
 
 
 
-            if (result != null) {
-                try {
+            if (result != null)
+            {
+                try
+                {
                     _context.Modulo.Remove(result);
                     _context.SaveChanges();
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
 
                     throw;
                 }
             }
         }
 
-        public bool Exists(long id) {
+        public bool Exists(long id)
+        {
 
             return _context.Modulo.Any(p => p.Id.Equals(id));
         }
 
-        public List<Modulo> FindAll() {
+        public List<Modulo> FindAll()
+        {
 
             return _context.Modulo.ToList();
         }
 
-        public Modulo FindByID(long id) {
+        public Modulo FindByID(long id)
+        {
 
             return _context.Modulo.SingleOrDefault(p => p.Id.Equals(id));
         }
 
-        public Modulo Update(Modulo modulo) {
+        public Modulo Update(Modulo modulo)
+        {
 
             if (!Exists(modulo.Id)) return null;
 
             var result = _context.Modulo.SingleOrDefault(p => p.Id.Equals(modulo.Id));
 
-            if (result != null) {
-                try {
+            if (result != null)
+            {
+                try
+                {
                     _context.Entry(result).CurrentValues.SetValues(modulo);
                     _context.SaveChanges();
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
 
                     throw;
                 }
             }
             return modulo;
+        }
+
+        public string FindMedalha(long idModulo, long idAluno)
+        {
+            var quantCompletaTexto = _context.CompletaTexto.Count(p => p.ModuloId.Equals(idModulo));
+            var quantCompletaFrase = _context.CompletaFrase.Count(p => p.ModuloId.Equals(idModulo));
+            var quantVF = _context.VerdadeiroFalso.Count(p => p.ModuloId.Equals(idModulo));
+            var quantOpcaoCerta = _context.OpcaoCerta.Count(p => p.ModuloId.Equals(idModulo));
+
+            var listaRespostaCompletaTexto = _context.RespostasCompletaTexto.Where(p => p.MId.Equals(idModulo) && p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaCompletaFrase = _context.RespostasCompleFrase.Where(p => p.MId.Equals(idModulo) && p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaVF = _context.RespostasVF.Where(p => p.MId.Equals(idModulo) && p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaOpcaoCerta = _context.RespostasOpcaoCerta.Where(p => p.MId.Equals(idModulo) && p.AlunoId.Equals(idAluno)).ToList();
+
+            //Soma das atividades criadas
+            var somaQtd = quantCompletaFrase + quantCompletaTexto + quantOpcaoCerta + quantVF;
+
+            double mediaResultado = 0;
+            string tipoMedalha = "";
+
+            if (listaRespostaCompletaTexto.Count() == quantCompletaTexto &&
+                listaRespostaCompletaFrase.Count() == quantCompletaFrase &&
+                listaRespostaOpcaoCerta.Count() == quantOpcaoCerta &&
+                listaRespostaVF.Count() == quantVF && somaQtd > 0)
+            {
+                var somaResultado = listaRespostaCompletaTexto.Sum(p => p.Resultado) +
+                    listaRespostaCompletaFrase.Sum(p => p.Resultado) +
+                    listaRespostaOpcaoCerta.Sum(p => p.Resultado) +
+                    listaRespostaVF.Sum(p => p.Resultado);
+
+                mediaResultado = somaResultado / somaQtd;
+
+            }
+            else
+            {
+                return "Sem medalha";
+            }
+
+
+            if (mediaResultado >= 0.9)
+            {
+                tipoMedalha = "Ouro";
+            }
+            else if (mediaResultado >= 0.6)
+            {
+                tipoMedalha = "Prata";
+            }
+            else
+            {
+                tipoMedalha = "Bronze";
+            }
+
+
+            return tipoMedalha;
         }
     }
 }

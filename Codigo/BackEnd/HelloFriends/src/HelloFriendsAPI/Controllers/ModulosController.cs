@@ -51,6 +51,20 @@ namespace HelloFriendsAPI.Controllers {
             return Ok(modulo);
         }
 
+        [ClaimsAuthorize("modulos", "retornar")]
+        [HttpGet("medalha/{idModulo}/{idAluno}")]
+        public IActionResult GetMedalha(long idModulo, long idAluno)
+        {
+            var respostas = _moduloBusiness.FindMedalha(idModulo, idAluno);
+
+            if (respostas == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(respostas);
+        }
+
         [ClaimsAuthorize("modulos", "criar")]
         [HttpPost]
         public IActionResult Post([FromBody] ModuloViewModel modulo) {

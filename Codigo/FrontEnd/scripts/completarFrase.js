@@ -8,11 +8,6 @@ let palavrasChaves;
 let idAtividadeEscolhida;
 let idModuloEscolhido;
 
-//Importar arquivo JS
-var imported = document.createElement('script');
-imported.src = 'scripts/rotasRespostaCompletaFrase.js';
-document.head.appendChild(imported);
-
 const baseURLCompletaFrase = `https://localhost:44327/api/completar-frase`;
 
 //recupera do localStorage a atividade escolhida

@@ -1,12 +1,6 @@
 const baseURLOpcaoCerta = `https://localhost:44327/api/opcaocerta`;
 let idModuloEscolhidoOC;
 
-//Importar arquivo JS
-let importedOpcaoCerta = document.createElement('script');
-importedOpcaoCerta.src = 'scripts/rotasRespostaOpcaoCerta.js';
-document.head.appendChild(importedOpcaoCerta);
-
-
 var selecaoAtividade = {
   opcaoCerta(event) {
     let nameOfFunction = [event.target];

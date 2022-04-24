@@ -1,11 +1,6 @@
 const baseURLCompletaTexto = `https://localhost:44327/api/completar-texto`;
 let idModuloEscolhido;
 
-//Importar arquivo JS
-let importedCompleTexto = document.createElement('script');
-importedCompleTexto.src = 'scripts/rotasRespostaCompletaTexto.js';
-document.head.appendChild(importedCompleTexto);
-
 var selecaoAtividade_completaTexto = {
   completaTexto(event) {
     let nameOfFunction = [event.target];

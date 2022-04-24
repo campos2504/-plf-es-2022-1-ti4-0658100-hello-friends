@@ -2,6 +2,7 @@
 using HelloFriendsAPI.Model;
 using HelloFriendsAPI.Repositorys;
 using HelloFriendsAPI.ViewModels;
+using System;
 using System.Collections.Generic;
 
 namespace HelloFriendsAPI.Business.Implementations {
@@ -40,6 +41,11 @@ namespace HelloFriendsAPI.Business.Implementations {
 
             return _repository.Update(_mapper.Map<Modulo>(moduloViewModel));
 
+        }
+
+        public string FindMedalha(long idModulo, long idAluno)
+        {
+            return _repository.FindMedalha(idModulo, idAluno);
         }
     }
 }

@@ -8,11 +8,6 @@ let palavrasChaves;
 let idAtividadeEscolhida;
 let idModuloEscolhido;
 
-//Importar arquivo JS
-var imported = document.createElement('script');
-imported.src = 'scripts/rotasRespostaCompletaTexto.js';
-document.head.appendChild(imported);
-
 const baseURLCompletaTexto = `https://localhost:44327/api/completar-texto`;
 
 //recupera do localStorage a atividade escolhida
@@ -47,16 +42,14 @@ function imprimeDadosDoTexto() {
       Texto = Texto.replace(/\!/g, ' !');
       Texto = Texto.replace(/\./g, ' .');
       Texto = Texto.replace(/\*/g, '<br><br>');
-      
-      
+
+
       //Cria um array com cada palavra da Texto, após retirar os caracteres especiais
       arrayDePalavrasDaTexto = Texto.split(/\s/);
 
       //Cria um array com cada palavra a ser escondida
       palavrasParaEsconder = data[idEscolhido].palavrasChaves.trim();
       arrayPalavrasChaves = palavrasParaEsconder.split(/,/);
-
-
 
       /**
        * Percorre o vetor de palavras da senteça, verificando se cada palavra corresponde a palavra chave.
@@ -99,7 +92,7 @@ function imprimePalavrasChaves() {
 
       Texto = data[idEscolhido].palavrasChaves;
       Texto = data[idEscolhido].palavrasChaves.replace(/\,/g, ' ');
-      
+
 
       //Cria um array com cada palavra da Texto, após retirar os caracteres especiais
       arrayDePalavrasDaTexto = Texto.split(/\s/);
@@ -109,7 +102,11 @@ function imprimePalavrasChaves() {
        * Percorre o vetor de palavras da senteça, verificando se cada palavra corresponde a palavra chave.
        * Em caso positivo, a palavra é substituída pelo input. O id da campo corresponde ao nome da palavra
        */
-       arrayDePalavrasDaTexto.forEach(element => {
+
+      //Colocar em ordem alfabética as palavra que serão exibidas para os alunos.
+      arrayDePalavrasDaTexto.sort();
+      
+      arrayDePalavrasDaTexto.forEach(element => {
         strHtml += `<p class="palavraChaveCompletaTexto">${element} </p>` + ''
       });
       // Preencher a DIV com o texto HTML
@@ -119,12 +116,10 @@ function imprimePalavrasChaves() {
 }
 
 /**
- * 
  * Verifica se uma determinada palavra é igual a palara chave.
  */
 function encontraPalavra(element, data) {
   for (i = 0; i < data.length; i++) {
-    console.log("entrou for");
     for (j = 0; j < arrayPalavrasChaves.length; j++) {
       if (element == arrayPalavrasChaves[j]) {
         return true;
@@ -139,8 +134,9 @@ function encontraPalavra(element, data) {
 function verificaResposta() {
 
   let aux = palavrasDigitadas();
-  let acertou = false;
-  console.log(aux);
+  let acertos = 0;
+  let erros = 0;
+  let resultado = 0;
 
   //Limpar os campos com as palavras preenchidas.
   for (i = 0; i < arrayPalavrasChaves.length; i++) {
@@ -149,27 +145,19 @@ function verificaResposta() {
 
   for (i = 0; i < aux.length; i++) {
     if (aux[i] == arrayPalavrasChaves[i]) {
-      acertou = true;
-      console.log("acertou");
+      acertos++;
     } else {
-      acertou = false;
-      console.log("errou");
+      erros++;
     }
   }
 
-  if (acertou) {
-    if(ehAluno()){
-      salvarRespostaCompletaTexto(1.0);
-    }    
-    alert("Parabéns, você acertou!");
-    window.location.href = "listaAtividadesCompletaFrase.html";
-  } else {
-    if(ehAluno()){
-      salvarRespostaCompletaTexto(0.0);
-    }
-    alert("Não foi dessa vez, tente novamente!");
-    window.location.href = "listaAtividadesCompletaFrase.html";
+  resultado = acertos / aux.length;
+
+  if (ehAluno()) {
+    salvarRespostaCompletaTexto(resultado);
   }
+  alert("Você acertou " + (resultado*100) + "% !");
+  window.location.href = "listaAtividadesCompletaFrase.html";
 }
 
 /**

@@ -22,6 +22,7 @@ function salvarRespostaOpcaoCerta(resultado){
     opcaoCertaID: opcaoCertaID
   }
   console.log(renamedData);
+  console.log("->Pedro");
 
   fetch(urlRespostaOpcaoCerta, {
     headers: {

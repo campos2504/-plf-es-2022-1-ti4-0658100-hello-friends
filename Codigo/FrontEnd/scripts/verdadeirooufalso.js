@@ -10,12 +10,6 @@ let alternativaRespondida;
 let respostaCerta;
 const baseURL = `https://localhost:44327/api/verdadeiro-falso`;
 
-//Importar arquivo JS
-var imported = document.createElement('script');
-imported.src = 'scripts/rotasRespostaVF.js';
-document.head.appendChild(imported);
-
-
 function introducao() {
   fetch(baseURL, {
     headers: {
@@ -98,13 +92,13 @@ function alternativaResposta() {
 
   if (respostaCerta ==JSON.parse(alternativaRespondida) ) {
     if(ehAluno()){
-        salvarRespostaOpcaoCerta(1.0);       
+      salvarRespostaVF(1.0);       
     }
     alert("Parabéns você acertou!");
     window.location.href = "listaAtividadesCompletaFrase.html";
   } else {
     if(ehAluno()){
-      salvarRespostaOpcaoCerta(0.0);   
+      salvarRespostaVF(0.0);   
     }
     alert("Infelizmente a resposta não está certa");
     window.location.href = "listaAtividadesCompletaFrase.html";

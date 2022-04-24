@@ -14,13 +14,6 @@ let alternativaRespondida;
 let respostaCerta;
 const baseURL = `https://localhost:44327/api/opcaocerta`;
 
-
-//Importar arquivo JS
-var imported = document.createElement('script');
-imported.src = 'scripts/rotasRespostaOpcaoCerta.js';
-document.head.appendChild(imported);
-
-
 function introducao() {
   fetch(baseURL, {
     headers: {

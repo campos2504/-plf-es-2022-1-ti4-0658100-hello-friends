@@ -1,11 +1,6 @@
 const baseURLVerdadeiroFalso = 'https://localhost:44327/api/verdadeiro-falso';
 let idModuloEscolhidoVF;
 
-//Importar arquivo JS
-let importedVF = document.createElement('script');
-importedVF.src = 'scripts/rotasRespostaVF.js';
-document.head.appendChild(importedVF);
-
 var selecaoAtividade_verdadeiroFalso = {
   verdadeiroFalso(event) {
     let nameOfFunction = [event.target];
