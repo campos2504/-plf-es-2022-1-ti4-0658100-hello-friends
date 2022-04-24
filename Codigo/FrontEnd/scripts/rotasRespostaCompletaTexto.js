@@ -1,32 +1,29 @@
-const urlRespostaCompletaFrase = `https://localhost:44327/api/respostasCompletaFrase`;
-let alunoIdCompletaFrase;
+const urlRespostaCompletaTexto = `https://localhost:44327/api/respostasCompletaTexto`;
+let alunoIdCompletaTexto;
 
 //Recuperar informações do localStorage
-let dadosAlunoCompletaFrase = JSON.parse(localStorage.getItem('userToken'));
+let dadosAlunoCompletaTexto = JSON.parse(localStorage.getItem('userToken'));
 
-let mIDCompletaFrase = JSON.parse(localStorage.getItem('moduloCorrente'));
-mIDCompletaFrase = mIDCompletaFrase.event;
-console.log(mIDCompletaFrase);
+let mIDCompletaTexto = JSON.parse(localStorage.getItem('moduloCorrente'));
+mIDCompletaTexto = mIDCompletaTexto.event;
 
-let completaFraseID = JSON.parse(localStorage.getItem('atividadeCompletaFraseEscolhida'));
-completaFraseID = completaFraseID.arg1;
-console.log(completaFraseID);
+let completaTextoID = JSON.parse(localStorage.getItem('atividadeCompletaTextoEscolhida'));
+completaTextoID = completaTextoID.arg1;
 
 
 //Salvar no BD a resposta
-function salvarRespostaCompletaFrase(resultado){ 
-  console.log(alunoId);
+function salvarRespostaCompletaTexto(resultado){ 
 
   const renamedData = {
     resultado: resultado,
-    alunoId: alunoIdCompletaFrase,
-    mID: mIDCompletaFrase,
-    completaFraseID: completaFraseID
+    alunoId: alunoIdCompletaTexto,
+    mID: mIDCompletaTexto,
+    completaTextoID: completaTextoID
   }
 
   console.log(renamedData);
 
-  fetch(urlRespostaCompletaFrase, {
+  fetch(urlRespostaCompletaTexto, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -46,7 +43,7 @@ function getUser() {
 
   if(ehAluno()){
     //GetByEmail
-    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaFrase.user.email);
+    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaTexto.user.email);
 
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
@@ -63,8 +60,8 @@ getUser();
 //Recuperar usuário
 function getModuloAluno() {
   
-  alunoIdCompletaFrase = getUser();
-  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaFrase/", mIDCompletaFrase,"/", alunoIdCompletaFrase.id);
+  alunoIdCompletaTexto = getUser();
+  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaTexto/", mIDCompletaTexto,"/", alunoIdCompletaTexto.id);
   console.log(urlModuloAluno);
 
     let request = new XMLHttpRequest();
