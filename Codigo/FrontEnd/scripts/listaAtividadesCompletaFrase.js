@@ -3,9 +3,9 @@ let idModuloTextoEscolhido;
 
 
 //Importar arquivo JS
-var imported = document.createElement('script');
-imported.src = 'scripts/rotasRespostaCompletaFrase.js';
-document.head.appendChild(imported);
+let importedCompletaFrase = document.createElement('script');
+importedCompletaFrase.src = 'scripts/rotasRespostaCompletaFrase.js';
+document.head.appendChild(importedCompletaFrase);
 
 var selecaoAtividade_completaFrase = {
   completaFrase(event) {
@@ -81,7 +81,6 @@ function tableCompletaFrase() {
       let dadosModuloAluno;
       if(ehAluno()){
         dadosModuloAluno = getModuloAluno();
-        console.log("Pedro ->", dadosModuloAluno);
       }      
       let nota;
       //process the returned data

@@ -1,32 +1,29 @@
-const urlRespostaCompletaFrase = `https://localhost:44327/api/respostasCompletaFrase`;
-let alunoIdCompletaFrase;
+const urlRespostaOpcaoCerta = `https://localhost:44327/api/respostasOpcaoCerta`;
+let alunoIdOpcaoCerta;
 
 //Recuperar informações do localStorage
-let dadosAlunoCompletaFrase = JSON.parse(localStorage.getItem('userToken'));
+let dadosAlunoOpcaoCerta = JSON.parse(localStorage.getItem('userToken'));
 
-let mIDCompletaFrase = JSON.parse(localStorage.getItem('moduloCorrente'));
-mIDCompletaFrase = mIDCompletaFrase.event;
-console.log(mIDCompletaFrase);
+let mIDopcaCerta = JSON.parse(localStorage.getItem('moduloCorrente'));
+mIDopcaCerta = mIDopcaCerta.event;
 
-let completaFraseID = JSON.parse(localStorage.getItem('atividadeCompletaFraseEscolhida'));
-completaFraseID = completaFraseID.arg1;
-console.log(completaFraseID);
+let opcaoCertaID = JSON.parse(localStorage.getItem('atividadeOpcaoCerta'));
+opcaoCertaID = opcaoCertaID.arg1;
 
 
 //Salvar no BD a resposta
-function salvarRespostaCompletaFrase(resultado){ 
-  console.log(alunoId);
+function salvarRespostaOpcaoCerta(resultado){ 
 
   const renamedData = {
     resultado: resultado,
-    alunoId: alunoIdCompletaFrase,
-    mID: mIDCompletaFrase,
-    completaFraseID: completaFraseID
+    alunoId: alunoIdOpcaoCerta,
+    mID: mIDopcaCerta,
+    opcaoCertaID: opcaoCertaID
   }
 
   console.log(renamedData);
 
-  fetch(urlRespostaCompletaFrase, {
+  fetch(urlRespostaOpcaoCerta, {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -46,7 +43,7 @@ function getUser() {
 
   if(ehAluno()){
     //GetByEmail
-    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaFrase.user.email);
+    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoOpcaoCerta.user.email);
 
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
@@ -63,8 +60,8 @@ getUser();
 //Recuperar usuário
 function getModuloAluno() {
   
-  alunoIdCompletaFrase = getUser();
-  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaFrase/", mIDCompletaFrase,"/", alunoIdCompletaFrase.id);
+  alunoIdOpcaoCerta = getUser();
+  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasOpcaoCerta/", mIDopcaCerta,"/", alunoIdOpcaoCerta.id);
   console.log(urlModuloAluno);
 
     let request = new XMLHttpRequest();
