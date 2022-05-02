@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-
-
+  <script src="scripts/medalhas.js"></script>
 </head>
 
 <body class="container-fluid sem-margin custom-body">
@@ -50,6 +49,9 @@
           </li>
           <li class="nav-item sobre ml-5 ml-lg-5 ml-md-0 ml-sm-0">
             <a class="nav-link " href="Sobre.html">SOBRE</a>
+          </li>
+          <li id="medalhas" class="nav-item">
+            
           </li>
         </ul>
         <li id="botaoDeslogar" class="nav-item tp sair">
@@ -108,10 +110,12 @@
 
     if (!(ehAluno())) {
         document.getElementById('editarCadastroNav').style.display = "none";
+        document.getElementById('medalhas').style.display = "none";
       }
   }
 
   window.addEventListener('load', initPage);
+  atualizaMedalha();
 </script>
 </body>
 

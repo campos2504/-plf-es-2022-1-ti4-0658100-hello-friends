@@ -119,3 +119,5 @@ function alternativaResposta() {
   }
   console.log(alternativaRespondida);
 }
+
+recuperaIdAluno();

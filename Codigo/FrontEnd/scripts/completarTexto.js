@@ -160,6 +160,7 @@ function verificaResposta() {
   window.location.href = "listaAtividadesCompletaFrase.html";
 }
 
+recuperaIdAluno();
 /**
  * Função para criar um array com as palavras digitadas pelo usuário.
  * @returns Retorna o array de palavras

@@ -7,5 +7,6 @@ namespace HelloFriendsAPI.Model {
         public string Imagem { get; set; }
         [NotMapped]
         public string ImagemSrc { get; set; }
+
     }
 }

@@ -18,6 +18,7 @@
   <script src="scripts/rotasRespostaCompletaTexto.js"></script>
   <script src="scripts/rotasRespostaOpcaoCerta.js"></script>
   <script src="scripts/rotasRespostaVF.js"></script>
+  <script src="scripts/medalhas.js"></script>
 </head>
 
 <body class="container-fluid sem-margin custom-body">
@@ -56,6 +57,9 @@
           </li>
           <li class="nav-item sobre ml-5 ml-lg-5 ml-md-0 ml-sm-0">
             <a class="nav-link " href="Sobre.html">SOBRE</a>
+          </li>
+          <li id="medalhas" class="nav-item">
+        
           </li>
         </ul>
         <li id="botaoDeslogar" class="nav-item tp sair">
@@ -147,6 +151,7 @@
 
       if (!(ehAluno())) {
         document.getElementById('editarCadastroNav').style.display = "none";
+        document.getElementById('medalhas').style.display = "none";
       }
     }
 
