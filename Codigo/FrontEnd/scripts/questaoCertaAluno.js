@@ -117,6 +117,10 @@ function alternativaResposta() {
     alert("Infelizmente a resposta não está certa");
     window.location.href = "listaAtividadesCompletaFrase.html";
   }
+
+  if(ehAluno()){
+    atualizaMedalha();
+  }
   console.log(alternativaRespondida);
 }
 

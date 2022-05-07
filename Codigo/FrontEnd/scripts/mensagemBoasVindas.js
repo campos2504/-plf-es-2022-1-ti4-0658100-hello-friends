@@ -15,11 +15,10 @@ function mensagemBoasVindas() {
             },
         }).then(result => result.json())
             .then((data) => {
-                console.log(data);
                 document.getElementById('nomeUsuarioCorrente').innerHTML = data.nomeCompleto;
             })
     }else{
-        document.getElementById('nomeUsuarioCorrente').innerHTML = "Welcome, teacher!"
+        document.getElementById('nomeUsuarioCorrente').innerHTML = "teacher!"
     }
 };
 

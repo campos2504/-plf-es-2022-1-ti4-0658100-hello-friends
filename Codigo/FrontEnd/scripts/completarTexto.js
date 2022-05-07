@@ -28,7 +28,7 @@ function imprimeDadosDoTexto() {
       //recupera do localStorage a atividade escolhida
       let atividadeEscolhida = JSON.parse(localStorage.getItem('atividadeCompletaTextoEscolhida'));
       idAtividadeEscolhida = atividadeEscolhida.arg1;
-
+      console.log(data);
       for (i = 0; i < data.length; i++) {
         if (data[i].id == idAtividadeEscolhida) {
           idEscolhido = i;
@@ -157,10 +157,15 @@ function verificaResposta() {
     salvarRespostaCompletaTexto(resultado);
   }
   alert("Você acertou " + (resultado*100) + "% !");
+
+  if(ehAluno()){
+    atualizaMedalha();
+  }
+
   window.location.href = "listaAtividadesCompletaFrase.html";
 }
 
-recuperaIdAluno();
+/*recuperaIdAluno();*/
 /**
  * Função para criar um array com as palavras digitadas pelo usuário.
  * @returns Retorna o array de palavras
