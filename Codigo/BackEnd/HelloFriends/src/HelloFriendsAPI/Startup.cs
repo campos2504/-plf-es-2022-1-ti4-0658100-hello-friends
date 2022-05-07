@@ -60,6 +60,7 @@ namespace HelloFriendsAPI
                 cfg.CreateMap<RespostasCompletaTexto, RespostasCompletaTextoViewModel>().ReverseMap();
                 cfg.CreateMap<RespostasCompleFrase, RespostasCompleFraseViewModel>().ReverseMap();
                 cfg.CreateMap<RespostasOpcaoCerta, RespostasOpcaoCertaViewModel>().ReverseMap();
+                cfg.CreateMap<Medalha, MedalhaViewModel>().ReverseMap();
 
             });
             IMapper mapper = configMapper.CreateMapper();
@@ -85,6 +86,8 @@ namespace HelloFriendsAPI
             services.AddScoped<IRespostasOpcaoCertaBusiness, RespostasOpcaoCertaBusinessImplementation>();
             services.AddScoped<IRespostasCompletaFraseBusiness, RespostasCompletaFraseBusinessImplementation>();
             services.AddScoped<IRespostasCompletaTextoBusiness, RespostasCompletaTextoBusinessImplementation>();
+            services.AddScoped<IMedalhaBusiness, MedalhaBusinessImplementation>();
+            services.AddScoped<IMedalhaRepository,MedalhaRepositoryImplementation>();
 
             services.AddSingleton(mapper);
 

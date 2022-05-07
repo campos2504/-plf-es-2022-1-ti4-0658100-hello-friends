@@ -26,5 +26,6 @@ namespace HelloFriendsAPI.Repositorys.Data
         public DbSet<RespostasCompletaTexto> RespostasCompletaTexto { get; set; }
         public DbSet<RespostasOpcaoCerta> RespostasOpcaoCerta { get; set; }
         public DbSet<RespostasVF> RespostasVF { get; set; }
+        public DbSet<Medalha> Medalha { get; set; }
     }
 }

@@ -19,7 +19,9 @@ a{
 }
      
 .navbar-nav{
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    margin-left: 190px;
+    margin-right: 150px;
 }
 
 .imageMenu:hover .editar-content{
@@ -85,10 +87,13 @@ a{
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-left: 30px;
 }
 
 .navbar-light .navbar-nav .nav-link{
     color: #ffffffec  !important;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
@@ -118,8 +123,30 @@ li{
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-left: 30px;
 }
 
+/*Medalhas*/
+img{
+    width: 50px;
+}
+#medalhas{
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: none !important;
+}
+
+.pontuacao{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    margin-left: 20px;
+    color: #ffffff;
+    font-weight:900 !important;
+    font-size: 20px;
+}
 
 
 .sobre{

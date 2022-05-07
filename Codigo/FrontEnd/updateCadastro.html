@@ -52,6 +52,9 @@
           <li class="nav-item sobre ml-5 ml-lg-5 ml-md-0 ml-sm-0">
             <a class="nav-link " href="Sobre.html">SOBRE</a>
           </li>
+          <li id="medalhas" class="nav-item">
+         
+          </li>
         </ul>
         <li id="botaoDeslogar" class="nav-item tp sair">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
@@ -165,6 +168,7 @@
     crossorigin="anonymous"></script>
   <script src="scripts/updateCadastro.js"></script>
   <script src="scripts/carregarFotoUsuario.js"></script>
+  <script src="scripts/medalhas.js"></script>
   <script>
     validarLogin();
 
@@ -176,9 +180,14 @@
         document.getElementById('aprovarCadastroNav').style.display = "none";
         document.getElementById('cancelarCadastroNav').style.display = "none";
       }
+
+      if (!(ehAluno())) {
+        document.getElementById('medalhas').style.display = "none";
+      }
     }
 
     window.addEventListener('load', initPage);
+    
   </script>
 
 </body>

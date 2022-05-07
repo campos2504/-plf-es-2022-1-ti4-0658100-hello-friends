@@ -117,7 +117,13 @@ function verificaResposta() {
     alert("Não foi dessa vez, tente novamente!");
     window.location.href = "listaAtividadesCompletaFrase.html";
   }
+  
+  if(ehAluno()){
+  atualizaMedalha();
+  }
 }
+
+
 
 /**
  * Função para criar um array com as palavras digitadas pelo usuário.
