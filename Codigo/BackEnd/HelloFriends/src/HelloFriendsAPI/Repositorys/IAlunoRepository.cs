@@ -11,5 +11,6 @@ namespace HelloFriendsAPI.Repositorys {
         void Delete(long id);
         bool Exists(long id);
         Aluno FindByEmail(string email);
+        double FindMediaAluno(long idAluno);
     }
 }

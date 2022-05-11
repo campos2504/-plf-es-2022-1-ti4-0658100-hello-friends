@@ -4,6 +4,7 @@ using HelloFriendsAPI.Repositorys;
 using HelloFriendsAPI.ViewModels;
 using Microsoft.AspNetCore.JsonPatch;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.OData;
@@ -15,6 +16,22 @@ namespace HelloFriendsAPI.Business.Implementations {
         private readonly IAlunoRepository _repository;
         private readonly IMapper _mapper;
 
+        public List<AlunoMediaViewModel> GetMedia()
+        {
+            var alunos =_repository.FindAll();
+            var alunosMediaList = new List<AlunoMediaViewModel>();
+            foreach (var aluno in alunos)
+            {
+                var media = _repository.FindMediaAluno(aluno.Id);
+                var alunoMedia = new AlunoMediaViewModel();
+                alunoMedia.Id = aluno.Id;
+                alunoMedia.NomeCompleto = aluno.NomeCompleto;
+                alunoMedia.Media = media;
+                alunosMediaList.Add(alunoMedia);
+            }
+
+            return alunosMediaList;
+        }
         public AlunoBusinessImplementation(IAlunoRepository repository, IMapper mapper)
         {
             _repository = repository;
