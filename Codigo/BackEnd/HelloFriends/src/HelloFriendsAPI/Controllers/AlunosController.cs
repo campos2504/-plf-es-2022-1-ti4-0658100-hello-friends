@@ -45,7 +45,7 @@ namespace HelloFriendsAPI.Controllers {
         }
         
         [ClaimsAuthorize("gestaoalunos", "retornar")]
-        [HttpGet]
+        [HttpGet("media")]
         public IActionResult GetMedia()
         {
             List<AlunoMediaViewModel> alunoMedia = _alunoBusiness.GetMedia();
