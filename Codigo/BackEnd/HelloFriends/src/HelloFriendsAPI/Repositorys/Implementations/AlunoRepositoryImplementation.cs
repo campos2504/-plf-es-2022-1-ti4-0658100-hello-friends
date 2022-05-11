@@ -3,6 +3,7 @@ using HelloFriendsAPI.Repositorys.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using HelloFriendsAPI.ViewModels;
 
 namespace HelloFriendsAPI.Repositorys.Implementations {
     public class AlunoRepositoryImplementation : IAlunoRepository {
@@ -59,8 +60,9 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
             return _context.Aluno.SingleOrDefault(p => p.Id.Equals(id));
         }
 
-        public double FindMediaAluno(long idAluno)
+        public AlunoMediaViewModel FindMediaAluno(Aluno aluno)
         {
+            var idAluno = aluno.Id;
             
             var listaRespostaCompletaTexto = _context.RespostasCompletaTexto.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
             var listaRespostaCompletaFrase = _context.RespostasCompleFrase.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
@@ -72,9 +74,18 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
                                 listaRespostaOpcaoCerta.Sum(p => p.Resultado) +
                                 listaRespostaVF.Sum(p => p.Resultado);
 
-            var qtde = listaRespostaCompletaFrase.Count + listaRespostaCompletaTexto.Count
+            var qtdeAtividades = _context.CompletaFrase.ToList().Count+_context.VerdadeiroFalso.ToList().Count
+                +_context.OpcaoCerta.ToList().Count+_context.CompletaTexto.ToList().Count;
+            var qtdeFeita = listaRespostaCompletaFrase.Count + listaRespostaCompletaTexto.Count
                                                         + listaRespostaOpcaoCerta.Count + listaRespostaVF.Count;
-            return somaResultado / qtde;
+
+            var alunoMedia = new AlunoMediaViewModel();
+            alunoMedia.Id = aluno.Id;
+            alunoMedia.NomeCompleto = aluno.NomeCompleto;
+            alunoMedia.AtividadesFeitas = qtdeFeita;
+            alunoMedia.TotalAtividades = qtdeAtividades;
+            alunoMedia.Media = somaResultado / qtdeFeita;
+            return alunoMedia;
         }
         
 
