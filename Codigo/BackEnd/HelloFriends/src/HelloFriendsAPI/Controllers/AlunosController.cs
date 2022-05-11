@@ -43,6 +43,20 @@ namespace HelloFriendsAPI.Controllers {
             });
             return Ok(resultado);
         }
+        
+        [ClaimsAuthorize("gestaoalunos", "retornar")]
+        [HttpGet("media")]
+        public IActionResult GetMedia()
+        {
+            List<AlunoMediaViewModel> alunoMedia = _alunoBusiness.GetMedia();
+            var resultado = alunoMedia.Select(x => new AlunoMediaViewModel()
+            {
+                Id = x.Id,
+                NomeCompleto = x.NomeCompleto,
+                Media = x.Media,
+            });
+            return Ok(resultado);
+        }
 
         [ClaimsAuthorize("gestaoalunos", "retornar")]
         [HttpGet("{id}")]

@@ -59,6 +59,25 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
             return _context.Aluno.SingleOrDefault(p => p.Id.Equals(id));
         }
 
+        public double FindMediaAluno(long idAluno)
+        {
+            
+            var listaRespostaCompletaTexto = _context.RespostasCompletaTexto.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaCompletaFrase = _context.RespostasCompleFrase.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaVF = _context.RespostasVF.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaOpcaoCerta = _context.RespostasOpcaoCerta.Where(p => p.AlunoId.Equals(idAluno)).ToList();
+            
+            var somaResultado = listaRespostaCompletaTexto.Sum(p => p.Resultado) +
+                                listaRespostaCompletaFrase.Sum(p => p.Resultado) +
+                                listaRespostaOpcaoCerta.Sum(p => p.Resultado) +
+                                listaRespostaVF.Sum(p => p.Resultado);
+
+            var qtde = listaRespostaCompletaFrase.Count + listaRespostaCompletaTexto.Count
+                                                        + listaRespostaOpcaoCerta.Count + listaRespostaVF.Count;
+            return somaResultado / qtde;
+        }
+        
+
         public Aluno Update(Aluno aluno) {
 
             if (!Exists(aluno.Id)) return null;
