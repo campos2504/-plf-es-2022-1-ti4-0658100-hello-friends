@@ -16,5 +16,7 @@ namespace HelloFriendsAPI.Business {
         Aluno Autorizar(long id, AlunoAuthViewModel aluno);
         void Delete(long id);
         List<AlunoMediaViewModel> GetMedia();
+        List<AlunoAtividadeViewModel> GetResultadoAtividadeViewModels(long id);
+
     }
 }

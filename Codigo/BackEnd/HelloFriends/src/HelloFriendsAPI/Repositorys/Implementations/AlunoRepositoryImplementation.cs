@@ -113,5 +113,69 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
 
             return _context.Aluno.SingleOrDefault(p => p.Email.Equals(email));
         }
+        public List<AlunoAtividadeViewModel> FindAlunoMediaAtividade(Aluno aluno)
+        {
+            var listAlunoAtividade = new List<AlunoAtividadeViewModel>();
+            var idAluno = aluno.Id;
+
+            var listaModulos = _context.Modulo.ToList();
+            var listaRespostaCompletaTexto = _context.RespostasCompletaTexto.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaCompletaFrase = _context.RespostasCompleFrase.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaVF = _context.RespostasVF.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaOpcaoCerta = _context.RespostasOpcaoCerta.Where(p => p.AlunoId.Equals(idAluno)).ToList();
+
+
+
+            AlunoAtividadeViewModel alunoAtividade;
+
+            foreach (var atividade in listaRespostaCompletaTexto)
+            {
+                alunoAtividade=new AlunoAtividadeViewModel();
+                alunoAtividade.IdAluno = aluno.Id;
+                alunoAtividade.NomeCompleto = aluno.NomeCompleto;
+                alunoAtividade.IdModulo = atividade.MId;
+                alunoAtividade.NomeModulo = listaModulos.Find(modulo => modulo.Id == atividade.MId).NomeModulo;
+                alunoAtividade.NomeAtividade = atividade.CompletaTexto.Titulo;
+                alunoAtividade.Resultado = atividade.Resultado;
+                listAlunoAtividade.Add(alunoAtividade);
+            }
+            foreach (var atividade in listaRespostaCompletaFrase)
+            {
+                alunoAtividade=new AlunoAtividadeViewModel();
+                alunoAtividade.IdAluno = aluno.Id;
+                alunoAtividade.NomeCompleto = aluno.NomeCompleto;
+                alunoAtividade.IdModulo = atividade.MId;
+                alunoAtividade.NomeModulo = listaModulos.Find(modulo => modulo.Id == atividade.MId).NomeModulo;
+                alunoAtividade.NomeAtividade = atividade.CompletaFrase.Titulo;
+                alunoAtividade.Resultado = atividade.Resultado;
+                listAlunoAtividade.Add(alunoAtividade);
+            }
+            foreach (var atividade in listaRespostaVF)
+            {
+                alunoAtividade=new AlunoAtividadeViewModel();
+                alunoAtividade.IdAluno = aluno.Id;
+                alunoAtividade.NomeCompleto = aluno.NomeCompleto;
+                alunoAtividade.IdModulo = atividade.MId;
+                alunoAtividade.NomeModulo = listaModulos.Find(modulo => modulo.Id == atividade.MId).NomeModulo;
+                alunoAtividade.NomeAtividade = atividade.VerdadeiroFalso.Titulo;
+                alunoAtividade.Resultado = atividade.Resultado;
+                listAlunoAtividade.Add(alunoAtividade);
+            }
+            foreach (var atividade in listaRespostaOpcaoCerta)
+            {
+                alunoAtividade=new AlunoAtividadeViewModel();
+                alunoAtividade.IdAluno = aluno.Id;
+                alunoAtividade.NomeCompleto = aluno.NomeCompleto;
+                alunoAtividade.IdModulo = atividade.MId;
+                alunoAtividade.NomeModulo = listaModulos.Find(modulo => modulo.Id == atividade.MId).NomeModulo;
+                alunoAtividade.NomeAtividade = atividade.OpcaoCerta.Titulo;
+                alunoAtividade.Resultado = atividade.Resultado;
+                listAlunoAtividade.Add(alunoAtividade);
+            }
+
+            
+            
+            return listAlunoAtividade;
+        }
     }
 }
