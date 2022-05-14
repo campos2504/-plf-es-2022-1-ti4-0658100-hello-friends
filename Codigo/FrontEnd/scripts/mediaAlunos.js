@@ -28,6 +28,16 @@ function mediaAlunos() {
                                 <h3 class=""><span id=""></span>${media}%</h3>
                               </div>
                            </td>
+                           <td>
+                              <div class=">
+                                <h3 class=""><span id=""></span>${data[i].atividadesFeitas}</h3>
+                              </div>
+                           </td>
+                           <td>
+                           <div class=">
+                             <h3 class=""><span id=""></span>${data[i].totalAtividades}</h3>
+                           </div>
+                        </td>
                        </td>                               
                     </tr>
                     `;
