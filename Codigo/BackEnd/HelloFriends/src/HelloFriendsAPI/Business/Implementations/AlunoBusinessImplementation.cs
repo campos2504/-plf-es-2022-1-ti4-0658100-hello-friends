@@ -22,11 +22,7 @@ namespace HelloFriendsAPI.Business.Implementations {
             var alunosMediaList = new List<AlunoMediaViewModel>();
             foreach (var aluno in alunos)
             {
-                var media = _repository.FindMediaAluno(aluno.Id);
-                var alunoMedia = new AlunoMediaViewModel();
-                alunoMedia.Id = aluno.Id;
-                alunoMedia.NomeCompleto = aluno.NomeCompleto;
-                alunoMedia.Media = media;
+                var alunoMedia = _repository.FindMediaAluno(aluno);
                 alunosMediaList.Add(alunoMedia);
             }
 
