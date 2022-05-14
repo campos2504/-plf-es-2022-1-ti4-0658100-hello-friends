@@ -54,6 +54,8 @@ namespace HelloFriendsAPI.Controllers {
                 Id = x.Id,
                 NomeCompleto = x.NomeCompleto,
                 Media = x.Media,
+                TotalAtividades = x.TotalAtividades,
+                AtividadesFeitas = x.AtividadesFeitas
             });
             return Ok(resultado);
         }
