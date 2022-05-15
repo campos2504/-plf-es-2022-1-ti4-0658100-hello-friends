@@ -1,5 +1,6 @@
 ﻿using HelloFriendsAPI.Model;
 using HelloFriendsAPI.Repositorys.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,7 +60,9 @@ namespace HelloFriendsAPI.Repositorys.Implementations
 
         public List<RespostasOpcaoCerta> FindAll()
         {
-            return _context.RespostasOpcaoCerta.ToList();
+            var result = _context.RespostasOpcaoCerta.Include(p => p.Aluno).Include(p => p.OpcaoCerta).ToList();
+
+            return result;
         }
 
         public RespostasOpcaoCerta FindByAlunoAtividade(long idAluno, Guid idAtividade)
