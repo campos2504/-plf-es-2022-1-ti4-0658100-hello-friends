@@ -1,5 +1,6 @@
 ﻿using HelloFriendsAPI.Model;
 using HelloFriendsAPI.Repositorys.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,7 +60,9 @@ namespace HelloFriendsAPI.Repositorys.Implementations
 
         public List<RespostasCompletaTexto> FindAll()
         {
-            return _context.RespostasCompletaTexto.ToList();
+            var result = _context.RespostasCompletaTexto.Include(p => p.Aluno).Include(p => p.CompletaTexto).ToList();
+
+            return result;
         }
 
         public RespostasCompletaTexto FindByAlunoAtividade(long idAluno, Guid idAtividade)
