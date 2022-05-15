@@ -59,6 +59,22 @@ namespace HelloFriendsAPI.Controllers {
             });
             return Ok(resultado);
         }
+        [ClaimsAuthorize("gestaoalunos", "retornar")]
+        [HttpGet("notas/{id}")]
+        public IActionResult GetNotasAluno(long id)
+        {
+            List<AlunoAtividadeViewModel> alunoAtividade = _alunoBusiness.GetResultadoAtividadeViewModels(id);
+            var resultado = alunoAtividade.Select(x => new AlunoAtividadeViewModel()
+            {
+                IdAluno = x.IdAluno,
+                NomeCompleto = x.NomeCompleto,
+                IdModulo=x.IdModulo,
+                NomeModulo=x.NomeModulo,
+                NomeAtividade=x.NomeAtividade,
+                Resultado=x.Resultado
+            });
+            return Ok(resultado);
+        }
 
         [ClaimsAuthorize("gestaoalunos", "retornar")]
         [HttpGet("{id}")]

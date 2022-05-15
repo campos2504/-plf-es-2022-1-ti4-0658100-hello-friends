@@ -84,5 +84,12 @@ namespace HelloFriendsAPI.Business.Implementations {
         {
             return _repository.FindByEmail(email);
         }
+
+        public List<AlunoAtividadeViewModel> GetResultadoAtividadeViewModels(long id)
+        {
+            var aluno = _repository.FindByID(id);
+            return  _repository.FindAlunoMediaAtividade(aluno);
+            
+        }
     }
 }
