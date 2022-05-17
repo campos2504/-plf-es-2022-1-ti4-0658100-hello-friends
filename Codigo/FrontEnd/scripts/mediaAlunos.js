@@ -17,7 +17,7 @@ function mediaAlunos() {
           tabela_mediaAlunos = tabela_mediaAlunos + ` 
                     <tr id="tb">
                       <td id="tb">
-                            <a onclick="" href="">
+                            <a onclick="selecionarAluno(${data[i].id})" href="listaAtividadesDoAluno.html">
                                 <i id="${data[i].id}"">
                                     ${data[i].nomeCompleto}
                                 </i>                              
@@ -49,3 +49,15 @@ function mediaAlunos() {
     })
 }
 mediaAlunos();
+
+
+
+
+function selecionarAluno(event) {
+
+  console.log(event);
+
+  if (event) {
+    localStorage.setItem('visualizarAtivAluno', JSON.stringify({ event }));
+  };
+};
