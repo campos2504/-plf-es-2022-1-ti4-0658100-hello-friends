@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using HelloFriendsAPI.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace HelloFriendsAPI.Repositorys.Implementations {
     public class AlunoRepositoryImplementation : IAlunoRepository {
@@ -119,10 +120,10 @@ namespace HelloFriendsAPI.Repositorys.Implementations {
             var idAluno = aluno.Id;
 
             var listaModulos = _context.Modulo.ToList();
-            var listaRespostaCompletaTexto = _context.RespostasCompletaTexto.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
-            var listaRespostaCompletaFrase = _context.RespostasCompleFrase.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
-            var listaRespostaVF = _context.RespostasVF.Where(p =>  p.AlunoId.Equals(idAluno)).ToList();
-            var listaRespostaOpcaoCerta = _context.RespostasOpcaoCerta.Where(p => p.AlunoId.Equals(idAluno)).ToList();
+            var listaRespostaCompletaTexto = _context.RespostasCompletaTexto.Where(p => p.AlunoId.Equals(idAluno)).Include(p => p.CompletaTexto).ToList();
+            var listaRespostaCompletaFrase = _context.RespostasCompleFrase.Where(p =>  p.AlunoId.Equals(idAluno)).Include(p => p.CompletaFrase).ToList();
+            var listaRespostaVF = _context.RespostasVF.Where(p =>  p.AlunoId.Equals(idAluno)).Include(p => p.VerdadeiroFalso).ToList();
+            var listaRespostaOpcaoCerta = _context.RespostasOpcaoCerta.Where(p => p.AlunoId.Equals(idAluno)).Include(p => p.OpcaoCerta).ToList();
 
 
 
