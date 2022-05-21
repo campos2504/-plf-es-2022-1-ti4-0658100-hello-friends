@@ -13,7 +13,12 @@ function mediaAlunos() {
       let tabela_mediaAlunos = "";
       // Montar texto HTML das atividades
       for (i = 0; i < data.length; i++) {           
-          var media = (data[i].media*100).toFixed(2);
+          var media;
+          if(data[i].media == "NaN"){
+            media = "Não iniciou"
+          }else{
+            media = ''.concat((data[i].media*100).toFixed(2), "%");
+          }
           tabela_mediaAlunos = tabela_mediaAlunos + ` 
                     <tr id="tb">
                       <td id="tb">
@@ -25,7 +30,7 @@ function mediaAlunos() {
 
                             <td>
                               <div class=">
-                                <h3 class=""><span id=""></span>${media}%</h3>
+                                <h3 class=""><span id=""></span>${media}</h3>
                               </div>
                            </td>
                            <td>
@@ -33,11 +38,6 @@ function mediaAlunos() {
                                 <h3 class=""><span id=""></span>${data[i].atividadesFeitas}</h3>
                               </div>
                            </td>
-                           <td>
-                           <div class=">
-                             <h3 class=""><span id=""></span>${data[i].totalAtividades}</h3>
-                           </div>
-                        </td>
                        </td>                               
                     </tr>
                     `;
