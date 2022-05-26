@@ -1,4 +1,5 @@
 ﻿using HelloFriendsAPI.Model;
+using HelloFriendsAPI.ViewModels;
 using System.Collections.Generic;
 
 namespace HelloFriendsAPI.Repositorys {
@@ -7,6 +8,7 @@ namespace HelloFriendsAPI.Repositorys {
         Modulo Create(Modulo modulo);
         Modulo FindByID(long id);
         List<Modulo> FindAll();
+        List<ModuloGraficoViewModel> FindMQtdModulosConcluidos();
         Modulo Update(Modulo modulo);
         void Delete(long id);
         bool Exists(long id);

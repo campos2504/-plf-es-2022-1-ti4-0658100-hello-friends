@@ -47,5 +47,10 @@ namespace HelloFriendsAPI.Business.Implementations {
         {
             return _repository.FindMedalha(idModulo, idAluno);
         }
+
+        public List<ModuloGraficoViewModel> FindMQtdModulosConcluidos()
+        {
+            return _repository.FindMQtdModulosConcluidos();
+        }
     }
 }

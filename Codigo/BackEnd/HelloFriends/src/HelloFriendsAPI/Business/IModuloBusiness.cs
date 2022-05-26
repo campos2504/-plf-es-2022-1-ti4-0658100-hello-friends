@@ -8,6 +8,7 @@ namespace HelloFriendsAPI.Business {
         Modulo Create(ModuloViewModel modulo);
         Modulo FindByID(long id);
         List<Modulo> FindAll();
+        List<ModuloGraficoViewModel> FindMQtdModulosConcluidos();
         Modulo Update(ModuloViewModel modulo);
         void Delete(long id);
         string FindMedalha(long idModulo, long idAluno);

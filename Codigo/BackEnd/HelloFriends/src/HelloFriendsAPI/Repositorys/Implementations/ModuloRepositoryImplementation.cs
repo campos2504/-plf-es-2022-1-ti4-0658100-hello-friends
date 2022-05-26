@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using HelloFriendsAPI.ViewModels;
 
 namespace HelloFriendsAPI.Repositorys.Implementations
 {
@@ -158,6 +159,27 @@ namespace HelloFriendsAPI.Repositorys.Implementations
 
 
             return tipoMedalha;
+        }
+
+        public List<ModuloGraficoViewModel> FindMQtdModulosConcluidos()
+        {
+            var listaModulos = _context.Medalha.ToList();
+            var listaModulosConcluidos = listaModulos.Select(p => p.ModuloId).Distinct().ToList();
+
+            var result = new List<ModuloGraficoViewModel>();
+
+            ModuloGraficoViewModel moduloGraficoViewModel;
+
+            for (int i = 0; i < listaModulosConcluidos.Count; i++)
+            {
+                var qtd = listaModulos.Where(p => p.ModuloId == listaModulosConcluidos[i]).Count();
+                moduloGraficoViewModel = new ModuloGraficoViewModel();
+                moduloGraficoViewModel.NomeModulo = _context.Modulo.SingleOrDefault(p => p.Id.Equals(listaModulosConcluidos[i])).NomeModulo;
+                moduloGraficoViewModel.Repeticoes = qtd;
+                result.Add(moduloGraficoViewModel);
+            }
+            
+            return result;
         }
     }
 }
