@@ -65,6 +65,21 @@ namespace HelloFriendsAPI.Controllers {
             return Ok(respostas);
         }
 
+
+        [ClaimsAuthorize("modulos", "retornar")]
+        [HttpGet("qtdModulosConcluidos")]
+        public IActionResult FindMQtdModulosConcluidos()
+        {
+            var respostas = _moduloBusiness.FindMQtdModulosConcluidos();
+
+            if (respostas == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(respostas);
+        }
+
         [ClaimsAuthorize("modulos", "criar")]
         [HttpPost]
         public IActionResult Post([FromBody] ModuloViewModel modulo) {

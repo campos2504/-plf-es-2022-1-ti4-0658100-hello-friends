@@ -34,6 +34,7 @@ function atualizaMedalha() {
     .then((data) => {
       let tela = document.getElementById('medalhas');
       let strHtml = "";
+      console.log(data);
       // Montar texto HTML das medalhas
       let idAluno = recuperaIdAluno();
       for (i = 0; i < data.length; i++) {
@@ -46,7 +47,7 @@ function atualizaMedalha() {
         let medalha = buscarMedalha(data[i].id);
 
         if (ehAluno()) {
-          escolhaMedalha(data[i].id, dados, medalha);
+          escolhaMedalha(data[i].id, dados, medalha, data[i].nomeModulo);
         }
 
       };
@@ -64,23 +65,23 @@ function atualizaMedalha() {
     })
 }
 
-function escolhaMedalha(id, dados, medalha) {
+function escolhaMedalha(id, dados, medalha, nomeModulo) {
   if (dados == "Ouro") {
     ouro += 1;
     if (medalha.tipoMedalha == null) {
-      alert("Parabéns, você conclui o módulo" + id);
+      alert("Parabéns, você conclui o módulo " + nomeModulo);
       medalhaGanha(dados, id, medalha);
     }
   } else if (dados == "Prata") {
     prata += 1;
     if (medalha.tipoMedalha == null) {
-      alert("Parabéns, você conclui o módulo" + id);
+      alert("Parabéns, você conclui o módulo " + nomeModulo);
       medalhaGanha(dados, id, medalha);
     }
   } else if (dados == "Bronze") {
     bronze += 1;
     if (medalha.tipoMedalha == null) {
-      alert("Parabéns, você conclui o módulo" + id);
+      alert("Parabéns, você conclui o módulo " + nomeModulo);
       medalhaGanha(dados, id, medalha);
     }
   } else if (dados == "Sem medalha") {
