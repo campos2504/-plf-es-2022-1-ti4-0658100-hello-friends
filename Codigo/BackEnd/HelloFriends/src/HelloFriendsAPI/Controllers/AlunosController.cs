@@ -96,7 +96,7 @@ namespace HelloFriendsAPI.Controllers {
 
             var aluno = _alunoBusiness.FindByEmail(email);
 
-            if (email != "joyce@gmail.com")
+            if (email != "joyce.lopes@gmail.com")
             {
                 aluno.ImagemSrc = String.Format("{0}://{1}{2}/Images/{3}", Request.Scheme, Request.Host, Request.PathBase, aluno.Imagem);
             }            
