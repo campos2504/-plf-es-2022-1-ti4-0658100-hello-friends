@@ -16,3 +16,12 @@ g rect{
     display: flex;
     justify-content: center !important;
 }
+
+.graficoMedalha{
+
+    margin-bottom: 80px;
+}
+
+.graficoModulo{
+    margin-bottom: 80px;
+}

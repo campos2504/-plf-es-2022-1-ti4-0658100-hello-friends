@@ -14,14 +14,14 @@ function getMedalha() {
   }
 
   function getModulo() {
-    let baseURLModulo = `https://localhost:44327/api/modulos`;
+    let baseURLModulo = `https://localhost:44327/api/modulos/qtdModulosConcluidos`;
     let request = new XMLHttpRequest();
     request.open('GET', baseURLModulo, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
     request.send();
     const dadosModulo = request.responseText;
     var objetoModulo = JSON.parse(dadosModulo);
-    console.log("modulo" + dadosModulo);
+    console.log("modulo" + objetoModulo);
     return objetoModulo;
   }
 getModulo();
@@ -54,7 +54,7 @@ function desenharBarraMedalhas() {
 
     let tabela = new google.visualization.DataTable();
     tabela.addColumn('string', 'categorias');
-    tabela.addColumn('number', 'quantidade');
+    tabela.addColumn('number', 'quantidade de medalhas');
     tabela.addRows([
 
     ]);
@@ -84,48 +84,26 @@ function desenharBarraMedalhas() {
 }
 google.charts.setOnLoadCallback(desenharBarraMedalhas);
 
+
 //Gráfico de barra - quantidade de Modulos feitos
 function desenharBarraModulos() {
 
-    let alunosFinalizaramModulo = getMedalha(); 
     let modulos = getModulo();
     var ListaNomeModulos = new Array;
-    var ListaQuantAlunosFinalizaramModulo = new Array(modulos.length);
-    let guardaPosicaoListaModulo = 0;
+    var ListaQuantAlunosFinalizaramModulo = new Array;
     
     for (i = 0; i < modulos.length; i++) {
-        if(modulos[i].id == i && ListaNomeModulos.indexOf(modulos[i].nomeModulo) == (-1)){
-            ListaNomeModulos.push(modulos[i].nomeModulo);
-        }
-
-      /*  if(ListaNomeModulos.some(modulos[i].nomeModulo) == false){
-            ListaNomeModulos.filter((nome) => nome !== modulos[i].nomeModulo);
-        }*/
-    }
-    for (i = 0; i < modulos.length; i++) {
-    ListaQuantAlunosFinalizaramModulo[i] = 0;
+        ListaNomeModulos.push(modulos[i].nomeModulo);
+        ListaQuantAlunosFinalizaramModulo.push(modulos[i].repeticoes);
     }
 
-    for (i = 0; i < modulos.length; i++) {
-        guardaPosicaoListaModulo = ListaNomeModulos.indexOf(modulos[i].nomeModulo);
-        if(guardaPosicaoListaModulo != -1){
-            for (j = 0; j < modulos.length; j++){
-                if(alunosFinalizaramModulo[j].id == modulos[i].id)
-               ListaQuantAlunosFinalizaramModulo[guardaPosicaoListaModulo] += 1
-            }
-        }
-
-        /*  if(ListaNomeModulos.some(modulos[i].nomeModulo) == false){
-            ListaNomeModulos.filter((nome) => nome !== modulos[i].nomeModulo);
-        }*/
-    }
     
-console.log(ListaNomeModulos);
-console.log(ListaQuantAlunosFinalizaramModulo);
+console.log('!!' + ListaNomeModulos);
+console.log('111!!' + ListaQuantAlunosFinalizaramModulo);
 
     let tabela = new google.visualization.DataTable();
     tabela.addColumn('string', 'categorias');
-    tabela.addColumn('number', 'quantidade');
+    tabela.addColumn('number', 'Quantidade de alunos que finalizaram o módulo');
     tabela.addRows([
 
     ]);
