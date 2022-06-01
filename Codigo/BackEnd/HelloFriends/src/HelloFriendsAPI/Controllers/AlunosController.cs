@@ -43,6 +43,38 @@ namespace HelloFriendsAPI.Controllers {
             });
             return Ok(resultado);
         }
+        
+        [ClaimsAuthorize("gestaoalunos", "retornar")]
+        [HttpGet("media")]
+        public IActionResult GetMedia()
+        {
+            List<AlunoMediaViewModel> alunoMedia = _alunoBusiness.GetMedia();
+            var resultado = alunoMedia.Select(x => new AlunoMediaViewModel()
+            {
+                Id = x.Id,
+                NomeCompleto = x.NomeCompleto,
+                Media = x.Media,
+                TotalAtividades = x.TotalAtividades,
+                AtividadesFeitas = x.AtividadesFeitas
+            });
+            return Ok(resultado);
+        }
+        [ClaimsAuthorize("gestaoalunos", "retornar")]
+        [HttpGet("notas/{id}")]
+        public IActionResult GetNotasAluno(long id)
+        {
+            List<AlunoAtividadeViewModel> alunoAtividade = _alunoBusiness.GetResultadoAtividadeViewModels(id);
+            var resultado = alunoAtividade.Select(x => new AlunoAtividadeViewModel()
+            {
+                IdAluno = x.IdAluno,
+                NomeCompleto = x.NomeCompleto,
+                IdModulo=x.IdModulo,
+                NomeModulo=x.NomeModulo,
+                NomeAtividade=x.NomeAtividade,
+                Resultado=x.Resultado
+            });
+            return Ok(resultado);
+        }
 
         [ClaimsAuthorize("gestaoalunos", "retornar")]
         [HttpGet("{id}")]
@@ -64,7 +96,7 @@ namespace HelloFriendsAPI.Controllers {
 
             var aluno = _alunoBusiness.FindByEmail(email);
 
-            if (email != "joyce@gmail.com")
+            if (email != "joyce.lopes@gmail.com")
             {
                 aluno.ImagemSrc = String.Format("{0}://{1}{2}/Images/{3}", Request.Scheme, Request.Host, Request.PathBase, aluno.Imagem);
             }            

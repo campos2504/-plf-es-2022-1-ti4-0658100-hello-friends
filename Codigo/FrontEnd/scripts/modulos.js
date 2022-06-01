@@ -22,7 +22,6 @@ function imprimeDados() {
 
       let tela = document.getElementById('content');
       let strHtml = "";
-      console.log(data);
       // Montar texto HTML dos módulos
       for (i = 0; i < data.length; i++) {
 

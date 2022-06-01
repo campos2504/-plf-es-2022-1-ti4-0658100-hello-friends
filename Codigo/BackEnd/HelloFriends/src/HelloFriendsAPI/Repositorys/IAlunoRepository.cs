@@ -1,5 +1,6 @@
 ﻿using HelloFriendsAPI.Model;
 using System.Collections.Generic;
+using HelloFriendsAPI.ViewModels;
 
 namespace HelloFriendsAPI.Repositorys {
     public interface IAlunoRepository {
@@ -11,5 +12,7 @@ namespace HelloFriendsAPI.Repositorys {
         void Delete(long id);
         bool Exists(long id);
         Aluno FindByEmail(string email);
+        AlunoMediaViewModel FindMediaAluno(Aluno aluno);
+        List<AlunoAtividadeViewModel> FindAlunoMediaAtividade(Aluno aluno);
     }
 }

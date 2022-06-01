@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Web.Http.OData;
 
 namespace HelloFriendsAPI.Business {
-    public interface IAlunoBusiness {
+    public interface IAlunoBusiness
+    {
 
         Aluno Create(AlunoViewModel aluno);
         Aluno FindByID(long id);
@@ -14,5 +15,8 @@ namespace HelloFriendsAPI.Business {
         Aluno Update(AlunoViewModel aluno);
         Aluno Autorizar(long id, AlunoAuthViewModel aluno);
         void Delete(long id);
+        List<AlunoMediaViewModel> GetMedia();
+        List<AlunoAtividadeViewModel> GetResultadoAtividadeViewModels(long id);
+
     }
 }

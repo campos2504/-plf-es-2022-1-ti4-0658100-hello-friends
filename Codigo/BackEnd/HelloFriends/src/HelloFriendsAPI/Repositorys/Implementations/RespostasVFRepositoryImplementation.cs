@@ -1,6 +1,7 @@
 ﻿using HelloFriendsAPI.Business.Implementations;
 using HelloFriendsAPI.Model;
 using HelloFriendsAPI.Repositorys.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,8 +58,10 @@ namespace HelloFriendsAPI.Repositorys.Implementations
 
             public List<RespostasVF> FindAll()
             {
-                return _context.RespostasVF.ToList();
-            }
+            var result = _context.RespostasVF.Include(p => p.Aluno).Include(p => p.VerdadeiroFalso).ToList();
+
+            return result;
+        }
 
         public RespostasVF FindByAlunoAtividade(long idAluno, Guid idAtividade)
         {

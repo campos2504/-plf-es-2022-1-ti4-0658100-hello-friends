@@ -1,0 +1,18 @@
+.grafico{
+    display: flex;
+    justify-content: center;
+}
+
+rect{
+    fill: rgba(255, 255, 255, 0.39) !important;
+}
+
+g rect{
+    fill: rgb(71, 99, 177) !important;
+}
+
+.sr{
+    font-size: 30px;
+    display: flex;
+    justify-content: center !important;
+}

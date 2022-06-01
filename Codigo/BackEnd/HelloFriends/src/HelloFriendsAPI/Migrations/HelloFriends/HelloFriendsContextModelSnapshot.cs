@@ -88,6 +88,29 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                     b.ToTable("CompletaTexto");
                 });
 
+            modelBuilder.Entity("HelloFriendsAPI.Model.Medalha", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("AlunoId");
+
+                    b.Property<bool>("ModuloConcluido");
+
+                    b.Property<long>("ModuloId");
+
+                    b.Property<string>("TipoMedalha");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlunoId");
+
+                    b.HasIndex("ModuloId");
+
+                    b.ToTable("Medalha");
+                });
+
             modelBuilder.Entity("HelloFriendsAPI.Model.Modulo", b =>
                 {
                     b.Property<long>("Id")
@@ -267,6 +290,19 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
 
             modelBuilder.Entity("HelloFriendsAPI.Model.CompletaTexto", b =>
                 {
+                    b.HasOne("HelloFriendsAPI.Model.Modulo", "Modulo")
+                        .WithMany()
+                        .HasForeignKey("ModuloId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("HelloFriendsAPI.Model.Medalha", b =>
+                {
+                    b.HasOne("HelloFriendsAPI.Model.Aluno", "Aluno")
+                        .WithMany()
+                        .HasForeignKey("AlunoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("HelloFriendsAPI.Model.Modulo", "Modulo")
                         .WithMany()
                         .HasForeignKey("ModuloId")
