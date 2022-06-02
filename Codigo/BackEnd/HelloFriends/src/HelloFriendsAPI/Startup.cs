@@ -88,6 +88,8 @@ namespace HelloFriendsAPI
             services.AddScoped<IRespostasCompletaTextoBusiness, RespostasCompletaTextoBusinessImplementation>();
             services.AddScoped<IMedalhaBusiness, MedalhaBusinessImplementation>();
             services.AddScoped<IMedalhaRepository,MedalhaRepositoryImplementation>();
+            services.AddScoped<IContratoBusiness, ContratoBusinessImplementation>();
+            services.AddScoped<IContratoRepository, ContratoRepositoryImplementation>();
 
             services.AddSingleton(mapper);
 

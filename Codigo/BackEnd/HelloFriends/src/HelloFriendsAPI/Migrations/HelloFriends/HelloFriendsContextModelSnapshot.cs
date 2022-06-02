@@ -88,6 +88,57 @@ namespace HelloFriendsAPI.Migrations.HelloFriends
                     b.ToTable("CompletaTexto");
                 });
 
+            modelBuilder.Entity("HelloFriendsAPI.Model.Contrato", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Bairro");
+
+                    b.Property<string>("CargaHorariaSemanal");
+
+                    b.Property<string>("Cep");
+
+                    b.Property<string>("Ci");
+
+                    b.Property<string>("Cidade");
+
+                    b.Property<string>("Cpf");
+
+                    b.Property<DateTime>("DataFinalContrato");
+
+                    b.Property<DateTime>("DataInicioContrato");
+
+                    b.Property<string>("DiaAula");
+
+                    b.Property<string>("Endereco");
+
+                    b.Property<string>("Estado");
+
+                    b.Property<string>("EstadoCivil");
+
+                    b.Property<string>("Horario");
+
+                    b.Property<string>("Nacionalidade");
+
+                    b.Property<string>("NomeAluno");
+
+                    b.Property<string>("NomeResponsavel");
+
+                    b.Property<string>("Numero");
+
+                    b.Property<string>("Profissao");
+
+                    b.Property<string>("ValorExtensoMensalidade");
+
+                    b.Property<double>("ValorMensalidade");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contrato");
+                });
+
             modelBuilder.Entity("HelloFriendsAPI.Model.Medalha", b =>
                 {
                     b.Property<long>("Id")
