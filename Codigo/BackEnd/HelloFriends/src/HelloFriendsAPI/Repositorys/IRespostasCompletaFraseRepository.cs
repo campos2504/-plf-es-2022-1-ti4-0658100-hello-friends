@@ -11,7 +11,7 @@ namespace HelloFriendsAPI.Repositorys.Implementations
         RespostasCompleFrase FindByAlunoAtividade(long idAluno, Guid idAtividade);
         List<RespostasCompleFrase> FindByModuloAluno(long idModulo, long idAluno);
         List<RespostasCompleFrase> FindAll();
-        RespostasCompleFrase Update(RespostasCompleFrase respostasOpcaoCerta);
+        RespostasCompleFrase Update(RespostasCompleFrase respostasCompleFrase);
         void Delete(long id);
         bool Exists(long id);
     }
