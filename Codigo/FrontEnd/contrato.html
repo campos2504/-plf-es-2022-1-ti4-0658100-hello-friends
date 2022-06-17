@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrato</title>
+  <link rel="stylesheet" href="styles/contrato.css">
+  <link rel="stylesheet" href="styles/menuProfessor.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+
+<body class="container-fluid sem-margin custom-body">
+
+  <header class="container-fluid header sem-margin">
+    <div class="cont"><img src="img/Fundo de tela.jpg" class="imagemFundo" alt=""></div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="form-group fotoMenu">
+        <div class="imageMenu mb-lg-0 mb-sm-5 ">
+          <div id="newMenu">
+          </div>
+          <img src="img/profile.jpg" alt="SemFoto" id="fotoUsuario">
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li id="editarCadastroNav" class="nav-item tp">
+            <a class="nav-link" href="updateCadastro.html">Editar Cadastro <svg xmlns="http://www.w3.org/2000/svg"
+                width="20" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path
+                  d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+              </svg></a>
+          </li>
+          <li id="aprovarCadastroNav" class="nav-item tp">
+            <a class="nav-link" href="aprovarCadastro.html">Aprovar Cadastro</a>
+          </li>
+          <li class="nav-item tp">
+            <a class="nav-link" href="modulos.html">Módulos Atividades</a>
+          </li>
+          <li id="cancelarCadastroNav" class="nav-item tp">
+            <a class="nav-link" href="cancelarCadastro.html">Cancelar Cadastros</a>
+          </li>
+          <li id="mediaAlunosNav" class="nav-item tp">
+            <a class="nav-link" href="listaMediaAlunos.html">Média alunos</a>
+          </li>
+          <li id="graficoAlunos" class="nav-item tp">
+            <a class="nav-link" href="Grafico.html">Gráfico Alunos</a>
+          </li>
+          <li class="nav-item sobre ml-5 ml-lg-5 ml-md-0 ml-sm-0">
+            <a class="nav-link " href="Sobre.html">SOBRE</a>
+          </li>
+          <li id="medalhas" class="nav-item">
+            
+          </li>
+        </ul>
+        <li id="botaoDeslogar" class="nav-item tp sair">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+            class="bi bi-door-open-fill sair" viewBox="0 0 16 16">
+            <path
+              d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+          </svg>
+        </li>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-fluid main-content sem-margin">
+    <div class="modulo">
+      <div class="row bemVindo">
+        <h3 class="mensagem">Welcome, <span id="nomeUsuarioCorrente"></span>!</h3>
+      </div>
+
+      <!-- Linha separação -->
+      <div>
+        <hr>
+      </div>
+
+      <!-- Contrato -->
+      <div class="row" id="content2">
+
+      </div>
+
+      <!-- Contrato -->
+      <!--
+      <div class="row" id="content">
+        <div id="contrato" style="text-align: justify;">
+            <h1 style="text-align: center;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE ENSINO DE LÍNGUA ESTRANGEIRA</h1><br/>
+            <h1 style="text-align: center;">IDENTIFICAÇÃO DAS PARTES CONTRATANTES </h1><br/>
+            <p>CONTRATANTE: 
+              <span id="nomeContratante"></span>, 
+              <span id="nacionalidade"></span>, 
+              <span id="estadoCivil"></span>, 
+              <span id="profissao"></span>, 
+              Carteira de Identidade nº 
+              <span id="ci"></span>, 
+              C.P.F. nº 
+              <span id="cpf"></span>, 
+              residente na 
+              <span id="endereco"></span>, 
+              nº 
+              <span id="numero"></span>, bairro: 
+              <span id="bairro"></span>, Cidade: 
+              <span id="cidade"></span>, 
+              CEP: 
+              <span id="cep"></span>, no Estado de 
+              <span id="estado"></span>, 
+              RESPONSÁVEL pela(s) aluna(s): 
+              <span id="nomeAluno"></span>.<br/></p>
+            <p>
+              CONTRATADA: Joyce Adriana Lopes da Silva Lacerda, professora de Inglês, Carteira de Identidade nº MG 11475568, C.P.F. nº 012.784.816-99, residente na Rua H, nº 26, bairro: Vila Militar, Cep 32044 - 466, na Cidade de Contagem, no Estado de Minas Gerais.
+            </p>  
+            <p>
+              As partes acima identificadas têm, entre si, justo e acertado o presente Contrato de Prestação de Serviços de Ensino de Língua Estrangeira, que se regerá pelas cláusulas seguintes e pelas condições descritas no presente.
+            </p>
+            <h1 style="text-align: center;">DO OBJETO DO CONTRATO</h1><br/>
+            <p>
+              Cláusula 1ª. O presente contrato tem como objeto a prestação, pela CONTRATADA ao CONTRATANTE, dos serviços de ensino do idioma Inglês.      
+            </p>
+            <h1 style="text-align: center;">DAS AULAS</h1><br/>
+            <p>
+              Cláusula 2ª. As aulas serão ministradas aos
+              <span id="diaAula"></span>
+              , no horário de 
+              <span id="horario"></span> , 
+              totalizando a carga horária semanal de 
+              <span id="cargaHorariaSemanal"></span> 
+              horas, ressalvando o caso de feriados, que serão devidamente compensados em horário a ser acertado posteriormente.
+            </p>
+            <h1 style="text-align: center;">DA FREQUÊNCIA</h1><br/>
+            <p>
+              Cláusula 3ª. A fim de que possa receber o certificado ao final do curso, o CONTRATANTE não deverá se ausentar por mais de 25% (vinte e cinco por cento) das aulas.
+            </p>
+            <h1 style="text-align: center;">DO PAGAMENTO</h1><br/>
+            <p>
+              Cláusula 4ª. Pelos serviços prestados, o CONTRATANTE pagará à CONTRATADA o valor mensal de 
+              <span id="valorMensalidade"></span> 
+              (<span id="valorExtensoMensalidade"></span>), sendo o pagamento à vista em dinheiro ou PIX, a serem pagos até o dia 10 (dez) de cada mês.
+            </p>
+            <h1 style="text-align: center;">DA RESCISÃO</h1><br/>
+            <p>
+              Cláusula 5ª. O presente contrato poderá ser rescindido caso o CONTRATANTE avise a CONTRATADA com antecedência de 30 (trinta) dias, devendo estar pagas todas as parcelas até este momento, mensais ou proporcional às aulas ministradas.<br/><br/>
+              Cláusula 6ª. O presente instrumento também será rescindido caso o CONTRATANTE deixe de pagar a mensalidade após 15 (quinze) dias do vencimento.
+            </p>
+            <h1 style="text-align: center;">DO PRAZO</h1><br/>
+            <p>
+              Cláusula 7ª. O presente contrato terá validade entre o periodo de 
+              <span id="dataInicioContrato"></span> ao dia 
+              <span id="dataFinalContrato"></span>
+              .
+            </p>
+            <h1 style="text-align: center;">CONDIÇÕES GERAIS</h1><br/>
+            <p>
+              Cláusula 8ª. Ao final deste contrato, o CONTRATANTE receberá um certificado de proficiência do curso.<br/><br/>
+              Cláusula 9ª. Não se incluem neste contrato os serviços de reforço e reciclagem, e o fornecimento de material didático utilizado no curso.
+            </p>
+            <h1 style="text-align: center;">DO FORO</h1><br/>
+            <p>
+              Cláusula 10ª. Para dirimir quaisquer controvérsias oriundas do contrato, as partes elegem o foro da comarca de Contagem.<br/><br/>
+              Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de igual teor.
+            </p>
+            <p>
+              Contagem, xx de xx de 2022
+            </p>
+            <div>
+              <p>
+                 Contratante: <hr>
+              </p>
+              <p>
+                Contratada: <hr>
+              </p>
+            </div>
+            <br>
+        </div>
+        <p>
+          <input type="button" value="Criar PDF" id="btnImprimir" onclick="CriaPDF()" />
+      </p>
+        <br>
+        <br>
+        <br>
+      </div>-->
+
+      <!-- Modal adição módulo -->
+      <div class="row ">
+        <div class="modal" tabindex="-1" role="dialog" id="modalInclusaoContrato">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Incluir Contrato - Dados responsável</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="nomeResponsavel">Nome do responsável</label>
+                  <input type="text" name="nomeResponsavel" id="nomeResponsavel" maxlength="20" class="form-control">
+
+                  <label for="nacionalidade">Nacionalidade</label>
+                  <input type="text" name="nacionalidade" id="nacionalidade" maxlength="20" class="form-control">
+
+                  <label for="estadoCivil">Estado civil</label>
+                  <input type="text" name="estadoCivil" id="estadoCivil" maxlength="20" class="form-control">
+
+                  <label for="profissao">Profissão</label>
+                  <input type="text" name="profissao" id="profissao" maxlength="20" class="form-control">
+
+                  <label for="carteiraIdentidade">Carteira de Identidade</label>
+                  <input type="text" name="carteiraIdentidade" id="carteiraIdentidade" maxlength="20" class="form-control">
+
+                  <label for="cpf">CPF</label>
+                  <input type="text" name="cpf" id="cpf" maxlength="20" class="form-control">
+
+                  <label for="endereco">Endereço</label>
+                  <input type="text" name="endereco" id="endereco" maxlength="20" class="form-control">
+
+                  <label for="numero">Numero</label>
+                  <input type="text" name="numero" id="numero" maxlength="20" class="form-control">
+
+                  <label for="bairro">Bairro</label>
+                  <input type="text" name="bairro" id="bairro" maxlength="20" class="form-control">
+
+                  <label for="cidade">Cidade</label>
+                  <input type="text" name="cidade" id="cidade" maxlength="20" class="form-control">
+
+                  <label for="estado">Estado</label>
+                  <input type="text" name="estado" id="estado" maxlength="20" class="form-control">
+
+                  <label for="cep">CEP</label>
+                  <input type="text" name="cep" id="cep" maxlength="20" class="form-control">
+
+                  <label for="nomeAluno">Nome Aluno</label>
+                  <input type="text" name="nomeAluno" id="nomeAluno" maxlength="20" class="form-control">
+
+                  <label for="diasAula">Dias das aulas</label>
+                  <input placeholder="Ex.: segunda-feira" type="text" name="diasAula" id="diasAula" maxlength="20" class="form-control">
+
+                  <label for="horario">Horário</label>
+                  <input placeholder="Ex.: 10:00 às 12:00" type="text" name="horario" id="horario" maxlength="20" class="form-control">
+
+                  <label for="mensalidade">Valor da mensalidade</label>
+                  <input placeholder="Ex.: 100" type="value" name="mensalidade" id="mensalidade" maxlength="20" class="form-control">
+
+                  <label for="mensalidadeExtenso">Valor da mensalidade por extenso</label>
+                  <input placeholder="Ex.: Cem reais" type="text" name="mensalidadeExtenso" id="mensalidadeExtenso" maxlength="100" class="form-control">
+
+                  <label for="txtmail" class=" col-form-label">Data de início do contrato:</label>
+                  <input placeholder="Data Início Contrato" type="date" id="datepicker" class="form-control" 
+                  value="1900-01-01">
+
+                  <label for="txtmail" class=" col-form-label">Data final do contrato:</label>
+                  <input placeholder="Data Final Contrato" type="date" id="datepicker" class="form-control" 
+                  value="1900-01-01">
+
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="btn_incluir" class="btn btn-primary"
+                  onclick="formModulo.submit(event)">Incluir</button>
+                <button type="button" id="btn_cancelar" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Botão adicionar -->
+      <div id="botaoAdicaoContrato" class="incluir-tarefaContrato my-5" style="width: 110px; height: 200px;">
+        <button type="button" class="btn btn-circle btn-sm incluirContrato my-5" data-toggle="modal"
+          style="background-color: #0C6C7A;" data-target="#modalInclusaoContrato"><svg width="0em" height="2em"
+            viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
+            <path fill="#ffdf2b" fill-rule="evenodd"
+              d="M11.75 4.5a.75.75 0 01.75.75V11h5.75a.75.75 0 010 1.5H12.5v5.75a.75.75 0 01-1.5 0V12.5H5.25a.75.75 0 010-1.5H11V5.25a.75.75 0 01.75-.75z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer-aplicacao" class="container-fluid footer">
+    <div class="row">
+      <div class="col-12 footer_area">
+        Copyright 2022 - Trabalho Interdisciplinar PUCMG - HelloFriends
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/validarLogin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"
+    integrity="sha512-/DXTXr6nQodMUiq+IUJYCt2PPOUjrHJ9wFrqpJ3XkgPNOZVfMok7cRw6CSxyCQxXn6ozlESsSh1/sMCTF1rL/g=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="scripts/carregarFotoUsuario.js"></script>
+  <script src="scripts/mensagemBoasVindas.js"></script>
+  <script src="scripts/contrato.js"></script>
+  <script>
+    validarLogin();
+
+    function initPage() {
+      document.getElementById('botaoDeslogar').addEventListener('click', deslogarUsuario);      
+      
+      if (ehAluno()) {
+        document.getElementById('botaoAdicaoContrato').style.display = "none";
+        document.getElementById('aprovarCadastroNav').style.display = "none";
+        document.getElementById('cancelarCadastroNav').style.display = "none";
+        document.getElementById('mediaAlunosNav').style.display = "none";
+      }
+
+      if (!(ehAluno())) {
+        document.getElementById('editarCadastroNav').style.display = "none";
+        document.getElementById('medalhas').style.display = "none";
+      }
+    }
+
+    window.addEventListener('load', initPage);
+  </script>
+</body>
+<script>
+  /*function CriaPDF() {
+
+    let baseURLBuscaMedalhas = `https://localhost:44327/api/contrato`;
+    let request = new XMLHttpRequest();
+    request.open('GET', baseURLBuscaMedalhas, false);
+    request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
+    request.send();
+    const dados = request.responseText;
+    var contrato = JSON.parse(dados);
+    console.log(contrato);
+
+      document.getElementById('nomeContratante').innerHTML = contrato[0].nomeResponsavel;
+      document.getElementById('nacionalidade').innerHTML = contrato[0].nacionalidade;
+      document.getElementById('estadoCivil').innerHTML = contrato[0].estadoCivil;
+      document.getElementById('profissao').innerHTML = contrato[0].profissao;
+      document.getElementById('ci').innerHTML = contrato[0].ci;
+      document.getElementById('cpf').innerHTML = contrato[0].cpf;
+      document.getElementById('endereco').innerHTML = contrato[0].endereco;
+      document.getElementById('numero').innerHTML = contrato[0].numero;
+      document.getElementById('bairro').innerHTML = contrato[0].bairro;
+      document.getElementById('cidade').innerHTML = contrato[0].cidade;
+      document.getElementById('estado').innerHTML = contrato[0].estado;
+      document.getElementById('cep').innerHTML = contrato[0].cep;
+      document.getElementById('nomeAluno').innerHTML = contrato[0].nomeAluno;
+      document.getElementById('diaAula').innerHTML = contrato[0].diaAula;
+      document.getElementById('horario').innerHTML = contrato[0].horario;
+      document.getElementById('cargaHorariaSemanal').innerHTML = contrato[0].cargaHorariaSemanal;
+      document.getElementById('valorMensalidade').innerHTML = contrato[0].valorMensalidade;
+      document.getElementById('valorExtensoMensalidade').innerHTML = contrato[0].valorExtensoMensalidade;
+      document.getElementById('dataInicioContrato').innerHTML = contrato[0].dataInicioContrato;
+      document.getElementById('dataFinalContrato').innerHTML = contrato[0].dataFinalContrato;
+
+
+      var minhaTabela = document.getElementById('contrato').innerHTML;
+      
+      var style = "<style>";
+      style = style + "table {width: 100%;font: 20px Calibri;}";
+      style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+      style = style + "padding: 2px 3px;text-align: center;}";
+      style = style + "</style>";
+      // CRIA UM OBJETO WINDOW
+      var win = window.open('', '', 'height=700,width=700');
+      win.document.write('<html><head>');
+      win.document.write('<title>Empregados</title>');   // <title> CABEÇALHO DO PDF.
+      win.document.write(style);                                     // INCLUI UM ESTILO NA TAB HEAD
+      win.document.write('</head>');
+      win.document.write('<body>');
+      win.document.write(minhaTabela);                          // O CONTEUDO DA TABELA DENTRO DA TAG BODY
+      win.document.close(); 	                                         // FECHA A JANELA
+      win.print();                                                            // IMPRIME O CONTEUDO
+  }*/
+</script>
+
+</html>
