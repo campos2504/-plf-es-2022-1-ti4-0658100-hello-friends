@@ -136,10 +136,10 @@ function CriaPDF() {
     // CRIA UM OBJETO WINDOW
     var win = window.open('', '', 'height=700,width=700');
     win.document.write('<html><head>');
-    win.document.write('<title>Empregados</title>');   // <title> CABEÇALHO DO PDF.                                  // INCLUI UM ESTILO NA TAB HEAD
+    win.document.write('<title>Contrato</title>');
     win.document.write('</head>');
     win.document.write('<body>');
-    win.document.write(contratoPreenchido);                          // O CONTEUDO DA TABELA DENTRO DA TAG BODY
-    win.document.close(); 	                                         // FECHA A JANELA
-    win.print();                                                            // IMPRIME O CONTEUDO
+    win.document.write(contratoPreenchido);
+    win.document.close();
+    win.print();
 }

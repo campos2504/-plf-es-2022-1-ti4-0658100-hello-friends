@@ -54,6 +54,9 @@
           <li id="graficoAlunos" class="nav-item tp">
             <a class="nav-link" href="Grafico.html">Gráfico Alunos</a>
           </li>
+          <li id="contratosAlunos" class="nav-item tp">
+            <a class="nav-link" href="relacaoContratos.html">Relação Contratos</a>
+          </li>
           <li class="nav-item sobre ml-5 ml-lg-5 ml-md-0 ml-sm-0">
             <a class="nav-link " href="Sobre.html">SOBRE</a>
           </li>
@@ -216,11 +219,15 @@
         document.getElementById('aprovarCadastroNav').style.display = "none";
         document.getElementById('cancelarCadastroNav').style.display = "none";
         document.getElementById('mediaAlunosNav').style.display = "none";
+        document.getElementById('contratosAlunos').style.display = "none";
+        document.getElementById('graficoAlunos').style.display = "none";
+        
       }
 
       if (!(ehAluno())) {
         document.getElementById('editarCadastroNav').style.display = "none";
         document.getElementById('medalhas').style.display = "none";
+            
       }
     }
 
