@@ -7,7 +7,7 @@ let imageBase64ModuloUpdate;
 let binaryString;
 let binaryStringUpdate;
 let idUpdate;
-const baseURL = `http://tishellofriends.azurewebsites.net/api/modulos`;
+const baseURL = `https://tishellofriends.azurewebsites.net/api/modulos`;
 
 /***
  * Imprime na tela os módulos já cadastrados.
@@ -180,7 +180,7 @@ const saveProviderModulo = (data) => {
   }
   const xhr = new XMLHttpRequest();
 
-  xhr.open('POST', 'http://tishellofriends.azurewebsites.net/api/modulos', true);
+  xhr.open('POST', 'https://tishellofriends.azurewebsites.net/api/modulos', true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
   xhr.onreadystatechange = () => {
@@ -303,7 +303,7 @@ const saveProviderModuloUpdate = (data) => {
   }
   const xhrUpdate = new XMLHttpRequest();
 
-  xhrUpdate.open('PUT', 'http://tishellofriends.azurewebsites.net/api/modulos', true);
+  xhrUpdate.open('PUT', 'https://tishellofriends.azurewebsites.net/api/modulos', true);
   xhrUpdate.setRequestHeader("Content-type", "application/json");
   xhrUpdate.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
 

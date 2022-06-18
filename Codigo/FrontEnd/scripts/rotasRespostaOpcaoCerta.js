@@ -1,4 +1,4 @@
-const urlRespostaOpcaoCerta = `http://tishellofriends.azurewebsites.net/api/respostasOpcaoCerta`;
+const urlRespostaOpcaoCerta = `https://tishellofriends.azurewebsites.net/api/respostasOpcaoCerta`;
 let alunoIdOpcaoCerta;
 
 //Recuperar informações do localStorage
@@ -42,7 +42,7 @@ function salvarRespostaOpcaoCerta(resultado){
 function getUserOpcaoCerta() {
 
   if(ehAluno()){
-    let urlUpdateAluno = ''.concat("http://tishellofriends.azurewebsites.net/api/alunos", '/email/', dadosAlunoOpcaoCerta);
+    let urlUpdateAluno = ''.concat("https://tishellofriends.azurewebsites.net/api/alunos", '/email/', dadosAlunoOpcaoCerta);
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
@@ -59,7 +59,7 @@ getUserOpcaoCerta();
 function getModuloAlunoOpcaoCerta() {
   
   let alunoIdOpcaoCerta = getUserOpcaoCerta();
-  let urlModuloAluno = ''.concat("http://tishellofriends.azurewebsites.net/api/respostasOpcaoCerta/", mIDopcaCerta,"/", alunoIdOpcaoCerta.id);
+  let urlModuloAluno = ''.concat("https://tishellofriends.azurewebsites.net/api/respostasOpcaoCerta/", mIDopcaCerta,"/", alunoIdOpcaoCerta.id);
 
     let request = new XMLHttpRequest();
     request.open('GET', urlModuloAluno, false);

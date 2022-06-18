@@ -1,6 +1,6 @@
 let dadosUsuario;
 let urlUpdateAluno;
-const urlFoto = 'http://tishellofriends.azurewebsites.net/api/alunos';
+const urlFoto = 'https://tishellofriends.azurewebsites.net/api/alunos';
 
 
 function carregarFotoUsuario() {

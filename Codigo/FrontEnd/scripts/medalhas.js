@@ -1,6 +1,6 @@
-const baseURLIdModulo = `http://tishellofriends.azurewebsites.net/api/modulos`;
+const baseURLIdModulo = `https://tishellofriends.azurewebsites.net/api/modulos`;
 let baseURLMedalhas;
-const medalhaURI = 'http://tishellofriends.azurewebsites.net/api/medalha';
+const medalhaURI = 'https://tishellofriends.azurewebsites.net/api/medalha';
 let idUsuario;
 let urlIdUsuario;
 let ouro = 0;
@@ -9,7 +9,7 @@ let bronze = 0;
 
 function recuperaIdAluno() {
   idUsuario = JSON.parse(localStorage.getItem('userToken'));
-  urlIdUsuario = ''.concat('http://tishellofriends.azurewebsites.net/api/alunos', '/email/', idUsuario.user.email);
+  urlIdUsuario = ''.concat('https://tishellofriends.azurewebsites.net/api/alunos', '/email/', idUsuario.user.email);
 
   let request = new XMLHttpRequest();
   request.open('GET', urlIdUsuario, false);
@@ -38,7 +38,7 @@ function atualizaMedalha() {
       // Montar texto HTML das medalhas
       let idAluno = recuperaIdAluno();
       for (i = 0; i < data.length; i++) {
-        baseURLMedalhas = `http://tishellofriends.azurewebsites.net/api/modulos/medalha/${data[i].id}/${idAluno}`
+        baseURLMedalhas = `https://tishellofriends.azurewebsites.net/api/modulos/medalha/${data[i].id}/${idAluno}`
         let request = new XMLHttpRequest();
         request.open('GET', baseURLMedalhas, false);
         request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
@@ -125,7 +125,7 @@ function medalhaGanha(medalha, id, buscaMedalha) {
 }
 
 function buscarMedalha(id) {
-  let baseURLBuscaMedalhas = `http://tishellofriends.azurewebsites.net/api/medalha/${id}/${recuperaIdAluno()}`;
+  let baseURLBuscaMedalhas = `https://tishellofriends.azurewebsites.net/api/medalha/${id}/${recuperaIdAluno()}`;
   let request = new XMLHttpRequest();
   request.open('GET', baseURLBuscaMedalhas, false);
   request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);

@@ -1,6 +1,6 @@
 let nomeUsuario;
 let urlNomeUsuario;
-const urlNome = 'http://tishellofriends.azurewebsites.net/api/alunos';
+const urlNome = 'https://tishellofriends.azurewebsites.net/api/alunos';
 
 
 function mensagemBoasVindas() {

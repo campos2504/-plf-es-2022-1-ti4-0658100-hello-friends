@@ -16,7 +16,7 @@ const saveProvider = (data) => {
 
   const xhr = new XMLHttpRequest();
 
-  xhr.open('POST', 'http://tishellofriends.azurewebsites.net/api/autenticacao/registrar-aluno', true);
+  xhr.open('POST', 'https://tishellofriends.azurewebsites.net/api/autenticacao/registrar-aluno', true);
   xhr.setRequestHeader("Content-type", "application/json");
 
   xhr.onreadystatechange = () => {

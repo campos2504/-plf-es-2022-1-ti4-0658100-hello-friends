@@ -1,4 +1,4 @@
-const urlRespostaVF = `http://tishellofriends.azurewebsites.net/api/respostasvf`;
+const urlRespostaVF = `https://tishellofriends.azurewebsites.net/api/respostasvf`;
 let alunoIdVF;
 
 //Recuperar informações do localStorage
@@ -41,7 +41,7 @@ function salvarRespostaVF(resultado){
 function getUserRespostaVF() {
 
   if(ehAluno()){
-    let urlUpdateAluno = ''.concat("http://tishellofriends.azurewebsites.net/api/alunos", '/email/', dadosAlunoVF);
+    let urlUpdateAluno = ''.concat("https://tishellofriends.azurewebsites.net/api/alunos", '/email/', dadosAlunoVF);
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
@@ -58,7 +58,7 @@ getUserRespostaVF();
 function getModuloAlunoVF() {
   
   let alunoIdVF = getUserRespostaVF();
-  let urlModuloAluno = ''.concat("http://tishellofriends.azurewebsites.net/api/respostasvf/", mIDVF,"/", alunoIdVF.id);
+  let urlModuloAluno = ''.concat("https://tishellofriends.azurewebsites.net/api/respostasvf/", mIDVF,"/", alunoIdVF.id);
 
     let request = new XMLHttpRequest();
     request.open('GET', urlModuloAluno, false);

@@ -1,4 +1,4 @@
-const urlContratos = `http://tishellofriends.azurewebsites.net/api/contrato`;
+const urlContratos = `https://tishellofriends.azurewebsites.net/api/contrato`;
           
 function getContratos() {
   fetch(urlContratos, {

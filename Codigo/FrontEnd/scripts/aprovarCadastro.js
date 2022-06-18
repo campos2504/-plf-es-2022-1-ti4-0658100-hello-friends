@@ -1,5 +1,5 @@
-const baseURL = `http://tishellofriends.azurewebsites.net/api/alunos`;
-const baseURLAutorizar = `http://tishellofriends.azurewebsites.net/api/alunos/autorizar`;
+const baseURL = `https://tishellofriends.azurewebsites.net/api/alunos`;
+const baseURLAutorizar = `https://tishellofriends.azurewebsites.net/api/alunos/autorizar`;
 
 var aprovacaoCadastro = {
   aprovado(id) {

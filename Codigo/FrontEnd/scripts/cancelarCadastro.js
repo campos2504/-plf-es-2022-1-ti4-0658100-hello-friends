@@ -1,4 +1,4 @@
-const baseURL = `http://tishellofriends.azurewebsites.net/api/alunos`;
+const baseURL = `https://tishellofriends.azurewebsites.net/api/alunos`;
 
 var cancelarCadastro = {
   delete(id) {

@@ -7,7 +7,7 @@ let nameAlunoUpdate;
 let email;
 let idAluno;
 
-const url = 'http://tishellofriends.azurewebsites.net/api/alunos';
+const url = 'https://tishellofriends.azurewebsites.net/api/alunos';
 
 //recupera do localStorage a atividade escolhida
 let dadosAluno = JSON.parse(localStorage.getItem('userToken'));

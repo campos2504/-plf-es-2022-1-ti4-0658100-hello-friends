@@ -1,4 +1,4 @@
-const baseURLCompletaTexto = `http://tishellofriends.azurewebsites.net/api/completar-texto`;
+const baseURLCompletaTexto = `https://tishellofriends.azurewebsites.net/api/completar-texto`;
 let idModuloEscolhido;
 
 var selecaoAtividade_completaTexto = {

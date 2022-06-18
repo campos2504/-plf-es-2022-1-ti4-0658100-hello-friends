@@ -1,4 +1,4 @@
-const baseURLOpcaoCerta = `http://tishellofriends.azurewebsites.net/api/opcaocerta`;
+const baseURLOpcaoCerta = `https://tishellofriends.azurewebsites.net/api/opcaocerta`;
 let idModuloEscolhidoOC;
 
 var selecaoAtividade = {

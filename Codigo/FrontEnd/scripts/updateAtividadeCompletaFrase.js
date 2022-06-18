@@ -1,4 +1,4 @@
-const baseURLCompletaFrase = `http://tishellofriends.azurewebsites.net/api/completar-frase`;
+const baseURLCompletaFrase = `https://tishellofriends.azurewebsites.net/api/completar-frase`;
 let idModuloEscolhidoUpdate;
 let idUpdateCompletaFrase;
 let idAtividadeUpdate;
@@ -40,7 +40,7 @@ const saveProviderCompletaFraseUpdate = (dataUpdate) => {
     palavrasChaves: dataUpdate.palavrasChaves
   };
 
-  xhrUpdateCompletaFrase.open('PUT', 'http://tishellofriends.azurewebsites.net/api/completar-frase', true);
+  xhrUpdateCompletaFrase.open('PUT', 'https://tishellofriends.azurewebsites.net/api/completar-frase', true);
   xhrUpdateCompletaFrase.setRequestHeader("Content-type", "application/json");
   xhrUpdateCompletaFrase.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
 
