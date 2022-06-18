@@ -9,7 +9,7 @@ const saveProvider = (data) => {
   }
   const xhr = new XMLHttpRequest();
 
-  xhr.open('POST', 'https://localhost:44327/api/forgotpassword/resetPassword', true);
+  xhr.open('POST', 'http://tishellofriends.azurewebsites.net/api/forgotpassword/resetPassword', true);
   xhr.setRequestHeader("Content-type", "application/json");
 
   xhr.onreadystatechange = () => {

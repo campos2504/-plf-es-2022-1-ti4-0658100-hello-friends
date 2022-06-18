@@ -1,4 +1,4 @@
-const urlRespostaCompletaFrase = `https://localhost:44327/api/respostasCompletaFrase`;
+const urlRespostaCompletaFrase = `http://tishellofriends.azurewebsites.net/api/respostasCompletaFrase`;
 let alunoIdCompletaFrase;
 
 //Recuperar informações do localStorage
@@ -41,7 +41,7 @@ function salvarRespostaCompletaFrase(resultado) {
 function getUserCompletaFrase() {
 
   if(ehAluno()) {
-    let urlUpdateAluno = ''.concat("https://localhost:44327/api/alunos", '/email/', dadosAlunoCompletaFrase);
+    let urlUpdateAluno = ''.concat("http://tishellofriends.azurewebsites.net/api/alunos", '/email/', dadosAlunoCompletaFrase);
     let request = new XMLHttpRequest();
     request.open('GET', urlUpdateAluno, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
@@ -58,7 +58,7 @@ getUserCompletaFrase();
 function getModuloAlunoCompletaFrase() {
 
   let alunoIdCompletaFrase = getUserCompletaFrase();
-  let urlModuloAluno = ''.concat("https://localhost:44327/api/respostasCompletaFrase/", mIDCompletaFrase, "/", alunoIdCompletaFrase.id);
+  let urlModuloAluno = ''.concat("http://tishellofriends.azurewebsites.net/api/respostasCompletaFrase/", mIDCompletaFrase, "/", alunoIdCompletaFrase.id);
 
   let request = new XMLHttpRequest();
   request.open('GET', urlModuloAluno, false);

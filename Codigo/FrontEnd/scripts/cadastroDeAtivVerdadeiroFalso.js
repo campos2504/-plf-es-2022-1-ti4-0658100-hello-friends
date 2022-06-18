@@ -24,7 +24,7 @@ const saveProvider = (data) => {
 
   const xhr = new XMLHttpRequest();
 
-  xhr.open('POST', 'https://localhost:44327/api/verdadeiro-falso', true);
+  xhr.open('POST', 'http://tishellofriends.azurewebsites.net/api/verdadeiro-falso', true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
 

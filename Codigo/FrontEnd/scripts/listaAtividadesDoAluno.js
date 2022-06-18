@@ -1,4 +1,4 @@
-const urlAtividadesAluno = `https://localhost:44327/api/alunos/notas`;
+const urlAtividadesAluno = `http://tishellofriends.azurewebsites.net/api/alunos/notas`;
 
 //recupera do localStorage a atividade escolhida
 let alunoEscolhido = JSON.parse(localStorage.getItem('visualizarAtivAluno'));

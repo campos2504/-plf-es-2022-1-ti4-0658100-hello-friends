@@ -1,4 +1,4 @@
-const urlContratos = `https://localhost:44327/api/contrato`;
+const urlContratos = `http://tishellofriends.azurewebsites.net/api/contrato`;
           
 function getContratos() {
   fetch(urlContratos, {

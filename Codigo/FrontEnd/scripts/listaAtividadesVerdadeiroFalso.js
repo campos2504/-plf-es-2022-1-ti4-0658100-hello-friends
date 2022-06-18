@@ -1,4 +1,4 @@
-const baseURLVerdadeiroFalso = 'https://localhost:44327/api/verdadeiro-falso';
+const baseURLVerdadeiroFalso = 'http://tishellofriends.azurewebsites.net/api/verdadeiro-falso';
 let idModuloEscolhidoVF;
 
 var selecaoAtividade_verdadeiroFalso = {

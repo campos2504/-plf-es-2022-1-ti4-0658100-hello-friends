@@ -2,7 +2,7 @@ google.charts.load('current', { 'packages': ['corechart'] });
 
 
 function getMedalha() {
-    let baseURLBuscaMedalhas = `https://localhost:44327/api/medalha`;
+    let baseURLBuscaMedalhas = `http://tishellofriends.azurewebsites.net/api/medalha`;
     let request = new XMLHttpRequest();
     request.open('GET', baseURLBuscaMedalhas, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
@@ -14,7 +14,7 @@ function getMedalha() {
   }
 
   function getModulo() {
-    let baseURLModulo = `https://localhost:44327/api/modulos/qtdModulosConcluidos`;
+    let baseURLModulo = `http://tishellofriends.azurewebsites.net/api/modulos/qtdModulosConcluidos`;
     let request = new XMLHttpRequest();
     request.open('GET', baseURLModulo, false);
     request.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);

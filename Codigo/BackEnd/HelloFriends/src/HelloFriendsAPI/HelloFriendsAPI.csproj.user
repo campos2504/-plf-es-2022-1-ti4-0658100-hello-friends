@@ -13,6 +13,7 @@
     <WebStackScaffolding_DbContextTypeFullName>HelloFriendsAPI.Repositorys.Data.HelloFriendsContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>C:\Users\Nataniel\plf-es-2022-1-ti4-0658100-hello-friends\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI\Properties\PublishProfiles\tishellofriends - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
