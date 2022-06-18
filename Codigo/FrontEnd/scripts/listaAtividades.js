@@ -1,4 +1,4 @@
-const baseURLOpcaoCerta = `https://localhost:44327/api/opcaocerta`;
+const baseURLOpcaoCerta = `http://tishellofriends.azurewebsites.net/api/opcaocerta`;
 let idModuloEscolhidoOC;
 
 var selecaoAtividade = {

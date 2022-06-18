@@ -1,5 +1,5 @@
 let idContrato = JSON.parse(localStorage.getItem('contratoSelecionado'));
-urlIdContrato = ''.concat(`https://localhost:44327/api/contrato/`, idContrato.event);
+urlIdContrato = ''.concat(`http://tishellofriends.azurewebsites.net/api/contrato/`, idContrato.event);
 console.log(urlIdContrato);
           
 let contratoPreenchido;

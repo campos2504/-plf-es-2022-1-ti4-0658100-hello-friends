@@ -8,7 +8,7 @@ let questaoImg;
 let pergunta;
 let alternativaRespondida;
 let respostaCerta;
-const baseURL = `https://localhost:44327/api/verdadeiro-falso`;
+const baseURL = `http://tishellofriends.azurewebsites.net/api/verdadeiro-falso`;
 
 function introducao() {
   fetch(baseURL, {

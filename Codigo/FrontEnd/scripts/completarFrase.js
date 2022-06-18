@@ -8,7 +8,7 @@ let palavrasChaves;
 let idAtividadeEscolhida;
 let idModuloEscolhido;
 
-const baseURLCompletaFrase = `https://localhost:44327/api/completar-frase`;
+const baseURLCompletaFrase = `http://tishellofriends.azurewebsites.net/api/completar-frase`;
 
 //recupera do localStorage a atividade escolhida
 let moduloEscolhido = JSON.parse(localStorage.getItem('moduloCorrente'));
@@ -155,7 +155,7 @@ const saveProviderCompletaFrase = (data) => {
 
   console.log("data-->", newData);
 
-  xhr.open('POST', 'https://localhost:44327/api/completar-frase', true);
+  xhr.open('POST', 'http://tishellofriends.azurewebsites.net/api/completar-frase', true);
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.setRequestHeader('Authorization', `Bearer ${retornarTokenUsuario()}`);
   xhr.onreadystatechange = () => {

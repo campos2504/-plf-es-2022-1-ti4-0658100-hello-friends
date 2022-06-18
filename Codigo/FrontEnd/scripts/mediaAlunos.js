@@ -1,4 +1,4 @@
-const urlMediaAlunos = `https://localhost:44327/api/alunos/media`;
+const urlMediaAlunos = `http://tishellofriends.azurewebsites.net/api/alunos/media`;
           
 function mediaAlunos() {
   fetch(urlMediaAlunos, {

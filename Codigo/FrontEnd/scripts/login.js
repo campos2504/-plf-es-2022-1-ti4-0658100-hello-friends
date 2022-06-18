@@ -4,11 +4,12 @@ const realizarLogin = (event) => {
   const renamedData = {
     email: document.querySelector('#email').value,
     senha: document.querySelector('#senha').value,
-  }
+  }  
 
   const xhr = new XMLHttpRequest();
 
-  xhr.open('POST', 'https://localhost:44327/api/autenticacao/entrar', true);
+
+  xhr.open('POST', 'http://tishellofriends.azurewebsites.net/api/autenticacao/entrar', true);
   xhr.setRequestHeader("Content-type", "application/json");
 
   xhr.onreadystatechange = () => {

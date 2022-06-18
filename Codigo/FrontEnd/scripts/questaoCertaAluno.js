@@ -12,7 +12,7 @@ let alternativaC;
 let alternativaD;
 let alternativaRespondida;
 let respostaCerta;
-const baseURL = `https://localhost:44327/api/opcaocerta`;
+const baseURL = `http://tishellofriends.azurewebsites.net/api/opcaocerta`;
 
 function introducao() {
   fetch(baseURL, {

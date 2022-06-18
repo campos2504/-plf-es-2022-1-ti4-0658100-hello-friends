@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using System;
 using System.IO;
 
 namespace HelloFriendsAPI
@@ -33,11 +34,7 @@ namespace HelloFriendsAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddCors(oprtions => oprtions.AddDefaultPolicy(builder => {
-              builder.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-            }));
+            services.AddCors();
 
             services.AddIdentityConfiguration(Configuration);
 
@@ -108,6 +105,12 @@ namespace HelloFriendsAPI
                 app.UseHsts();
             }
 
+            /*services.AddCors(oprtions => oprtions.AddDefaultPolicy(builder => {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));*/
+
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "wwwroot/Images")),
@@ -115,7 +118,9 @@ namespace HelloFriendsAPI
             }) ;
             app.UseAuthentication();
             app.UseHttpsRedirection();
-            app.UseCors();
+            app.UseCors(option => option.AllowAnyOrigin());
+            app.UseCors(option => option.AllowAnyHeader());
+            app.UseCors(option => option.AllowAnyMethod());
             app.UseMvc();
         }
     }
