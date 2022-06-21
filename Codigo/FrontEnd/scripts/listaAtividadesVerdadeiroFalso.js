@@ -62,7 +62,7 @@ function editarVerdadeiroFalso(id) {
 function selecionaAtividadeUpdate(event) {
   if (event) {
     localStorage.setItem('atividadeUpdateVF', JSON.stringify({ event }));
-    window.location.href = "";//falta o front de update
+    window.location.href = "updateDeAtivverdadeiroFalso.html";
   };
 };
 
