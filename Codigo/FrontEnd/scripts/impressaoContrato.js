@@ -30,7 +30,7 @@ function getContratos() {
         <h1 style="text-align: center;">CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE ENSINO DE LÍNGUA ESTRANGEIRA</h1><br/>
         <h1 style="text-align: center;">IDENTIFICAÇÃO DAS PARTES CONTRATANTES </h1><br/>
         <p>CONTRATANTE:
-          <span id="nomeContratante">${data.nomeResponsavel}</span>, 
+          <span id="nomeContratante">${data.nomeResponsavel}</span>, nacionalidade
           <span id="nacionalidade">${data.nacionalidade}</span>, 
           <span id="estadoCivil">${data.estadoCivil}</span>, 
           <span id="profissao">${data.profissao}</span>, 
@@ -47,10 +47,11 @@ function getContratos() {
           CEP: 
           <span id="cep">${data.cep}</span>, no Estado de 
           <span id="estado">${data.estado}</span>, 
-          RESPONSÁVEL pela(s) aluna(s): 
+          RESPONSÁVEL pela(o)(s) aluna(o)(s): 
           <span id="nomeAluno">${data.nomeAluno}</span>.<br/>
+        </p>
         <p>
-          CONTRATADA: Joyce Adriana Lopes da Silva Lacerda, professora de Inglês, Carteira de Identidade nº MG 11475568, C.P.F. nº 012.784.816-99, residente na Rua H, nº 26, bairro: Vila Militar, Cep 32044 - 466, na Cidade de Contagem, no Estado de Minas Gerais.
+          CONTRATADA: Joyce Adriana Lopes da Silva Lacerda, professora de Inglês, Carteira de Identidade nº MG XXXXXX, C.P.F. nº XXX.XXX.XXX-XX, residente na Rua A, nº 0, bairro: Centro, Cep XXXXX-XXXX, na Cidade de Contagem, no Estado de Minas Gerais.
         </p>  
         <p>
           As partes acima identificadas têm, entre si, justo e acertado o presente Contrato de Prestação de Serviços de Ensino de Língua Estrangeira, que se regerá pelas cláusulas seguintes e pelas condições descritas no presente.
@@ -96,13 +97,16 @@ function getContratos() {
           Cláusula 8ª. Ao final deste contrato, o CONTRATANTE receberá um certificado de proficiência do curso.<br/>
           Cláusula 9ª. Não se incluem neste contrato os serviços de reforço e reciclagem, e o fornecimento de material didático utilizado no curso.
         </p>
-        <h1 style="text-align: center;">DO FORO</h1><br/>
+        <h1 style="text-align: center;">DO FORO</h1>
         <p>
           Cláusula 10ª. Para dirimir quaisquer controvérsias oriundas do contrato, as partes elegem o foro da comarca de Contagem.<br/>
-          Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de igual teor.
+          Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de igual teor.<br/>
         </p>
         <p>
-          Contagem, xx de xx de 2022
+          Data de início do contrato: ${dataFormatadaInicio}
+        </p>
+        <p>
+          Contagem,______de__________________de__________.
         </p>
         <div>
         <p>
@@ -115,8 +119,10 @@ function getContratos() {
    <br>
 </div>
 <p>
- <input type="button" value="Criar PDF" id="btnImprimir" onclick="CriaPDF()" />
+ <input type="button" value="Imprimir" id="btnImprimir" onclick="CriaPDF()" />
 </p>
+<br>
+<br>
 <br>
 <br>
 </div>
@@ -128,7 +134,6 @@ function getContratos() {
     })
 }
 getContratos();
-
 
 
 function CriaPDF() {
@@ -143,3 +148,7 @@ function CriaPDF() {
     win.document.close();
     win.print();
 }
+
+
+
+

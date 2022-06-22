@@ -84,10 +84,14 @@ hr {
 #content{
     display: flex;
     position: relative;
-    font-size:40px;
+    font-size:20px;
     margin:0 auto;
     padding: 10px;
     max-width: 70%;
+}
+
+h1{
+    font-size:28px !important;
 }
 
 .linkContrato {

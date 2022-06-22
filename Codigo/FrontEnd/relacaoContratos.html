@@ -76,7 +76,7 @@
   </header>
   <!-- Conteúdo Principal -->
   <main class="main-content">
-    <h1 class="title">Média geral dos alunos</h1>
+    <h1 class="title">Relação contratos</h1>
     <!-- Conteúdo -->
     <div class="content">
       <section id="alunos">
@@ -90,6 +90,7 @@
                   <th>Aluno(s)</th>
                   <th>Data inicio</th>
                   <th>Data final</th>
+                  <th>Excluir</th>
                 </tr>
               </thead>
 
@@ -126,8 +127,8 @@
                       <label for="profissao">Profissão</label>
                       <input type="text" name="profissao" id="profissao" maxlength="20" class="form-control">
     
-                      <label for="carteiraIdentidade">Carteira de Identidade</label>
-                      <input type="text" name="carteiraIdentidade" id="carteiraIdentidade" maxlength="20" class="form-control">
+                      <label for="ci">Carteira de Identidade</label>
+                      <input type="text" name="ci" id="ci" maxlength="20" class="form-control">
     
                       <label for="cpf">CPF</label>
                       <input type="text" name="cpf" id="cpf" maxlength="20" class="form-control">
@@ -153,31 +154,34 @@
                       <label for="nomeAluno">Nome Aluno</label>
                       <input type="text" name="nomeAluno" id="nomeAluno" maxlength="20" class="form-control">
     
-                      <label for="diasAula">Dias das aulas</label>
-                      <input placeholder="Ex.: segunda-feira" type="text" name="diasAula" id="diasAula" maxlength="20" class="form-control">
+                      <label for="diaAula">Dias das aulas</label>
+                      <input placeholder="Ex.: segunda-feira" type="text" name="diaAula" id="diaAula" maxlength="20" class="form-control">
     
                       <label for="horario">Horário</label>
                       <input placeholder="Ex.: 10:00 às 12:00" type="text" name="horario" id="horario" maxlength="20" class="form-control">
     
-                      <label for="mensalidade">Valor da mensalidade</label>
-                      <input placeholder="Ex.: 100" type="value" name="mensalidade" id="mensalidade" maxlength="20" class="form-control">
+                      <label for="cargaHorariaSemanal">Carga horária semanal</label>
+                      <input placeholder="Ex.: 01:00" type="text" name="cargaHorariaSemanal" id="cargaHorariaSemanal" maxlength="20" class="form-control">
+
+                      <label for="ValorMensalidade">Valor da mensalidade</label>
+                      <input placeholder="Ex.: 100" type="value" name="ValorMensalidade" id="ValorMensalidade" maxlength="20" class="form-control">
     
-                      <label for="mensalidadeExtenso">Valor da mensalidade por extenso</label>
-                      <input placeholder="Ex.: Cem reais" type="text" name="mensalidadeExtenso" id="mensalidadeExtenso" maxlength="100" class="form-control">
+                      <label for="valorExtensoMensalidade">Valor da mensalidade por extenso</label>
+                      <input placeholder="Ex.: Cem reais" type="text" name="valorExtensoMensalidade" id="valorExtensoMensalidade" maxlength="100" class="form-control">
     
-                      <label for="txtmail" class=" col-form-label">Data de início do contrato:</label>
-                      <input placeholder="Data Início Contrato" type="date" id="datepicker" class="form-control" 
+                      <label for="dataInicioContrato" class=" col-form-label">Data de início do contrato:</label>
+                      <input placeholder="Data Início Contrato" type="date" id="dataInicioContrato" class="form-control" 
                       value="1900-01-01">
     
-                      <label for="txtmail" class=" col-form-label">Data final do contrato:</label>
-                      <input placeholder="Data Final Contrato" type="date" id="datepicker" class="form-control" 
+                      <label for="dataFinalContrato" class=" col-form-label">Data final do contrato:</label>
+                      <input placeholder="Data Final Contrato" type="date" id="dataFinalContrato" class="form-control" 
                       value="1900-01-01">
     
                     </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" id="btn_incluir" class="btn btn-primary"
-                      onclick="formModulo.submit(event)">Incluir</button>
+                      onclick="formContrato.submit(event)">Incluir</button>
                     <button type="button" id="btn_cancelar" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                   </div>
                 </div>
@@ -214,6 +218,7 @@
     crossorigin="anonymous"></script>
   <script src="scripts/carregarFotoUsuario.js"></script>
   <script src="scripts/relacaoContratos.js"></script>
+  <script src="scripts/criarContrato.js"></script>
   <script>
     validarLogin();
 

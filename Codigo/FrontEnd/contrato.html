@@ -245,6 +245,9 @@
                   <label for="horario">Horário</label>
                   <input placeholder="Ex.: 10:00 às 12:00" type="text" name="horario" id="horario" maxlength="20" class="form-control">
 
+                  <label for="cargaHorariaSemanal">cargaHorariaSemanal/label>
+                  <input placeholder="Ex.: 01:00" type="text" name="cargaHorariaSemanal" id="cargaHorariaSemanal" maxlength="20" class="form-control">
+
                   <label for="mensalidade">Valor da mensalidade</label>
                   <input placeholder="Ex.: 100" type="value" name="mensalidade" id="mensalidade" maxlength="20" class="form-control">
 
@@ -263,7 +266,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" id="btn_incluir" class="btn btn-primary"
-                  onclick="formModulo.submit(event)">Incluir</button>
+                  onclick="formContrato.submit(event)">Incluir</button>
                 <button type="button" id="btn_cancelar" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               </div>
             </div>
@@ -308,7 +311,7 @@
     crossorigin="anonymous"></script>
   <script src="scripts/carregarFotoUsuario.js"></script>
   <script src="scripts/mensagemBoasVindas.js"></script>
-  <script src="scripts/contrato.js"></script>
+  <script src="scripts/impressaoContrato.js"></script>
   <script>
     validarLogin();
 

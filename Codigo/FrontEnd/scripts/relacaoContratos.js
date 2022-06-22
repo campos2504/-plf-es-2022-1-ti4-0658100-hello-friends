@@ -45,6 +45,19 @@ function getContratos() {
                                 <h3 class=""><span id=""></span>${dataFormatadaFinal}</h3>
                               </div>
                            </td>
+                           <td>
+                              
+                            <button type="button" id="btn_excluir" onclick="excluirContrato('${data[i].id}')"
+                              class="btn btn-light btn-circle btn-sm">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-x editar-excluir"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                              </svg>
+
+                            </button>
+
+                           </td>
                        </td>                               
                     </tr>
                     `;
@@ -66,4 +79,24 @@ function selecionarAluno(event) {
   if (event) {
     localStorage.setItem('contratoSelecionado', JSON.stringify({ event }));
   };
+};
+
+
+//Exclui contrato
+function excluirContrato(id) {
+
+  let urlDeleteContrato = ''.concat(urlContratos, '/', id);
+
+  fetch(urlDeleteContrato, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${retornarTokenUsuario()}`
+    },
+    method: 'delete',
+  }).then(function (res) {
+    console.log("reposta delete->", res)
+    window.location.reload();
+  })
+    .catch(function (res) { console.log("reposta delete->", res) })
 };
