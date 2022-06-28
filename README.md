@@ -18,53 +18,38 @@ Plataforma web de aprendizado de Língua Inglesa.
 
 O trabalho consiste em dois projetos desacoplados, um para o BackEnd da solução e outro para o FrontEnd. O projeto BackEnd é uma API Rest implementada por meio do framework ASP.NET Core 2.2, enquanto que o FrontEnd é composto por HTML, CSS e JavaScript convencional, sem uma biblioteca ou framework FrontEnd específico. A comunicação e troca de dados entre os dois projetos é realizada através de requisições AJAX que enviam e retornam JSON.
 
-### Configuração do BackEnd
+### Cadastro no site
 
-Esse projeto utiliza o framework ASP.NET Core 2.2, que por sua vez possui dependência na plataforma .NET Core 2.2. O link para baixar o .NET Core 2.2 é esse: https://dotnet.microsoft.com/download/dotnet/2.2. Também será necessário [instalar o Banco de Dados SQL Server](https://www.youtube.com/watch?v=LxtLqS-9KYo).
+Para utilização da ferramenta, é necessário primeiramente entrar em contato com a Profª. Joyce, pelo e-mail: joycelopeslacerda@gmail.com. Ela orientará o aluno interessado em fazer aulas particulares de inglês, desde o cadastro no site, até questões de planejamento de aulas e mensalidades.
 
-Após fazer as devidas configurações será necessário criar o banco de dados do projeto BackEnd, sendo possível fazer essa configuração através do Gerenciador de Pacotes da IDE Visual Studio ou através da Linha de Comando via terminal.
+Após contato com a Profª., será necessário efetuar um cadastro prévio no site, pelo endereço: https://hellofriendsenglishclass.netlify.app/cadastro. A tela carregada será:
 
-**Visual Studio:** Será necessário [instalar a IDE](https://visualstudio.microsoft.com/pt-br/vs/) e então abrir o projeto dentro da mesma, para isso será necessário selecionar a opção Open Project/Solution e então escolher o arquivo **plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\BackEnd\HelloFriends\HelloFriends.sln**. Dentro do Gerenciador de Pacotes da IDE será necessário executar os dois comandos abaixo:
+![image](https://user-images.githubusercontent.com/72347093/176051337-6d439dfd-a3d4-4a1c-91d7-b974ba8f1a77.png)
 
-```console
-Update-Database -Context ApplicationDbContext
-Update-Database -Context HelloFriendsContext
-```
+Após efetuado o cadastro, a Profª. irá liberar o acesso do aluno desde que todas os pré-requisitos negociais estejam acordados.
 
-**Linha de Comando:** Para configurar o banco via linha de comando será necessário instalar o [dotnet-ef](https://docs.microsoft.com/pt-br/ef/core/cli/dotnet), para isso é necessário já estar com o .NET Core 2.2 instalado na máquina. Após instalar o dotnet-ef basta executar os comandos abaixo no terminal:
+### Primeiro acesso ao sistema
 
-```console
-$ cd plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI
-$ dotnet ef database update --context ApplicationDbContext
-$ dotnet ef database update --context HelloFriendsContext
-```
+Com o cadastro liberado, o aluno poderá efetuar o login no site. Após login, ele será direcionado para a tela inicial de módulos, conforme segue:
 
-### Inicializar BackEnd
+![image](https://user-images.githubusercontent.com/72347093/176050354-2edd214d-428c-4b3c-bd86-5ede9e3b607e.png)
 
-Existem duas maneiras de executar o projeto: através da IDE [Visual Studio 2019](https://visualstudio.microsoft.com/pt-br/vs/) ou via Linha de Comando no terminal.
+### Praticando o idioma
 
-#### Inicialização através do Visual Studio
+Durante as aulas, a Profª. irá indicar ao aluno quais módulos e atividades ele deverá fazer, em complemento ao ensino ministrado em sala.
 
-Para executar o projeto via Visual Studio é necessário realizar a instalação da mesma e então abrir o projeto nela, para abrir o projeto será necessário escolher o arquivo **plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\BackEnd\HelloFriends\HelloFriends.sln** através da opção Open Project presente no Visual Studio, essa escolhe irá aparecer após iniciar a IDE.
+No sistema existem quatro tipos de atividades, sendo: Completa Frase, Completa Texto, Opção Certa e Verdadeiro ou Falso. Segue print da tela.
 
-![image](https://user-images.githubusercontent.com/36521129/138569684-8981f5bd-c4db-41a8-be88-ff9bf97a0b45.png)
+![image](https://user-images.githubusercontent.com/72347093/176050649-ffb34374-4c74-4351-8276-869164d507fe.png)
 
-Após abrir o projeto no Visual Studio basta iniciar ele:
+Em cada módulo, poderão existir várias atividades de cada um dos quatro tipos, sendo as mesmas criadas por liberalidade da Profª.
 
-![image](https://user-images.githubusercontent.com/36521129/138569730-e5c9291c-c45e-4cc4-989b-d488e309e45a.png)
+### Ganhando medalhas
 
-#### Inicialização através da Linha de Comando
+Os alunos receberão medalhas após cada módulo concluído, conforme o percentual de acerto. As medalhas poderão ser de bronze, prata ou ouro.
 
-Para iniciar o projeto através da linha de comando basta abrir o terminal do computador e executar os comandos:
 
-```console
-$ cd plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\BackEnd\HelloFriends\src\HelloFriendsAPI
-$ dotnet run
-```
-O comando dotnet é instalado automáticamente durante a instalação do .NET Core 2.2.
 
-### Utilização do FrontEnd
 
-O fluxo de navegação entre as telas do FrontEnd ainda não está finalizado, mas as telas desenvolvidas já estão integradas com o BackEnd. Para testar basta ir até a pasta plf-es-2021-2-ti3-6654100-projeto-de-ingles\Codigo\FrontEnd e escolher algum arquivo HTML para interagir.
 
 
