@@ -9,11 +9,32 @@ body {
 
 
  .title{
-     margin: 50px 30px;
-     font-size: 35px;
-     line-height: 42px;
-     letter-spacing: 0.15em;
-     color: #ABBF54;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    color: #FFFA6F;
+    width: 790px;
+    margin-top: 30px;
+    margin-left: 40px;
+    border-radius: 60px;
+
+    text-shadow:  
+    1px -1px 0 #f5bc66, 
+    2px -2px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #ffde71, 
+    1px -1px 1px rgba(255, 255, 255, 0.55), 
+    1px -1px 1px rgba(255, 255, 255, 0.55);
  }
 
  
@@ -23,7 +44,9 @@ body {
      margin: 0.5rem;
  }
  #data-table{
-     width: 100%;
+    margin-top: 30px !important;
+     width: 80%;
+     margin: 0 auto;
      color: #969cb3;
  }
  table thead tr th:first-child,
@@ -41,7 +64,8 @@ body {
      color: #fdf865;
      padding: 1rem 2rem;
      border-bottom: 2px #3797A5 solid ;
-     background-color: #3796a585;
+    background-color: #3796a585;
+    text-align: center;
 
  }
 

@@ -156,7 +156,8 @@ function verificaResposta() {
   if (ehAluno()) {
     salvarRespostaCompletaTexto(resultado);
   }
-  alert("Você acertou " + (resultado*100) + "% !");
+  resultado = ''.concat((resultado*100).toFixed(2));
+  alert("Você acertou " + (resultado) + "% !");
 
   if(ehAluno()){
     atualizaMedalha();

@@ -22,12 +22,30 @@
 .titulo{
     font-family: 'Varela Round', sans-serif;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 30px;
     line-height: 42px;
     letter-spacing: 0.15em;
-    color:#ABBF54;
-    margin-top: 10px;
-    margin-left: 30px !important;
+    color: #FFFA6F;
+    width: 950px;
+    margin-left: 40px !important;
+    margin-top: 30px;
+    border-radius: 60px;
+
+    text-shadow:  
+    1px -1px 0 #f5bc66, 
+    2px -2px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #ffde71, 
+    1px -1px 1px rgba(255, 255, 255, 0.55), 
+    1px -1px 1px rgba(255, 255, 255, 0.55);
 }
 
 textarea:focus, input:focus, select:focus {
@@ -37,8 +55,8 @@ textarea:focus, input:focus, select:focus {
 /*escolha Da Questao*/
 
 .nav-pills .nav-link.active{
-    color: rgba(0, 0, 0, 0.486) !important;
-    background-color: #FFFA6F !important; 
+    color: #fff !important;
+    background-color: #ABBF54 !important; 
 }
 
 .opcao{
@@ -60,7 +78,7 @@ textarea:focus, input:focus, select:focus {
     font-size: 25px;
     line-height: 42px;
     letter-spacing: 0.15em;
-    color:#ABBF54;
+    color: rgba(77, 54, 54, 0.596);
     margin-top: 10px;
     margin-left: 30px !important;
 }

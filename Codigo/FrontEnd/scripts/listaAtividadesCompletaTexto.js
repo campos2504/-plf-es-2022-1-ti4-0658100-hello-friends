@@ -89,7 +89,7 @@ function tableCompletaTexto() {
           if(ehAluno()){
             dadosModuloAlunoCompletaTexto.forEach(element => {
               if(element.completaTextoID == data[i].id){
-                nota = (element.resultado * 100) + "%";
+                nota = ''.concat((element.resultado*100).toFixed(2), "%");
               }
             });
           }          

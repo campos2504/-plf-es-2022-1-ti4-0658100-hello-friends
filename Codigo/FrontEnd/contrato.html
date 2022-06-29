@@ -54,6 +54,9 @@
           <li id="graficoAlunos" class="nav-item tp">
             <a class="nav-link" href="Grafico.html">Gráfico Alunos</a>
           </li>
+          <li id="contratosAlunos" class="nav-item tp">
+            <a class="nav-link" href="relacaoContratos.html">Relação Contratos</a>
+          </li>
           <li class="nav-item sobre ml-5 ml-lg-5 ml-md-0 ml-sm-0">
             <a class="nav-link " href="Sobre.html">SOBRE</a>
           </li>
@@ -73,16 +76,7 @@
   </header>
 
   <main class="container-fluid main-content sem-margin">
-    <div class="modulo">
-      <div class="row bemVindo">
-        <h3 class="mensagem">Welcome, <span id="nomeUsuarioCorrente"></span>!</h3>
-      </div>
-
-      <!-- Linha separação -->
-      <div>
-        <hr>
-      </div>
-
+  
       <!-- Contrato -->
       <div class="row" id="content2">
 
@@ -199,7 +193,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <div class="form-group">
+                <div class="form-group cadastroForm">
                   <label for="nomeResponsavel">Nome do responsável</label>
                   <input type="text" name="nomeResponsavel" id="nomeResponsavel" maxlength="20" class="form-control">
 
@@ -310,7 +304,6 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
   <script src="scripts/carregarFotoUsuario.js"></script>
-  <script src="scripts/mensagemBoasVindas.js"></script>
   <script src="scripts/impressaoContrato.js"></script>
   <script>
     validarLogin();

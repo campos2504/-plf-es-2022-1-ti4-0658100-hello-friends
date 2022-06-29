@@ -29,7 +29,7 @@
         <div class="imageMenu mb-lg-0 mb-sm-5 ">
           <div id="newMenu">
           </div>
-          <img src="img/profile.jpg" alt="SemFoto">
+          <img src="img/profile.jpg" alt="SemFoto" id="fotoUsuario">
         </div>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -57,11 +57,17 @@
           <li id="mediaAlunosNav" class="nav-item tp">
             <a class="nav-link" href="listaMediaAlunos.html">Média alunos</a>
           </li>
+          <li id="graficoAlunos" class="nav-item tp">
+            <a class="nav-link" href="Grafico.html">Gráfico Alunos</a>
+          </li>
+          <li id="contratosAlunos" class="nav-item tp">
+            <a class="nav-link" href="relacaoContratos.html">Relação Contratos</a>
+          </li>
           <li class="nav-item sobre ml-5 ml-lg-5 ml-md-0 ml-sm-0">
             <a class="nav-link " href="Sobre.html">SOBRE</a>
           </li>
           <li id="medalhas" class="nav-item">
-           
+            
           </li>
         </ul>
         <li id="botaoDeslogar" class="nav-item tp sair">
@@ -75,19 +81,6 @@
     </nav>
   </header>
   <main class="container-fluid main-content sem-margin">
-
-    <div class="row bemVindo">
-      <h3 class="mensagem">Olá, Fulano.<span id="nomeUsuarioCorrente"></span></h3>
-    </div>
-
-    <div class="row bemVindo">
-      <h3 class="mensagem">Good Morning!</h3>
-    </div>
-
-    <!-- Linha separação -->
-    <div>
-      <hr>
-    </div>
 
     <div class="row col-12 titulo">
       <div id="textoPadrao">Complete the sentence below: </div>
@@ -137,10 +130,15 @@
         document.getElementById('aprovarCadastroNav').style.display = "none";
         document.getElementById('cancelarCadastroNav').style.display = "none";
         document.getElementById('mediaAlunosNav').style.display = "none";
+        document.getElementById('contratosAlunos').style.display = "none";
+        document.getElementById('graficoAlunos').style.display = "none";
+        
       }
+
       if (!(ehAluno())) {
         document.getElementById('editarCadastroNav').style.display = "none";
         document.getElementById('medalhas').style.display = "none";
+            
       }
     }
 

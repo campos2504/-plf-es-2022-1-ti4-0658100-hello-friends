@@ -34,6 +34,8 @@ body,html {
     border: 0px;
 }
 
+
+
 @media screen and (min-width: 768px) {
     .imagem_area {
         padding: 10px;
@@ -193,7 +195,7 @@ a {
 }
      
 .imagemContrato img{
-    width: 200px;
+    width: 700px;
     height: 200px;
     border-radius: 20%;
     border: 1px solid gray;
@@ -250,6 +252,49 @@ a {
 
 /*Linha assinatura*/
 
-#linhaAssinatura{
-    
+#contrato{
+    background-color: #ffffffa6;
+    padding: 70px;
+    margin-bottom: 30px;
+}
+
+#btnImprimir{
+    border-radius: 30px;
+    width: 50px;
+    height: 60px; 
+    color: #FFF8E5;
+    background-color: #ABBF54;
+    border: none;
+}
+
+/*Modal*/
+
+
+.form-control{
+    display: inline !important;
+    width: 80% !important;
+}
+
+label{
+    display: block !important;
+}
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    width: 600px!important;
+}
+
+.modal-body{
+    width: 700px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.cadastroForm{
+    width: 100% !important;
+}
+
+.btn-secondary{
+    background-color: #eb503c !important;
 }

@@ -162,3 +162,57 @@ input{
     color:#9fb927;
     font-weight: 600;     
 }
+
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.parabens{
+    border: 10px solid #d2e96b;
+    background-color: #fcfcfc;
+    padding: 2.4rem;
+    border-radius: 3500px;
+    width: 35%;
+    height: 80%;
+    display: flex;
+    justify-content: end;
+    text-align: center;
+    color: #ffbd43;
+    font-size: 65px;
+}
+
+.cancel{
+    font-size: 15px !important;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.cancelar{
+    border: 10px solid #d2e96b;
+    background-color: #fcfcfc;
+    padding: 2.4rem;
+    border-radius: 3500px;
+    width: 35%;
+    height: 80%;
+    display: flex;
+    justify-content: end;
+    text-align: center;
+    color: #e04545;
+    font-size: 60px;
+}

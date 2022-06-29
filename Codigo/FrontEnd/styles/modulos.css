@@ -67,17 +67,41 @@ body,html {
     color: #FFFA6F;
 }
 
+.mensagem{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    color: #FFFA6F;
+    width: 950px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 20px;
+    border-radius: 60px;
+
+    text-shadow:  
+    1px -1px 0 #f5bc66, 
+    2px -2px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #ffde71, 
+    1px -1px 1px rgba(255, 255, 255, 0.55), 
+    1px -1px 1px rgba(255, 255, 255, 0.55);
+}
+
 .bemVindo{
     margin-top: 10px;
     margin-left: 30px !important;
 }
 
-hr {
-    width: 80% !important;
-    height: 80% !important;
-    border: 1px solid #0C6C7A !important;
-    transform: rotate(-0.05deg) !important;
-}
 
 
 
@@ -242,4 +266,60 @@ a {
 
 .card-text{
     margin-top: 50px;
+}
+
+/*Inicio - modal criar modulo*/
+
+.modal-content{
+    width: 450px !important;
+    height: 530px;
+    background-color: #ABBF54 !important;
+    border-radius: 30px !important;
+}
+
+.modal-header{
+    padding: 10 !important;
+    border-bottom: 2px solid #f8f8f8 !important;
+    
+}
+
+.modal-title{
+    font-size: 20px;
+    color: #fff9ee;
+    font-family: 'Fredoka One', cursive !important;
+    letter-spacing: 0.10em;
+}
+
+.modal-body{
+    font-size: 15px;
+    color: #fff9ee;
+    font-family: 'Fredoka One', cursive !important;
+    letter-spacing: 0.10em;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: center !important;
+    border-top: 2px solid #f8f8f8 !important;
+}
+
+.modal-footer button{
+    border-radius: 60px;
+    width: 150px;
+}
+
+.modal-footer .btn-primary{
+    background-color: #1aa4e5 !important;
+}
+
+.modal-footer .btn-secondary{
+    background-color: rgb(245, 83, 83) !important;
+}
+
+.modal-header .close{
+    color: #ffffff !important;
+}
+
+.form-control{
+    border-radius: 50px !important;
 }

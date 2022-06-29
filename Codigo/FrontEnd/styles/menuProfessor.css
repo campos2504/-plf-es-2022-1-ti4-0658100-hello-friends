@@ -6,6 +6,7 @@ a{
     text-decoration: none;
 }
 
+
 .sem-margin{
     padding: 0 !important;
 }
@@ -20,8 +21,8 @@ a{
      
 .navbar-nav{
     /*margin: 0 auto;*/
-    margin-left: 190px;
-    margin-right: 150px;
+    margin-left: 150px;
+    margin-right: 100px;
 }
 
 .imageMenu:hover .editar-content{
@@ -34,6 +35,11 @@ a{
       border-radius:100%;
 }
 
+.collapse{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+}
 
    
 #newMenu{
@@ -53,7 +59,6 @@ a{
    
 
 .cont {
-    content: "";
     left: 0;
     right: 0;
     size: 10% !important;
@@ -65,17 +70,16 @@ a{
     width: 100%;
     height: 100%;
   
-    opacity: 1;
   }
   
   .imagemFundo{
       width: 100%;
       position:fixed !important;
-      -webkit-filter: blur(7px);
-    -moz-filter: blur(7px);
-    -o-filter: blur(7px);
-    -ms-filter: blur(7px);
-    filter: blur(7px);
+      -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
+    filter: blur(5px);
   }
 
 /*Tópicos*/
@@ -87,7 +91,15 @@ a{
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-left: 30px;
+    font-size: 13px;
+}
+
+.tp{
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -105,33 +117,22 @@ a{
     justify-content:center;
 }
 
-.menu{
-   font-size: 18px !important;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: rgb(255, 255, 255) !important;
-}
+
 
 li{
    margin-bottom: 5px !important;
    cursor: pointer;
 }
 
-.tp{
-    margin: 0 20px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-left: 30px;
-}
+
 
 /*Medalhas*/
 img{
-    width: 50px;
+    width: 40px;
 }
+
 #medalhas{
-    margin-left: 75px;
+    margin-left: 95px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -155,6 +156,7 @@ img{
     justify-content: center;
     text-align: center;
     border-radius: 20px;
+    font-size: 13px;
 }
 
 /*Fotter*/
@@ -162,13 +164,19 @@ img{
     background: #3797A5;
     padding: 15px;
     color: white;
-    font-size: 1.5em;
+    font-size: .8em;
     text-align: center;
     font-family: 'Varela Round', sans-serif;
     font-style: normal;
-    position:absolute;
     bottom:0;
     width:100%;
+    position: absolute;
+}
+hr {
+    width: 80% !important;
+    height: 80% !important;
+    border: 1px solid #0C6C7A !important;
+    transform: rotate(-0.05deg) !important;
 }
 
 /*Sair*/

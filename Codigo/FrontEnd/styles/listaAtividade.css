@@ -63,13 +63,15 @@ i {
 
 
 .nav-pills .nav-link.active{
-    color: rgba(0, 0, 0, 0.486) !important;
-    background-color: #FFFA6F !important; 
+    color: rgb(255, 255, 255) !important;
+    background-color: #ffbd43 !important; 
     border-radius: 60px;
     margin-left: 30px;
     font-weight: bold !important;
     font-family: 'Varela Round', sans-serif !important;
 }
+
+
 
 .opcao{
     color: rgba(0, 0, 0, 0.54) !important; 
@@ -124,6 +126,76 @@ i {
 }
 
 .title{
-    color: #ffbd43;
-    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    color: #FFFA6F;
+    width: 570px;
+    margin-left: 20px;
+    border-radius: 60px;
+
+    text-shadow:  
+    1px -1px 0 #f5bc66, 
+    2px -2px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #f5bc66, 
+    1px -1px 0 #ffde71, 
+    1px -1px 1px rgba(255, 255, 255, 0.55), 
+    1px -1px 1px rgba(255, 255, 255, 0.55);
+
+    margin-bottom: 50px !important;
 }
+
+
+/*Inicio - modal criar modulo*/
+
+.modal-content{
+    background-color: #ABBF54 !important;
+    border-radius: 30px !important;
+}
+
+.modal-header{
+    padding: 10 !important;
+    border-bottom: 2px solid #f8f8f8 !important;
+    
+}
+
+
+.modal-body{
+    font-size: 20px !important;
+    color: #fff9ee;
+    letter-spacing: 0.10em;
+}
+
+.modal-footer{
+    display: flex !important;
+    justify-content: center !important;
+    border-top: 2px solid #f8f8f8 !important;
+}
+
+.modal-footer button{
+    border-radius: 60px;
+    width: 190px;
+}
+
+.modal-footer .btn-primary{
+    background-color: #1aa4e5 !important;
+}
+
+.modal-header .close{
+    color: #ffffff !important;
+}
+
+.container-fluid{
+    margin: 0 !important;
+}
+
