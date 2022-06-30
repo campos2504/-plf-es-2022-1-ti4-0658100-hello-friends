@@ -15,11 +15,13 @@ const saveProvider = (data) => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
-        console.log(xhr.responseText);
+        renderizaAlert('Senha alterada', 'success')
+        setTimeout(() => {window.location.href="Login.html"}, 2000);
         throw new Error("Senha alterada")
       }
       else {
-        console.log(xhr.responseText);
+        renderizaAlert('Senha não alterada', 'danger')
+        setTimeout(() => {window.location.href="Login.html"}, 2000);
         throw new Error("Senha não alterada")
       }
     }
