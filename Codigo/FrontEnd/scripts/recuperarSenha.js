@@ -11,11 +11,13 @@ const saveProvider = (data) => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
-        console.log(xhr.responseText);
+        renderizaAlert('Email enviado', 'success')
+        setTimeout(() => {window.location.href="Login.html"}, 2000);
         throw new Error("Email enviado")
       }
       else {
-        console.log(xhr.responseText);
+        renderizaAlert('Email não enviado', 'danger')
+        setTimeout(() => {window.location.href="Login.html"}, 2000);
         throw new Error("Error")
       }
     }

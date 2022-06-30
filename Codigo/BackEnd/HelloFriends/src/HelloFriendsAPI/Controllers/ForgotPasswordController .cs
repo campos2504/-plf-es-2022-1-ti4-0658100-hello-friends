@@ -40,7 +40,7 @@ namespace HelloFriendsAPI.Controllers
                 if (user != null)
                 {
                     var token = await _userManager.GeneratePasswordResetTokenAsync(await user);
-                    var resetUrl = "http://127.0.0.1:5500/Codigo/FrontEnd/resetSenha.html?token=" + token + "&email=" + model.Email;
+                    var resetUrl = "https://hellofriendsenglishclass.netlify.app/resetsenha.html?token=" + token + "&email=" + model.Email;
                     MailRequest request = new MailRequest() ;
                     request.ToEmail = model.Email; request.Subject = "Recuperação de Senha"; request.Body = resetUrl;
                     try
